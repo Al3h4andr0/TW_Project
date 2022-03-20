@@ -24,14 +24,14 @@ body,html{
 }
 .div2{
     position: absolute;
-    width: 20%;
+    width: 300px;
     float: left;
     background-color: brown;
 }
 .div3{
     position: absolute;
     left: 80%;
-    width: 20%;
+    width: 300px;
     float: right;
     background-color: blueviolet;
 }
