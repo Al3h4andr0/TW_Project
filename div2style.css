@@ -1,0 +1,70 @@
+.arrow {
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    position: fixed;
+    top: 50%;
+  }
+  #btnControl {
+    display: none;
+}
+
+  .arrow:hover
+  {
+      border: solid gray;
+      border-width: 0 4px 4px 0;
+      display: inline-block;
+      padding: 10px;
+  }
+ /* #hide_div{display: none;}*/
+  
+   .arrow:target{
+      -webkit-animation: slide-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+              animation: slide-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    }
+    @-webkit-keyframes slide-right {
+      0% {
+        -webkit-transform: translateX(-300px);
+                transform: translateX(-300px);
+      }
+      100% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+      }
+    }
+    @keyframes slide-right {
+      0% {
+        -webkit-transform: translateX(-300px);
+                transform: translateX(-300px);
+      }
+      100% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+      }
+    }
+    .square{
+      height:100%;
+      width: 300px;
+      background-color: rgb(255, 255, 255);
+    }
+.div2_button{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+#img_div2{
+  height: 100px;
+  width:200px;
+}
+.tags{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.tags > p{
+  border-style: solid;
+  border-width: 2px;
+}
