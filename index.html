@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -49,13 +50,33 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius assumenda voluptates ipsam, quam inventore ea aliquam obcaecati fugit qui, voluptatem dolore aperiam ullam labore vel culpa! Inventore molestiae voluptatum debitis.</p>
            </div>
         <div class="div1">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ex molestias animi ut quia placeat dolorum quis explicabo, praesentium eligendi quaerat ullam autem consectetur illo aliquam laborum neque! Suscipit, aperiam?</p>
-         </div>
+            <h4 class="logo">NavBar</h4>
+
+            <ul class="filterList">
+                <li><a href="#">Filter1</a></li>
+                <li><a href="#">Filter2</a></li>
+                <li><a href="#">Filter3</a></li>
+                <li><a href="#">Filter4</a></li>
+            </ul>
+
+            <div class="filterButton">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <ul class="accountButtons">
+                <li id="addApartment"><a href="#">Add</a></li>
+                <li><i class="material-icons" style="font-size:35px;color: #cecece;">account_circle</i></li>
+            </ul>
+        </div>
+
+       
         
         <iframe id="map_frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=27.49663352966309%2C47.14127796020417%2C27.576971054077152%2C47.18014577412355&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>
         <small><a href="https://www.openstreetmap.org/#map=14/47.1607/27.5368">View Larger Map</a></small>
-     
+         
     </div>
-    
+    <script src="div1JS/filters.js"></script>
 </body>
 </html>

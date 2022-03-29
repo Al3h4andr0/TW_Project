@@ -1,0 +1,138 @@
+
+
+:root {
+    --color1: #5d4954;
+    --color2:rgb(206, 206, 206);
+    --color3:#49505d;
+    --color1darkened:hsl(327, 12%, 28%);
+}
+
+.div1 {
+    margin: 0px;
+    padding: 0px;
+    z-index: 10;
+    position: relative;
+    width: 100%;
+    float: top;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: var(--color1);
+    .logo{
+        color: var(--color2);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size:22px;
+    }
+    .filterList{
+        display:flex;
+        justify-content: space-around;
+        width: 40%;
+        a{
+            color: var(--color2);
+            text-decoration:none;
+            letter-spacing: 3px;
+            font-weight: bold;
+            font-size:12px;
+            text-transform: uppercase;
+        }
+        li{
+            list-style:none; 
+        }
+    }
+    .filterButton{
+        display:none;
+       div{
+         width:1.3em;
+        margin:0.1em;
+        height:0.18em;
+        background-color: var(--color2);
+        border-radius: 1em;
+    }
+       
+    }
+    .accountButtons{
+         position:relative;
+        display:flex;
+        margin:0;
+        width:25%;
+        justify-content: space-between;
+        a{
+            color: var(--color2);
+            text-decoration:none;
+            letter-spacing: 3px;
+            font-weight: bold;
+            font-size:12px;
+            text-transform: uppercase;
+        }
+        li{
+            list-style:none;
+            align-self: center;
+            cursor:pointer;
+        }
+        #addApartment{
+            background-color: var(--color3);
+            height: 3vh;
+            width: 6em;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.5em;
+        }
+    }
+    
+}
+
+@media screen and (max-width:800px){
+
+.div1{//if overflow issues: overflow-x: hidden
+
+    .filterList{
+        position: absolute;
+       z-index: inherit;
+        width:100%;
+        height:3.5vh;
+        top:8vh;
+        background-color: var(--color1darkened);
+        display:flex;
+        justify-content: space-evenly;
+        align-items: center;
+        transition: transform 0.25s ease-out;
+        transform:  translateX(100%);
+      li{
+          opacity: 1;
+      }
+     
+    }
+    .filterButton{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        cursor:pointer;
+       
+       div{
+          margin:0.2em;
+       }
+    }
+    .accountButtons{
+        width: 35%;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        li{
+            margin:0.2em;
+        }
+    }
+   
+}
+
+}
+
+.filterButton-active{
+   
+    transform: translateX(0%)  !important;
+}
+
+
