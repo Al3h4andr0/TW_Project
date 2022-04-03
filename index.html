@@ -2,21 +2,52 @@
 <html lang="en">
 
 <head>
-    <title>
-        TWProject
-    </title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
 
     <div class="map">
-
         <div class="div2">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae distinctio deleniti incidunt ab
-                dignissimos voluptatem quidem tempore dolor voluptatibus nisi eaque, iure corrupti natus temporibus
-                dicta magnam fugiat explicabo eligendi!</p>
+            <div id="hide_div">
+                <div class="slide-right" id="22">
+                    <div class="square">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <img src="https://www.imgacademy.com/sites/default/files/2009-stadium-about.jpg"
+                                            id="img_div2">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="div2_button">
+                                        <button>Overview</button>
+                                        <button>Reviews</button>
+                                        <button>Photos</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tags">
+                                        <p>tag1</p>
+                                        <p>tag2</p>
+                                        <p>tag3</p>
+                                        <p>tag4</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <a href="#hide_div">
+            </div><i class="arrow" id="arrow"></i> </label> </a>
         </div>
         <div class="div3">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius assumenda voluptates ipsam, quam inventore
@@ -24,23 +55,36 @@
                 voluptatum debitis.</p>
         </div>
         <div class="div1">
-            <input type="text" placeholder="Search..">
-            <a href="#home" class="active">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-            <a href="#???" class="icon" onclick="myFunction()">
-                <i class="fa fa-bar"></i>
-            </a>
+            <h4 class="logo">NavBar</h4>
+
+            <ul class="filterList">
+                <li><a href="#">Filter1</a></li>
+                <li><a href="#">Filter2</a></li>
+                <li><a href="#">Filter3</a></li>
+                <li><a href="#">Filter4</a></li>
+            </ul>
+
+            <div class="filterButton">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <ul class="accountButtons">
+                <li id="addApartment"><a href="#">Add</a></li>
+                <li><i class="material-icons" style="font-size:35px;color: #cecece;">account_circle</i></li>
+            </ul>
         </div>
 
-        <iframe id="map_frame" frameborder="0" marginheight="0" marginwidth="0"
+
+
+        <iframe id="map_frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
             src="https://www.openstreetmap.org/export/embed.html?bbox=27.49663352966309%2C47.14127796020417%2C27.576971054077152%2C47.18014577412355&amp;layer=mapnik"
             style="border: 1px solid black"></iframe><br />
         <small><a href="https://www.openstreetmap.org/#map=14/47.1607/27.5368">View Larger Map</a></small>
 
     </div>
-
+    <script src="div1JS/filters.js"></script>
 </body>
 
 </html>
