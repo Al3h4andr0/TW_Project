@@ -1,4 +1,5 @@
 * {
+<<<<<<< HEAD
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -75,3 +76,48 @@ ul {
   }
 }
 /*# sourceMappingURL=style.css.map */
+=======
+    box-sizing: border-box;
+    margin: 0;
+  }
+.map{
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
+#map_frame{
+    width: 100%;
+    height: 100%;
+}
+body,html{
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+.div1{
+    position: absolute;
+    width: 100%;
+  float: top;
+  background-color: yellow;
+}
+.div2{
+    position: absolute;
+    width: 20%;
+    float: left;
+    background-color: brown;
+}
+.div3{
+    position: absolute;
+    left: 80%;
+    width: 20%;
+    float: right;
+    background-color: blueviolet;
+}
+
+@media screen and (max-width:600px){
+    .div3{
+        background-color: olive;
+    }
+    
+}
+>>>>>>> main
