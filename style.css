@@ -1,0 +1,14 @@
+body {
+  text-decoration: none;
+  max-width: 21cm;
+  margin: auto;
+  line-height: 1.6;
+  font-weight: 300;
+  font-family: Roboto,sans-serif;
+  background-color: white;
+}
+
+body a {
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */
