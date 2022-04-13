@@ -56,15 +56,19 @@
         </div>
         <div class="div1">
             <section class="left-section">
-                <h4 class="logo">EMa</h4>
+                <p class="logo">
+                    <span id="logo-E">E</span>
+                    <span id="logo-Ma">Ma</span>
+                    </h4>
                 <div class="search-bar">
                     <input type="text" placeholder="Search...">
-                    <button id="filter-button">
-                        <img src="div1SVG/UI_Filter.svg" alt="UI_Filter" />
-                    </button>
-                    <button id="search-button">
-                        <img src="div1SVG/UI_Magnifier.svg" alt="UI_Magnifier" />
-                    </button>
+                    <div id="ui-filter">
+                        <img id="ui-filter-icon" src="div1SVG/UI_Filter.svg" alt="UI_Filter" />
+                    </div>
+                    <div id="ui-magnifier">
+                        <!-- <img id="ui-magnifier-icon" src="div1SVG/UI_Magnifier.svg" alt="UI_Magnifier" /> -->
+                    </div>
+
                 </div>
             </section>
 
@@ -89,5 +93,9 @@
     </div>
     <script src="div1JS/filters.js"></script>
 </body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+</style>
 
 </html>
