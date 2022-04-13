@@ -4,58 +4,110 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    
 
+<body>
     <div class="map">
         <div class="div2">
-              <div id="hide_div">
-                <div class="slide-right" id="22"> 
-                    <div class="square">
-                         <table>
-                              <tr>
-                                 <td>
-                                    <div>
-                                        <img src="https://www.imgacademy.com/sites/default/files/2009-stadium-about.jpg" id="img_div2">
-                                    </div>
-                                 </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                    <div class="div2_button"> 
-                                        <button >Overview</button>
-                                        <button >Reviews</button>
-                                        <button >Photos</button>
-                                        </div>
-                                </td>
-                             </tr>
-                             <tr>
-                                <td>
-                                    <div class="tags">
-                                        <p>tag1</p>
-                                        <p>tag2</p>
-                                        <p>tag3</p>
-                                        <p>tag4</p>
-                                      </div>
-                                </td>
-                             </tr>
-                            </table>
+            <img src="arrow_right.svg" class="arrow_right">
+            <div class="background">
+                <div class="images">
+                    <img src="https://www.imgacademy.com/sites/default/files/2009-stadium-about.jpg" class="image">
+                    <button class="img_btn">
+                        <p class="txt_btn">See more</p>
+                    </button>
+                </div>
+                <div class="name_location">
+                    <div class="name">
+                        <p class="desc_text"> Grand Hotel Mircea</p>
                     </div>
-                  </div>   
-                <a href="#hide_div"></div><i class="arrow" id="arrow"></i> </label> </a>
-         </div>
-         <div class="div3">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius assumenda voluptates ipsam, quam inventore ea aliquam obcaecati fugit qui, voluptatem dolore aperiam ullam labore vel culpa! Inventore molestiae voluptatum debitis.</p>
-           </div>
+                    <hr class="line1">
+                    <div class="location_price">
+                        <div class="loc">
+                            <img src="location.svg" class="location">
+                            <p class="desc_text"> Street Toma Cozma nr 81</p>
+                        </div>
+
+                        <div class="price">
+                            <img src="cash.svg">
+                            <p class="desc_text">15$/night</p>
+                        </div>
+                    </div>
+                    <hr class="line2">
+                </div>
+                <div class="OvReCo">
+                  <button class="OvReCo_btn">
+                    <p class="txt_btn">Overview</p>
+                  </button>
+                  <button class="OvReCo_btn">
+                    <p class="txt_btn">Reviews</p>
+                  </button>
+                  <button class="OvReCo_btn">
+                    <p class="txt_btn">Contact</p>
+                  </button>
+                  <div class="tags">
+                    <div class="tag_background"></div>
+                  </div>
+                </div>
+                <div class="tags">
+                  <div class="red_tag">
+                    <p class="dark_skinny_txt">Without:</p>
+                    <p class="white_txt">#smog</p>
+                  </div>
+                  <div class="red_tag">
+                    <p class="dark_skinny_txt">Without:</p>
+                    <p class="white_txt">#theft</p>
+                  </div>
+                  <div class="red_tag">
+                    <p class="dark_skinny_txt">Without:</p>
+                    <p class="white_txt">#noise</p>
+                  </div>
+                  <div class="more_tags">
+                    <p class="txt_btn">+5 more</p>
+                  </div>
+                </div>
+                <hr class="line3">
+                <div class="desc">
+                    <p class="txt_btn">
+                     A general description of the place, as the owner wrote it.
+                     This section is changed depending on the 3 buttons Overview, reviews and Contact
+                    </p>
+                   </div>
+                   <hr class="line4">
+                   <div class="rent">
+                    <p class="txt_btn" style="color: green;">
+                     Available!
+                    </p>
+                    <p class="txt_btn">
+                      Total price: 200$
+                    </p>
+                     <button class="rent_btn">
+                         <pc class="rent_btn_txt">
+                            Rent
+                         </p>
+                     </button>
+                   </div>
+            </div>
+        </div>
+        <div class="div3">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius assumenda voluptates ipsam, quam inventore
+                ea aliquam obcaecati fugit qui, voluptatem dolore aperiam ullam labore vel culpa! Inventore molestiae
+                voluptatum debitis.</p>
+        </div>
         <div class="div1">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ex molestias animi ut quia placeat dolorum quis explicabo, praesentium eligendi quaerat ullam autem consectetur illo aliquam laborum neque! Suscipit, aperiam?</p>
-         </div>
-        
-        <iframe id="map_frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=27.49663352966309%2C47.14127796020417%2C27.576971054077152%2C47.18014577412355&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ex molestias animi ut quia placeat dolorum
+                quis explicabo, praesentium eligendi quaerat ullam autem consectetur illo aliquam laborum neque!
+                Suscipit, aperiam?</p>
+        </div>
+
+        <iframe id="map_frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=27.49663352966309%2C47.14127796020417%2C27.576971054077152%2C47.18014577412355&amp;layer=mapnik"
+            style="border: 1px solid black"></iframe><br />
         <small><a href="https://www.openstreetmap.org/#map=14/47.1607/27.5368">View Larger Map</a></small>
-     
+
     </div>
-    
+
 </body>
+
 </html>

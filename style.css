@@ -23,11 +23,6 @@ body,html{
   float: top;
   background-color: yellow;
 }
-.div2{
-    position: absolute;
-    width: 300px;
-    float: left; 
-}
 .div3{
     position: absolute;
     left: 80%;
