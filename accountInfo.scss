@@ -1,0 +1,27 @@
+
+body{
+
+.user-button{
+    align-self: center;
+
+button{
+    top: 5%;
+    left: 95%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position:relative;
+    border-radius:50%;
+    width: 40px;
+    height: 40px;
+    background-color:#F4ECE6;
+    img{
+        margin-left: 8px;
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        
+    }
+}
+}
+}
