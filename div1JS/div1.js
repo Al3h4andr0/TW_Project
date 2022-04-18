@@ -165,7 +165,7 @@ function addMinMaxInput(
 function addCancelSubmitButtons(advancedFiltersSection) {
   var bottomSide = document.createElement("div");
   bottomSide.setAttribute("class", "buttons-part");
-  bottomSide.appendChild(createAdvancedFilterButton("cancel", "filter-cancel"));
+  bottomSide.appendChild(createAdvancedFilterButton("Cancel", "filter-cancel"));
   bottomSide.appendChild(createAdvancedFilterButton("Submit", "filter-submit","undefined","sendFilterToBar(this)"));
   advancedFiltersSection.appendChild(bottomSide);
 }
