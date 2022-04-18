@@ -236,8 +236,8 @@
     transform: translateY(-10%);
     transition: ease-in-out 0.15s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    flex-flow: row wrap;
-    grid-template-columns: repeat(5, 1fr);
+     flex-flow: row wrap;
+     grid-template-columns: repeat(5, 1fr);
 
     .dropdown {
         position: relative;
@@ -435,7 +435,10 @@
             margin-left: 0.5rem;
             margin-right: 0.5rem;
         }
+       
     }
+  
+    
     .top-hashtag {
         :not(i) {
             color: var(--color2);

@@ -90,6 +90,8 @@ function createAdvancedFilterP(text, id = "undefined") {
   return label;
 }
 
+
+
 function createAdvancedFilterInput(defaultText, id = "undefined") {
   var inputDiv = document.createElement("input");
   inputDiv.setAttribute("type", "text");
@@ -240,7 +242,7 @@ var toBeSendArray =[];
     case "filter-hashtags":
       var tagsArray = Array.from(document.getElementsByClassName("tag active"));
       tagsArray.forEach((item) =>{
-          toBeSendArray.push(generateTopBarTag("tag-hashtag-" + item.innerHTML,"top-tag top-hashtag",item.innerHTML));
+          toBeSendArray.push(generateTopBarTag("tag-hashtag-" + item.innerHTML.substring(1),"top-tag top-hashtag",item.innerHTML));
           item.classList.remove('active');
       })
     break;
@@ -248,6 +250,7 @@ var toBeSendArray =[];
       var tagsArray = Array.from(document.getElementsByClassName("tag active"));
 
       tagsArray.forEach((item) =>{
+       
           toBeSendArray.push(generateTopBarTag("tag-location-" + item.innerHTML,"top-tag","Located in " + item.innerHTML));
           item.classList.remove('active');
       })
@@ -270,14 +273,31 @@ var toBeSendArray =[];
   }
   document.getElementById("filter-options").classList.toggle("active");
   document.getElementById("filter-options-advanced").classList.remove("active");
-  console.log("TOBESENDARRAYLENGTH: " + toBeSendArray.length)
+  console.log("TOBESENDARRAYLENGTH: " + toBeSendArray.length);
+  let changed = 1;
   toBeSendArray.forEach((child) => {
-    console.log("pushing");
+  
+    if(filterTopZone.querySelector("#" + child.id) != null)
+    {console.log(child);
+      filterTopZone.querySelector("#" + child.id).remove();}
     filterTopZone.appendChild(child);
-  })
+  });
   
 }
 // END ADVANCED FILTER HANDLER
+
+function createTopBarSubmitButton()
+{
+  var button = createAdvancedFilterP("Submit","submit-filters-button");
+  button.classList.add("top-tag");
+  button.style.paddingLeft = "0.25rem";
+  button.style.paddingRight = "0.25rem";
+  button.addEventListener("click",() => {
+    //CALL FUNCTION TO SEND TO BACKEND THE FILTERS
+    button.remove();
+  },false);
+  return button;
+}
 
 // TAGS HANDLER FOR EACH ONE
 function tagHandler(button)
