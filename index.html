@@ -4,9 +4,18 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/b96a3bcd86.js" crossorigin="anonymous"></script>
-   
+    <title>EMa</title>
+    <!-- <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+    </style> -->
+
 </head>
 
 <body>
@@ -22,7 +31,7 @@
                                 <td>
                                     <div>
                                         <img src="https://www.imgacademy.com/sites/default/files/2009-stadium-about.jpg"
-                                            id="img_div2">
+                                            id="img_div2" alt="stadium">
                                     </div>
                                 </td>
                             </tr>
@@ -49,7 +58,9 @@
                     </div>
                 </div>
                 <a href="#hide_div">
-            </div><i class="arrow" id="arrow"></i> </label> </a>
+                    <i class="arrow" id="arrow"></i> </a>
+            </div>
+
         </div>
         <div class="div3">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius assumenda voluptates ipsam, quam inventore
@@ -58,62 +69,119 @@
         </div>
         <div class="div1">
             <!-- LOGO + SEARCH BAR -->
-            <section class="left-section">
+            <div class="left-section">
                 <!-- LOGO -->
                 <p class="logo">
-                    <span id="logo-E">E</span>
-                    <span id="logo-Ma">Ma</span>
+                    <span id="logo-E" class="logo-E">E</span>
+                    <span id="logo-Ma" class="logo-Ma">Ma</span>
                 </p>
                 <!-- END LOGO -->
                 <div class="search-bar">
                     <input type="text" placeholder="Search...">
                     <!-- ICONS -->
-                    <section class="ui-icons">
-                        <div id="ui-filter" onclick="openFilters()">
-                            <img id="ui-filter-icon" src="div1SVG/UI_Filter.svg" alt="UI_Filter" />
+                    <div class="ui-icons">
+                        <div id="ui-filter" class="ui-filter" onclick="openFilters()">
+                            <img id="ui-filter-icon" class="ui-filter-icon" src="div1SVG/UI_Filter.svg"
+                                alt="UI_Filter" />
                         </div>
-                        <div id="ui-magnifier">
-                            <img id="ui-magnifier-icon" src="div1SVG/UI_Magnifier.svg" alt="UI_Magnifier" />
+                        <div id="ui-magnifier" class="ui-magnifier">
+                            <img id="ui-magnifier-icon" class="ui-magnifier-icon" src="div1SVG/UI_Magnifier.svg"
+                                alt="UI_Magnifier" />
                         </div>
-                    </section>
+                        <!-- FILTERS DESKTOP -->
+                        <div id="filter-div" class="filter-window">
+
+                            <div class="menu">
+                                <li class="menu-item" id="price">
+                                    <a href="#price" class="button">
+                                        <i class="far fa-dollar"></i>
+                                    Price
+                                    </a>
+                                    <div class="menu-item__sub">
+                                        <a href="#">Posts</a>
+                                        <a href="#">Picture</a>
+                                    </div>
+                                </li>
+                                <li class="menu-item" id="location">
+                                    <a href="#location" class="button">
+                                        <i class="far fa-map"></i>
+                                        Location
+                                    </a>
+                                    <div class="menu-item__sub">
+                                        <a href="#">New</a>
+                                        <a href="#">Sent</a>
+                                        <a href="#">Spam</a>
+                                        <a href="#">New</a>
+                                        <a href="#">Sent</a>
+                                        <a href="#">Spam</a>
+                                        <a href="#">New</a>
+                                        <a href="#">Sent</a>
+                                        <a href="#">Spam</a>
+                                        <a href="#">New</a>
+                                        <a href="#">Sent</a>
+                                        <a href="#">Spam</a>
+                                        <a href="#">New</a>
+                                        <a href="#">Sent</a>
+                                        <a href="#">Spam</a>
+                                    </div>
+                                </li>
+                                <li class="menu-item" id="hashtags">
+                                    <a href="#hashtags" class="button">
+                                        <i class="fas fa-hashtag"></i>
+                                        Hashtags
+                                    </a>
+                                    <div class="menu-item__sub">
+                                        <a href="#">Password</a>
+                                        <a href="#">Language</a>
+                                    </div>
+                                </li>
+                                <li class="menu-item" id="surface">
+                                    <a href="#surface" class="button">
+                                        <i class="fa-solid fa-ruler"></i>
+                                        Surface
+                                    </a>
+                                    <div class="menu-item__sub">
+                                        <a href="#">Password</a>
+                                        <a href="#">Language</a>
+                                    </div>
+                                </li>
+                                <li class="menu-item submit">
+                                    <a href="#" class="button">
+                                        <i class="fa-solid fa-check"></i>
+                                    Submit
+                                    </a>
+                                </li>
+                            </div>   
+                            
+                            
+
+
+
+
+
+
+                        </div>
+                    </div>
                     <!-- END ICONS -->
 
                 </div>
-            </section>
+            </div>
             <!--END LOGO + SEARCH BAR -->
 
             <!-- ADD APARTMENT + MY ACCOUNT BUTTON -->
-            <section class="right-section">
-                <p id="add-apartment">Add apartment</p>
-                <div id="account-button">
+            <div class="right-section">
+                <p id="add-apartment" class="add-apartment">Add apartment</p>
+                <div id="account-button" class="account-button">
                     <p>BF</p>
-                    </button>
-            </section>
+                    <!-- </button> -->
+                </div>
+            </div>
             <!-- END ADD APARTMENT + MY ACCOUNT BUTTON -->
 
 
 
         </div>
-        <!-- FILTERS DESKTOP -->
-        <div id="filter-div-desktop" class="filters-desktop">
-            <div class="dropdown" id="dropdown1" data-dropdown>
-                <div id="add-filter-button" class="filter-instance" addFilter>
-                    <i class="fa-solid fa-plus"></i>
-                    <p>Add</p>
-                </div>
-                <div id="filter-options" filterOptions>
 
-                    <div class="filter-option 0"  onclick="filterHandler(this)" id="filter-price">Price</div>
-                    <div class="filter-option 1" onclick="filterHandler(this)" id="filter-location">Location</div>
-                    <div class="filter-option 2" onclick="filterHandler(this)" id="filter-surface">Surface</div>
-                    <div class="filter-option 3" onclick="filterHandler(this)"id="filter-hashtags">Hashtags</div>
-                    <div class="filter-option 4" onclick="filterHandler(this)" id="filter-date">Date</div>
-                   
-                     <div id="filter-options-advanced">
-                       Content2;
-                   </div>  
-            </div>
-        </div>
     </div>
     <!-- END FILTERS DESKTOP -->
 
@@ -134,7 +202,7 @@
 
 
 
-    <iframe id="map_frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+    <iframe id="map_frame" title="map-frame"
         src="https://www.openstreetmap.org/export/embed.html?bbox=27.49663352966309%2C47.14127796020417%2C27.576971054077152%2C47.18014577412355&amp;layer=mapnik"
         style="border: 1px solid black"></iframe><br />
     <small><a href="https://www.openstreetmap.org/#map=14/47.1607/27.5368">View Larger Map</a></small>
@@ -143,8 +211,5 @@
     <script src="div1JS/div1.js"></script>
 </body>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
-</style>
 
 </html>
