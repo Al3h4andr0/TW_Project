@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+    <script src="https://kit.fontawesome.com/b96a3bcd86.js" crossorigin="anonymous"></script>
+   
+</head>
+
+<body>
+
 
 <body>
     <div class="map">
@@ -96,18 +103,94 @@
                 voluptatum debitis.</p>
         </div>
         <div class="div1">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ex molestias animi ut quia placeat dolorum
-                quis explicabo, praesentium eligendi quaerat ullam autem consectetur illo aliquam laborum neque!
-                Suscipit, aperiam?</p>
-        </div>
+            <!-- LOGO + SEARCH BAR -->
+            <section class="left-section">
+                <!-- LOGO -->
+                <p class="logo">
+                    <span id="logo-E">E</span>
+                    <span id="logo-Ma">Ma</span>
+                </p>
+                <!-- END LOGO -->
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <!-- ICONS -->
+                    <section class="ui-icons">
+                        <div id="ui-filter" onclick="openFilters()">
+                            <img id="ui-filter-icon" src="div1SVG/UI_Filter.svg" alt="UI_Filter" />
+                        </div>
+                        <div id="ui-magnifier">
+                            <img id="ui-magnifier-icon" src="div1SVG/UI_Magnifier.svg" alt="UI_Magnifier" />
+                        </div>
+                    </section>
+                    <!-- END ICONS -->
 
-        <iframe id="map_frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=27.49663352966309%2C47.14127796020417%2C27.576971054077152%2C47.18014577412355&amp;layer=mapnik"
-            style="border: 1px solid black"></iframe><br />
-        <small><a href="https://www.openstreetmap.org/#map=14/47.1607/27.5368">View Larger Map</a></small>
+                </div>
+            </section>
+            <!--END LOGO + SEARCH BAR -->
+
+            <!-- ADD APARTMENT + MY ACCOUNT BUTTON -->
+            <section class="right-section">
+                <p id="add-apartment">Add apartment</p>
+                <div id="account-button">
+                    <p>BF</p>
+                    </button>
+            </section>
+            <!-- END ADD APARTMENT + MY ACCOUNT BUTTON -->
+
+
+
+        </div>
+        <!-- FILTERS DESKTOP -->
+        <div id="filter-div-desktop" class="filters-desktop">
+            <div class="dropdown" id="dropdown1" data-dropdown>
+                <div id="add-filter-button" class="filter-instance" addFilter>
+                    <i class="fa-solid fa-plus"></i>
+                    <p>Add</p>
+                </div>
+                <div id="filter-options" filterOptions>
+
+                    <div class="filter-option 0"  onclick="filterHandler(this)" id="filter-price">Price</div>
+                    <div class="filter-option 1" onclick="filterHandler(this)" id="filter-location">Location</div>
+                    <div class="filter-option 2" onclick="filterHandler(this)" id="filter-surface">Surface</div>
+                    <div class="filter-option 3" onclick="filterHandler(this)"id="filter-hashtags">Hashtags</div>
+                    <div class="filter-option 4" onclick="filterHandler(this)" id="filter-date">Date</div>
+                   
+                     <div id="filter-options-advanced">
+                       Content2;
+                   </div>  
+            </div>
+        </div>
+    </div>
+    <!-- END FILTERS DESKTOP -->
+
+
+    <!-- FILTERS MOBILE -->
+    <div class="filters-mobile">
+        <div id="filter-bar">
+            <div id="filters-text">Filters</div>
+            <div id="back-button">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+        </div>
+    </div>
+    <!-- END FILTERS MOBILE -->
+
+
+
+
+
+    <iframe id="map_frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=27.49663352966309%2C47.14127796020417%2C27.576971054077152%2C47.18014577412355&amp;layer=mapnik"
+        style="border: 1px solid black"></iframe><br />
+    <small><a href="https://www.openstreetmap.org/#map=14/47.1607/27.5368">View Larger Map</a></small>
 
     </div>
-
+    <script src="div1JS/div1.js"></script>
 </body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+</style>
 
 </html>
