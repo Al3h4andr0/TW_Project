@@ -1,3 +1,4 @@
+@import "div2style.css";
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,12 +22,6 @@ body,html{
     width: 100%;
   float: top;
   background-color: yellow;
-}
-.div2{
-    position: absolute;
-    width: 300px;
-    float: left;
-    background-color: brown;
 }
 .div3{
     position: absolute;
