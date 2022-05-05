@@ -14,8 +14,29 @@
   top: 0px;
   border-radius: 8px;
   background-color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 6px;
 }
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: gainsboro;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 .arrow_right {
   cursor: pointer;
   width: 50px;
@@ -23,7 +44,7 @@
 }
 
 .collapsed {
-  transform: translateX(-92%);
+  transform: translateX(-93%);
 }
 
 .images {
@@ -57,7 +78,6 @@
 }
 
 .txt_btn {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 21px;
@@ -141,6 +161,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
 .OvReCo_btn:hover {
@@ -203,7 +224,7 @@
 
 .line3 {
   position: relative;
-  top: 6%;
+  top: 10%;
   border: 1px solid #BBBABA;
 }
 
@@ -251,4 +272,72 @@
 
 .rent_btn:hover {
   background: #da2d2d;
+}
+
+.rent_form_container {
+  
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  top: 106px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #BBBABA;
+}
+
+.rent_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  height: 100%;
+}
+
+.rent_form label {
+  font-family: 'Playfair Display';
+}
+
+.rent_form input {
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0 2px 5px 0 grey;
+  padding: 0 10px;
+}
+
+.rent_form .row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.rent_form input[type="submit"] {
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  background-color: #DA4545;
+}
+.hidden{
+  display: none;
+}
+.expanded{
+  display: flex;
+}
+.rent_form_cancel{
+  box-shadow: 0 2px 5px 0 grey;
+  padding: 0 10px;
+  border: none;
+  border-radius: 7px;
+  height: 20px;
+  width: 100px;
+}
+.rent_form_cancel:hover{
+  cursor: pointer;
 }
