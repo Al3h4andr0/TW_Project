@@ -200,7 +200,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30vw;
+  width: 100%;
 }
 
 .filter-window .menu a {
@@ -210,6 +210,29 @@
 .filter-window .menu .submit > * {
   background-color: #da4545;
   color: white;
+}
+
+.filter-window .menu .price-input {
+  padding: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: initial;
+}
+
+.filter-window .menu .price-input div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0;
+  padding-bottom: 0.5rem;
+}
+
+.filter-window .menu .price-input div * {
+  font-size: medium;
+}
+
+.filter-window .menu .price-input input {
+  width: 1%;
 }
 
 .filter-window .menu-item {
@@ -236,7 +259,7 @@
 }
 
 .filter-window .menu-item__sub {
-  background: #568656;
+  background: #e5e5e5;
   overflow: hidden;
   transition: max-height 0.3s;
   max-height: 0;
