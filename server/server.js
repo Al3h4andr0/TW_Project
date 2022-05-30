@@ -2,6 +2,7 @@ const http = require("http");
 const { url } = require("inspector");
 const static = require('node-static');
 const { getRequestData} = require('./utils/utils');
+/** We want the this as a single tone as it is kinda the database at the moment; can't enforce the pattern in js form one i know so we work with what we have*/
 let Todo = new (require('./controller/todos'))();
 let Location = new (require('./controller/locations'))();
 
@@ -14,6 +15,8 @@ const DELETE = 'DELETE';
 
 var fileServer = new static.Server('./../public');
 
+
+/** To be fair this functions should be part of route processers */
 const handleFilesRequest = (request, response) => {
     request.addListener('end', function () {
         fileServer.serve(request, response);
@@ -84,6 +87,7 @@ const getAllLocationsWithinBounds = async (request, response) => {
 // route listener; routs request to proper processor
 async function requestListener (request, response) {
 
+    //Act as Get but I'm lazy to parse URL params so we use POST to be able to have a body
     if (request.url.match(/\api\/locations\/bound/) && request.method === POST) {
         safeExec(getAllLocationsWithinBounds, request, response);
     } else if (request.url.match(/\api\/todos\/([0-9]+)/) && request.method === GET) {

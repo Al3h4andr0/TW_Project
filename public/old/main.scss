@@ -1,0 +1,86 @@
+:root{
+    --color1: #333;
+    --color2: white;
+    --color3: #ddd;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+.map{
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    position:relative;
+}
+#map_frame{
+    width: 100%;
+    height: 100%;
+}
+body,html{
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+.div1{
+    position: absolute;
+    width: 100%;
+    height: 3em;
+  float: top;
+  background-color: var(--color1);
+  overflow:hidden;
+  *{
+float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  }
+  input{
+      color: black;
+      align-items: flex-start;
+  }
+  a:hover{
+      background-color: var(--color3);
+      color:black;
+  }
+  a.active{
+      background-color: turquoise;
+      color:white;
+  }
+  .icon{
+      display:none;
+  }
+  
+
+
+
+
+}
+.div2{
+    position: absolute;
+    width: 25em;
+    float: left;
+    background-color: brown;
+}
+.div3{
+    position: absolute;
+    width: 18em;
+    right:0;
+    float: right;
+    background-color: blueviolet;
+}
+
+@media screen and (max-width:600px){
+    .div1 a:not(:first-child) {display:none;}
+   .div1 a.icon{float:right;
+   display:block;}
+    .div3{
+        background-color: olive;
+    }
+    
+}

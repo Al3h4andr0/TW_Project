@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b96a3bcd86.js" crossorigin="anonymous"></script>
+
+    <title>EMa</title>
+</head>
+
+<body>
+    <div class="map">
+        <div class="div2">
+            <div class="background">
+                <div class="images">
+                    <img src="https://www.imgacademy.com/sites/default/files/2009-stadium-about.jpg" class="image">
+                    <button class="img_btn">
+                        <p class="txt_btn">See more</p>
+                    </button>
+                </div>
+                <div class="name_location">
+                    <div class="name">
+                        <p class="desc_text"> Grand Hotel Mircea</p>
+                    </div>
+                    <hr class="line1">
+                    <div class="location_price">
+                        <div class="loc">
+                            <img src="location.svg" class="location">
+                            <p class="desc_text"> Street Toma Cozma nr 81</p>
+                        </div>
+
+                        <div class="price">
+                            <img src="cash.svg">
+                            <p class="desc_text">15$/night</p>
+                        </div>
+                    </div>
+                    <hr class="line2">
+                </div>
+                <div class="OvReCo">
+                    <a class="OvReCo_btn txt_btn" href="#overview">
+                        Overview
+                    </a>
+                    <a class="OvReCo_btn txt_btn" href="#contact">
+                        Contact
+                    </a>
+                    <a class="OvReCo_btn txt_btn" href="#reviews">
+                        Reviews
+                    </a>
+                    <div class="tags">
+                        <div class="tag_background"></div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <div class="red_tag">
+                        <p class="dark_skinny_txt">Without:</p>
+                        <p class="white_txt">#smog</p>
+                    </div>
+                    <div class="red_tag">
+                        <p class="dark_skinny_txt">Without:</p>
+                        <p class="white_txt">#theft</p>
+                    </div>
+                    <div class="red_tag">
+                        <p class="dark_skinny_txt">Without:</p>
+                        <p class="white_txt">#noise</p>
+                    </div>
+                    <div class="more_tags">
+                        <p class="txt_btn">+5 more</p>
+                    </div>
+                </div>
+                <hr class="line3">
+                <div class="desc">
+                    <h1 id="overview">Overview</h1>
+                    <p class="txt_btn">
+                        A general description of the place, as the owner wrote it.
+                        This section is changed depending on the 3 buttons Overview, reviews and Contact
+                    </p>
+
+                    <h1 id="contact">Contact</h1>
+                    <p class="txt_btn">
+                        A general description of the place, as the owner wrote it.
+                        This section is changed depending on the 3 buttons Overview, reviews and Contact
+                    </p>
+                    <p class="txt_btn">
+                        A general description of the place, as the owner wrote it.
+                        This section is changed depending on the 3 buttons Overview, reviews and Contact
+                    </p>
+                    <p class="txt_btn">
+                        A general description of the place, as the owner wrote it.
+                        This section is changed depending on the 3 buttons Overview, reviews and Contact
+                    </p>
+                    <p class="txt_btn">
+                        A general description of the place, as the owner wrote it.
+                        This section is changed depending on the 3 buttons Overview, reviews and Contact
+                    </p>
+                    <p class="txt_btn">
+                        A general description of the place, as the owner wrote it.
+                        This section is changed depending on the 3 buttons Overview, reviews and Contact
+                    </p>
+
+                    <h1 id="reviews">Reviews</h1>
+                    <p class="txt_btn">
+                        A general description of the place, as the owner wrote it.
+                        This section is changed depending on the 3 buttons Overview, reviews and Contact
+                    </p>
+                    <p class="txt_btn">
+                        A general description of the place, as the owner wrote it.
+                        This section is changed depending on the 3 buttons Overview, reviews and Contact
+                    </p>
+                    <p class="txt_btn">
+                        A general description of the place, as the owner wrote it.
+                        This section is changed depending on the 3 buttons Overview, reviews and Contact
+                    </p>
+                    <p class="txt_btn">
+                        A general description of the place, as the owner wrote it.
+                        This section is changed depending on the 3 buttons Overview, reviews and Contact
+                    </p>
+                </div>
+                <hr class="line4">
+                <div class="rent">
+                    <p class="txt_btn" style="color: green;">
+                        Available!
+                    </p>
+                    <p class="txt_btn">
+                        Total price: 200$
+                    </p>
+                    <button class="rent_btn" onclick="toggleRentFormOn()">
+                        <pc class="rent_btn_txt">
+                            Rent
+                            </p>
+                    </button>
+                </div>
+            </div>
+            <img onclick="togglePanel()" src="arrow_right.svg" class="arrow_right">
+            <div class="rent_form_container">
+                
+                <form action="" class="rent_form">
+                    <button class="rent_form_cancel" onclick="toggleRentFormOff()"> Cancel </button>
+                    <div class="row">
+                        <label for="fname">First name:</label>
+                        <input type="text" id="fname" name="fname" placeholder="First name">
+                    </div>
+                    <div class="row">
+                        <label for="lname">Last name:</label>
+                        <input type="text" id="lname" name="lname" placeholder="Last Name">
+                    </div>
+                    <div class="row">
+                        <label for="phone">Phone number:</label>
+                        <input type="text" id="phone" name="phone" placeholder="Phone Number">
+                    </div>
+                    <div class="row">
+                        <label for="email">Email address:</label>
+                        <input type="text" id="email" name="email" placeholder="Email">
+                    </div>
+                    <input type="submit" value="Rent" >
+                </form>
+            </div>
+        </div>
+        <div class="div3">
+
+        </div>
+        <div class="div1">
+            <!-- LOGO + SEARCH BAR -->
+            <section class="left-section">
+                <!-- LOGO -->
+                <p class="logo">
+                    <span id="logo-E">E</span>
+                    <span id="logo-Ma">Ma</span>
+                </p>
+                <!-- END LOGO -->
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <!-- ICONS -->
+                    <section class="ui-icons">
+                        <div id="ui-filter" onclick="openFilters()">
+                            <img id="ui-filter-icon" src="div1SVG/UI_Filter.svg" alt="UI_Filter" />
+                        </div>
+                        <div id="ui-magnifier">
+                            <img id="ui-magnifier-icon" src="div1SVG/UI_Magnifier.svg" alt="UI_Magnifier" />
+                        </div>
+                    </section>
+                    <!-- END ICONS -->
+
+                </div>
+            </section>
+            <!--END LOGO + SEARCH BAR -->
+
+            <!-- ADD APARTMENT + MY ACCOUNT BUTTON -->
+            <section class="right-section">
+                <p id="add-apartment">Add apartment</p>
+                <div id="account-button">
+                    <p>BF</p>
+                    </button>
+            </section>
+            <!-- END ADD APARTMENT + MY ACCOUNT BUTTON -->
+
+
+
+        </div>
+        <!-- FILTERS DESKTOP -->
+        <div id="filter-div-desktop" class="filters-desktop">
+            <div class="dropdown" id="dropdown1" data-dropdown>
+                <div id="add-filter-button" class="filter-instance" addFilter>
+                    <i class="fa-solid fa-plus"></i>
+                    <p>Add</p>
+                </div>
+                <div id="filter-options" filterOptions>
+
+                    <div class="filter-option 0" onclick="filterHandler(this)" id="filter-price">Price</div>
+                    <div class="filter-option 1" onclick="filterHandler(this)" id="filter-location">Location</div>
+                    <div class="filter-option 2" onclick="filterHandler(this)" id="filter-surface">Surface</div>
+                    <div class="filter-option 3" onclick="filterHandler(this)" id="filter-hashtags">Hashtags</div>
+                    <div class="filter-option 4" onclick="filterHandler(this)" id="filter-date">Date</div>
+
+                    <div id="filter-options-advanced">
+                        Content2;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END FILTERS DESKTOP -->
+
+
+        <!-- FILTERS MOBILE -->
+        <div class="filters-mobile">
+            <div id="filter-bar">
+                <div id="filters-text">Filters</div>
+                <div id="back-button">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+            </div>
+        </div>
+        <!-- END FILTERS MOBILE -->
+ 
+
+
+
+
+        <iframe id="map_frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=27.49663352966309%2C47.14127796020417%2C27.576971054077152%2C47.18014577412355&amp;layer=mapnik"
+            style="border: 1px solid black"></iframe><br />
+        <small><a href="https://www.openstreetmap.org/#map=14/47.1607/27.5368">View Larger Map</a></small>
+
+    </div>
+    <script src="div1JS/div1.js"></script>
+    <script src="div2JS/div2.js"></script>
+</body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+</style>
+
+</html>
