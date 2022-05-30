@@ -1,0 +1,16 @@
+Front-end:
+ Search results form
+ Aici vor fi afisate informatiile despre un imobiliar cautat, acestea fiind:
+-Overview-ul imobilului (buton)
+-Reviews ale imobilului (buton)
+-Poze de la locul respectiv (buton)
+
+-Taguri pentru imobil(poluare,aglomeratie,nivel de trai etc.)
+-Adresa
+-Valabilitatea in intervalul specificat la cautare
+-Posibilitatea de a inchiria imobilul, butonul Rent care va duce la un formular de inchiriere
+
+ Rent form
+ -Se va completa cu datele personale ale utilizatorului pentru inchirierea imobilului
+ -Pentru contactare se va da optiunea utilizatorului sa se logheze intr un cont sau sa introduca un numar de telefon
+ -Se va putea alege metoda de plata cash sau card
