@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>EMa [Estate Web Manager]</title>
+    <link href = "style.css" rel = "stylesheet" type = "text/css">
+    <script src="https://kit.fontawesome.com/7a29751d8c.js" crossorigin="anonymous"></script>
+  </head>
+  <body a link ="#DA4545" vlink="#DA4546">
+    <div id = "contentinfo">
+      <dl>
+        <dt>Authors</dt>
+        <dd>
+          Alupoaie Mircea
+          &amp;
+          Fomin Bogdan
+          &amp;
+          Mihailescu Alessandro
+        </dd>
+      </dl>
+    </div>
+
+    <a href = "#contentinfo" class="gotop"> <i class="fa-solid fa-angles-up"></i></a>
+
+    <section id="content">
+        <h1> Content </h1>
+        <ol>
+            <li> <a href="#Introduction">Introduction</a></li>
+                <ol>
+                    <li> <a href="#Purpose">Purpose</a></li>
+                    <li> <a href="#IntendedAudience">Intended Audience and Reading Suggestions</a></li>
+                    <li> <a href="#ProductScope">Product Scope</a></li>
+                    <li> <a href="#References">References</a></li>
+                </ol>
+<br>
+            <li> <a href="#OverallDescription">Overall Description</a></li>
+                <ol>
+                    <li> <a href="#ProductPerspective">Product Perspective</a></li>
+                    <li> <a href="#ProductFunctions">Product Functions</a></li>
+                    <li> <a href="#UserClasses">User Classes and Characteristics</a></li>
+                    <li> <a href="#DesignImpl">Design and Implementation Constraints</a></li>
+                    <li> <a href="#OperatingEnv">Operating Environment</a></li>
+                    <li> <a href="#UserDoc">User Documentation</a></li>
+                    <li> <a href="#AssumpionsDep">Assumptions and Dependencies</a></li>
+                </ol>
+<br>
+            <li> <a href="#ExternalInterfaceReq">External Interface Requirements</a></li>
+                <ol>
+                    <li> <a href="#UserInterface">User Interface</a></li>
+                    <li> <a href="#HardwareInterface">Hardware Interface</a></li>
+                    <li> <a href="#SoftwareInterface">Software Interface</a></li>
+                    <li> <a href="#CommunicationInterface">Communication Interface</a></li>
+                </ol>
+<br>
+            <li> <a href="#SystemFeature">System Features</a></li>
+                <ol>
+                    <li> <a href="#SearchResults">Search Results Page</a></li>
+                    <li> <a href="#UserInput">User Input</a></li>
+                    <li> <a href="#UserIdentity">User Identity Manager</a></li>
+                    <li> <a href="#OpenStreetMap">OpenStreetMap</a></li>
+                    <li> <a href="#AddingBuilding">Adding a Building</a></li>
+                    <li> <a href="#CreateAccount">Create an Account Form</a></li>
+                </ol>
+<br>
+            <li> <a href="#Other">Other Non-Functional Requirements</a></li>
+                <ol>
+                    <li> <a href="#PerformanceReq">Performance Requirements</a></li>
+                    <li> <a href="#SafetyReq">Safety Requirements</a></li>
+                    <li> <a href="#SecurityReq">Security Requirements</a></li>
+                    <li> <a href="#SoftwareQualityAttributes">Software Quality Attributes</a></li>
+                </ol>
+
+        </ol>
+
+    </section>
+
+<br>
+<br>
+
+
+
+
+    <section id="introduction" role="doc-introduction">
+      <!-- review? -->
+      <h2 id="Introduction">Introduction</h2>
+      <h4 id="Purpose">Purpose</h4>
+     <p> Aceasta documentatie vizeaza aplicatia web EMa (Estate Web Manager) care gestioneaza tranzactiile imobiliare.    </p>
+    
+      <h4 id="IntendedAudience">Intended Audience and Reading Suggestions</h4>
+    <p>Acest document este destinat developerilor care au o baza bine definita in html, css, javascript, php. </p>
+        <p>        Este recomandat sa se citeasca mai intai sectiunile Overall description, System features apoi restul.</p>    
+    
+        <h4 id="ProductScope">Product Scope</h4>
+        <p> EMa manageriaza eficient tranzactiile imobiliare prin a oferi posibilitatea oricarei persoane sa puna in chirie sau sa inchirieze un imobil cu ajutorul unui sistem cartografic interactiv cu filtre relevante. Intr-un cadru antreprenorial cei care dau in chirie pot folosi serviciile oferite de aplicatie pentru o taxa procentuala. Pentru a mentine relevanta aplicatia se pot adauga feature-uri noi in functie de piata imobiliara actuala.
+        </p>
+        <h4 id="References">References</h4>
+        <p> ToBeDone</p>
+   </section>
+
+    <section id="OverallDescription">
+      <h2 id = "OverallDescription">Overall Description</h2>
+
+      <h4 id = "ProductPerspective"> Product Perspective</h4>
+      <p>
+        Aplicatia este un produs nou, de sine statator care are in componenta sa OpenStreetMap - serviciu de cartografie si sistemul de logare de la Google, fiecare avand o interfata grafica proprie.
+      </p>
+
+      <h4 id = "ProductFunctions"> Product Functions</h4>
+      <p>  Functionalitatile de baza ale aplicatiei sunt:    </p>
+      <ul>
+            <li> <p> managementul tranzactiilor imobiliare folosind chestionare cu date personale, conturi pe aplicatie    </p></li>
+            <li> <p> cautarea interactiva a imobilelor folosind harta, taguri, bara de cautare, review-uri, profilul utilizatorilor     </p></li>
+      </ul>
+
+      <h4 id="UserClasses">User Classes and Characteristics</h4>
+        <p>Persoanele care vor folosi aplicatia sunt oameni de rand, majoritatea adulti care cauta un loc de cazare (turisti) si antreprenori care vor pune la dispozitie imobilurile. Nu este necesar pentru turisti sa aiba cunostiinte speciale pentru a folosi aplicatia, in schimb antreprenorii vor avea nevoie de cunostiinte de business pentru a colabora cu detinatorii aplicatiei.</p>
+
+      <h4 id="DesignImpl">Design and Implementation Constraints</h4>
+<p>Aplicatia foloseste exclusiv resurse cu licenta open source. Nu exista limitari hardware. Foloseste serviciul OpenStreetMap impreuna cu interfata sa si serviciul de logare de la Google impreuna cu interfata sa. Ca tehnologii folosite avem geolocatia, incriptia care este folosita pentru date personale,parole si tranzactii, modelul MVC.</p>
+      <p>Tool-urile folosite pentru developementul aplicatiei sunt:    </p>
+      <ul>
+
+        <li><p>Server web: Xampp</p></li>
+        <li><p>Editor text: Visual Studio Code        </p></li>
+        <li><p>Validatoare: W3schools html Validator, CSS Portal Validator, web.dev Quality Validator        </p></li>
+        <li><p>Management al codului: Github        </p></li>
+      </ul>
+
+      <h4 id="OperatingEnv">Operating Environment</h4>
+      <p>Aplicatia va rula exclusiv pe orice browser web popular(Ex. Chrome, Firefox, Edge, Sfari), specificatiile hardware fiind cele minime pentru navigarea acestor platforme. Este independent de orice sistem de operare dar developerii au dezvoltat o pe Windows 10.
+    </p>
+
+        <h4 id="UserDoc">User Documentation</h4>
+        <p>Nu exista o documentatie pentru user, singurul mod de prezentare/explicare a aplicatiei este videoul explicativ care este trimis impreuna cu proiectul.        </p>
+
+        <h4 id="AssumpionsDep">Assumptions and Dependencies</h4>
+
+            <p>Este posibil sa apara probleme in partea de development in sectiunile legate de logarea contului folosind Google. Dependentele aplicatiei sunt serviciile OpenStreetMap si sistemul de logare de la Google.
+            </p>
+
+    </section>
+
+    <section id="ExternalInterfaceReq">
+     <h2 id = "ExternalInterfaceReq">External Interface Requirements</h2>
+
+    <h4 id = "UserInterface">User Interface</h4>
+
+    <p>Pagina principala este formata din harta oferita de OpenStreetMap, iar pe deasupra exista diferite butoane cu ajutorul carora utilizatorul poate vizualiza diferite imobile in functie de preferinte pe harta (locatia) iar in stanga o descriere urmata de multiple detalii despre imobil. </p>
+    <p> Utilizatorul are optiunea si de a cauta un imobil, cu ajutorul field-ului search din bara de navigare situata in antetul paginii. De asemenea, in bara de navigare exista un buton cu ajutorul caruia userul isi poate adauga un imobil spre vanzare/inchiriere dar numai cu conditia ca acesta sa fie logat. </p>
+    <p>Logarea se poate realiza cu butonul din dreapta barei de navigare, buton care deschide un pop-up unde se poate realiza logarea, sau ( daca logarea a fost realizata ) modificarea/vizualizarea datelor contului si lista imobilelor postate de acest user.
+    </p>
+    <p>Dupa logare, utilizatorul poate accesa functia de add prin intermediul butonului specificat mai devreme, buton care va trimite userul intr-un formular separat in care va introduce datele necesare pentru a adauga imobilul, inclusiv fotografii.
+      </p>
+
+<h4 id="HardwareInterface">Hardware Interface</h4>
+
+<p>Din moment ce aceasta aplicatie va fi incarcata pe web, host-ul ales pentru produsul finit este cel oferit de platforma Heroku . </p>
+<p>Aplicatia noastra web poate fi accesata de pe multiple dispozitive, aceasta fiind facila pentru orice device care are la dispozitie un browser actualizat.</p>
+
+<h4 id="SoftwareInterface">Software Interface</h4>
+<p>Aplicatia va fi creata in HTML5, CSS3, JavaScript ES6 pe  partea de UI, iar pentru gestionarea imobilelor si a conturilor vom folosi  PHP 8.0 pentru a gestiona o baza de date relationala  accesata prin HTTP requests conform paradigmei REST. </p>
+   
+<h4 id="CommunicationInterface">Communication Interface</h4>
+
+<p>Orice utilizator cu o conexiune la internet si cu ajutorul unui browser poate accesa aplicatia prin protocol HTTP. Va exista si o rubrica de suport unde prin care userul poate semnala anumite erori, imbunatatiri etc.</p>
+
+</section>
+
+<section id="SystemFeature"> 
+
+  <h2 id ="SystemFeature">System Features</h2>
+
+      <h4 id="SearchResults">Search Results Page</h4>
+<p>In partea stanga a paginii, va exista o zona in care imobilele
+  pot fi vizualizate sub forma de lista. Lista se va actualiza in functie de input-ul utilizatorului in bara de search respectiv in functie de filtrele aplicate.
+  </p>
+<p>In aceasta lista, sunt afisate doar informatii esentiale:</p>
+<ul>
+<li><p>O poza reprezentativa</p></li>
+<li><p>Pretul cerut</p></li>
+<li><p>Zona/Strada</p></li>
+</ul>
+<p>In momentul in care utilizatorul apasa pe o proprietate, partea stanga a site-ului va fi populata cu informatii in detaliu despre acea proprietate:</p>
+<ul>
+
+  <li><p>Overview-ul imobilului</p></li>
+  <li><p>Review-urile imobilului (In cazul in care e dat spre inchiriere)</p></li>
+  <li><p>Pozele de la locul respectiv   </p></li>
+  <li><p>Tag-urile asociate</p></li>
+  <li><p>Buton pentru a sugera posibilitatea de a inchiria/cumpara imobilul</p></li>
+</ul>
+
+<h4 id="UserInput">User Input</h4>
+<p>Partea de stanga sus a paginii web va fi populata cu logo-ul aplicatiei, o bara de search si o zona in care se pot adauga filtre si/sau ordonari precum:</p>
+<ul>
+  <li><p>Pret intre 1000-3000 lei</p></li>
+  <li><p>Zona: Copou si Centru</p></li>
+  <li><p>Sortat dupa pret</p></li>
+  <li><span>Fara: </span><span style="color: #DA4545;">#smog</span></li>
+</ul>
+
+<p>Cuvintele cheie inserate  in bara de search, respectiv filtrele aplicate de catre utilizator vor avea impact in zona de rezultate, unde imobilele vor avea cerintele dorite de catre utilizator.</p>
+
+
+<h4 id="UserIdentity">User Identity Manager</h4>
+<p>In partea dreapta sus a paginii, exista un buton ce va facilita utilizatorului optiunea de a se loga cu un ID si parola sau a-si vizualiza contul. Aceste optiuni sunt vizibile intr-o fereastra de tip pop-up. In aceasta fereastra, se pot  schimba datele personale precum numar de telefon  etc sau pentru a se vizualiza imobilele postate de catre utilizator. Daca user-ul nu are un cont, va avea optiunea de a-si crea unul sau de a se conecta cu contul de Google, urmand ca apoi sa aiba optiunea de a adauga un imobil pe platforma.
+  </p>
+  <p>Daca user-ul are imobile pe platorma, se pot vizualiza din aceasta zona, iar daca se incearca accesarea lor prin click, se vor deschide si vor putea fi vizualizate in zona Search results page, cu butoane aditionale pentru shimbarea detaliilor imobilului.
+  </p>
+
+
+  <h4 id="OpenStreetMap">OpenStreetMap</h4>
+<p>Partea neocupata de catre Search results page si User Input va fi populata de catre API-ul OpenStreetMap, unde vor fi waypoint-uri actualizate in functie de input-ul userului. Waypoint-urile pot fi accesate, iar daca acest lucru se intampla, in partea de Building Description se vor afisa informatiile imobilului reprezentat de acel waypoint. Evident, se pot folosi si functionalitatile oferite din oficiu de catre OpenStreetMap, precum zoom in/out, navigare prin swipe etc.
+</p>
+
+
+  <h4 id="AddingBuilding">Adding a Building</h4>
+<p>In partea dreapta sus a paginii, langa butonul ce se ocupa de managerierea contului, exista un buton de Add pe care utilizatorul il va putea apasa pentru a lista o locuinta noua.</p>
+<p> Acest buton il va trimite pe o alta pagina, un formular, unde vom colecta informatii despre noul imobil ce va fi listat. Aceste informatii sunt (in linii mari) urmatoarele:</p>
+<ol>
+
+<li><p>Date despre proprietar</p></li>
+<li><p>Fotografii cu interiorul/exteriorul imobilului</p></li>
+<li><p>Adresa imobilului</p></li>
+<li><p>Pret</p></li>
+<li><p>Daca imobilul este dat spre inchiriere sau vanzare</p></li>
+<li><p>Filtre despre locatie ( <span style="color: #DA4545;">#smog</span> etc.) </p></li>
+<li><p>O scurta descriere a imobilului.</p></li>
+
+</ol>
+
+  <h4 id="CreateAccount">Create an Account Form</h4>
+  <p>Dupa cum am spus si in sectiunea 'User Identity Manager' ( <a href="#UserIdentity">click aici </a>) exista un buton in partea dreapta sus a paginii care va deschide un pop-up unde utilizatorul se poate loga iar, daca acesta nu are un cont, are optiunea si de a-si crea unul.</p>
+  <p>Optiunea de a crea un cont este data de butonul 'Sign Up', buton ce va redirectiona utilizatorul spre formularul pregatit pentru a colecta datele necesare crearii contului.</p>
+  <p>Datele esentiale crearii unui cont sunt:</p>
+  <ul>
+<li><p>Nume</p></li>
+<li><p>Prenume</p></li>
+<li><p>Adresa eMail</p></li>
+<li><p>Parola</p></li>
+  </ul>
+  <p> Dupa ce toate aceste date sunt introduse, utilizatorul va apasa pe butonul 'Sign Up' ce il va trimite inapoi la pagina principala unde se va putea loga.</p>
+</section>
+
+<section id="Other">
+<h2 id="Other">Other Nonfunctional Requirements</h2>
+
+<h4 id="PerformanceReq">Performance Requirements</h4>
+
+<p>Aceasta aplicatie web nu are componente ce au nevoie de o putere mare de procesare, astfel incat, orice device cu un browser instalat cu o versiune nu mai veche de cativa ani ani o poate folosi. </p>
+
+<h4 id="SafetyReq">Safety Requirements</h4>
+
+<p>Se va implementa o metodologie ce va opri atacuri de tip SQL injections, iar atacurile de tip JS injection vor fi gestionate automat.</p>
+
+<h4 id="SecurityReq">Security Requirements</h4>
+
+<p>Datele confidentiale ale utilizatorului vor fi trimise in mod encriptat catre server si inapoi, alte date ce vor fi sustrase in mod automat sunt doar fisierele de tip imagine iar utilizatorul poate alege de a da permisiunea aplicatiei sa acceseze fotografiile sau nu.</p>
+
+
+<h4 id="SoftwareQualityAttributes">Software Quality Attributes</h4>
+
+<p>Din moment ce aplicatia este construita pe o arhitectura de tip microservicii, aceasta poate fi modificata cu usurinta. De asemenea, designul este unul responsive pentru compatibilitate sporita pe nenumarate platforme.</p>
+
+
+</section>
+
+  </body>
+</html>

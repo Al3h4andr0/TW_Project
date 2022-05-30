@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone Airbnb</title>
+
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+    <style>
+        @media only screen and (max-width: 1130px) {
+            :root {
+                --nav-height: 100px;
+                --main-height: calc(100vh - var(--nav-height));
+                --map-frame-height: calc(80vh - var(--nav-height));
+                --width-content: 100vw;
+                /*--map-visibility: hidden;*/
+                --map-width: 100vw;
+                --map-frame-width:100vw;
+                --main-flex-direction: column-reverse;
+                --map-controller-display: none;
+            }
+        }
+
+        @media only screen and (min-width: 1130px) {
+            :root {
+                --nav-height: 148px;
+                --main-height: calc(100vh - var(--nav-height));
+                --width-content: 50vw;
+                /*--map-visibility: visible;*/
+                --map-width: unset;
+                --map-frame-width: 50vw;
+                --map-frame-height: calc(100vh - var(--nav-height));
+                --main-flex-direction: row;
+                --map-controller-display: flex;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100vw;
+            height: auto;
+            overflow-x: hidden;
+        }
+        #nav_bar {
+            height: var(--nav-height);
+            width: 100%;
+            position: sticky;
+            top: 0px;
+            z-index: 10;
+            background-color: blueviolet;
+        }
+        
+        main {
+            display: flex;
+            flex-direction: var(--main-flex-direction);
+            width: 100%;
+        }
+
+        #content {
+            display: flex;
+            flex-direction: column;
+            width: var(--width-content);
+            background-color: azure;
+        }
+
+        .locationImage img {
+            width: 100%;
+        }
+
+        #map {
+            width: var(--map-width);
+            height: unset;
+            position: relative;
+            visibility: var(--map-visibility);
+        }
+
+        #map-controller {
+            position: absolute;
+            height: 100%;
+            width: 50px;
+            justify-content: space-around;
+            display: var(--map-controller-display);
+        }
+
+        #map-controller > div {
+            position: sticky !important;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            top: calc(50vh + var(--nav-height)/2);
+            display: flex;
+            justify-content: space-around;
+            z-index: 10;
+        }
+
+        #map-controller > div > i {
+            width: 30px;
+            height: 30px;
+            font-size: x-large;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #map_frame {
+            width: var(--map-frame-width);
+            height: var(--map-frame-height);
+            position: sticky !important;
+            top: var(--nav-height);
+        }
+
+        /* Do we need it? */
+        footer {
+            height: 200px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav_bar">
+        <header>
+            <div id="nav_bar_wrapper">
+                <div id="logo"></div>
+                <div id="search">
+                    <div>
+                        <button type="button" onclick="showModal(1)">
+                            <i class="bi bi-toggles2"></i>
+                            <span>Filter</span>
+                        </button>
+                        
+                    </div>
+                </div>
+                <div id="control">
+                </div>
+            </div>
+        </header>
+        <div>
+            <!-- filter zone here -->
+        </div>
+    </nav>
+    <main>
+        <section id="content">
+            
+        </section>
+        <section id="map">
+            <div id="map-controller">
+                <div>
+                    <i class="bi bi-arrow-right-square"></i>
+                </div>
+            </div>
+            <div id="map_frame"></div>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
