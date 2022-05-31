@@ -60,7 +60,7 @@ export default class Side {
                             ${location.price}
                             <i />
                             /
-                            ${location.time}
+                            ${location.condition}
                         </span>
                         
                     </div>
