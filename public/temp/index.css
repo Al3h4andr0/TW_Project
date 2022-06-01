@@ -1,2 +1,105 @@
 @import './side-content/side.css';
 @import './map/map.css';
+@media only screen and (max-width: 1130px) {
+    :root {
+        --nav-height: 100px;
+        --main-height: calc(100vh - var(--nav-height));
+        --map-frame-height: calc(80vh - var(--nav-height));
+        --width-content: 100vw;
+        /*--map-visibility: hidden;*/
+        --map-width: 100vw;
+        --map-frame-width:100vw;
+        --main-flex-direction: column-reverse;
+        --map-controller-display: none;
+    }
+}
+
+@media only screen and (min-width: 1130px) {
+    :root {
+        --nav-height: 148px;
+        --main-height: calc(100vh - var(--nav-height));
+        --width-content: 50vw;
+        /*--map-visibility: visible;*/
+        --map-width: unset;
+        --map-frame-width: 50vw;
+        --map-frame-height: calc(100vh - var(--nav-height));
+        --main-flex-direction: row;
+        --map-controller-display: flex;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+}
+#nav_bar {
+    height: var(--nav-height);
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    background-color: blueviolet;
+}
+
+main {
+    display: flex;
+    flex-direction: var(--main-flex-direction);
+    width: 100%;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    width: var(--width-content);
+    background-color: azure;
+}
+
+.locationImage img {
+    width: 100%;
+}
+
+#map {
+    width: var(--map-width);
+    height: unset;
+    position: relative;
+    visibility: var(--map-visibility);
+}
+
+#map-controller {
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    justify-content: space-around;
+    display: var(--map-controller-display);
+}
+
+#map-controller > div {
+    position: sticky !important;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    top: calc(50vh + var(--nav-height)/2);
+    display: flex;
+    justify-content: space-around;
+    z-index: 10;
+}
+
+#map-controller > div > i {
+    width: 30px;
+    height: 30px;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#map_frame {
+    width: var(--map-frame-width);
+    height: var(--map-frame-height);
+    position: sticky !important;
+    top: var(--nav-height);
+}
