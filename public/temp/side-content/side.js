@@ -7,34 +7,51 @@ export default class Side {
         this.rootElement = rootElement;
         this.locationsIds = [];
     }
-
+    
+   
     renderOverview(locationOverview, id) {
         return `
             <div class="locationOverview" id="locationReview${id}">
-
+             <p>${locationOverview.description}</p>
+             <p>${locationOverview.facilities}</p>
+             <p>${locationOverview.surface}</p>
+             <p>${locationOverview.for}</p>
+             ${this.renderAvaliability(locationOverview.dates)}
             </div>`
     }
-
+    renderAvaliability(locationOverviewDates)
+    {
+        let res='';
+        for(let value of Object.values(locationOverviewDates))
+        {
+            res+=`<div class="locationOverviewDates">
+             <p>${value.start} ${value.end}</p>
+            </div>
+            `
+        }
+        return res;
+    }
     renderContact(locationContact, id) {
         return `
             <div class="locationContact" id="locationReview${id}">
-
+            <p>${locationContact.website.key}</p>
+            <p>${locationContact.website.http}</p>
+            <p>${locationContact.phoneNumber}</p>
             </div>`
     }
 
     renderReviews(locationReviews, id) {
-        return `
-            <div class="locationReviews" id="locationReview${id}">
-
-            </div>`
-    }
-
-    renderLocationTags(tags) {
-        return `
-            <div class="locationTags">
-            
-            </div>
-        `
+        let res='';
+        for(let value of Object.values(locationReviews)){
+           res+= `<div class="locationReviews" id="locationReview${id}">
+           ${value.title}
+           </br>
+           ${value.description}
+           </br>
+           ${value.score}
+           </div>`
+          }
+          return res;
     }
 
     renderLocations(locations) {
@@ -60,10 +77,13 @@ export default class Side {
                             ${location.price}
                             <i />
                             /
-                            ${location.condition}
+                            night
                         </span>
                         
                     </div>
+                    <div class="locationCondition">
+                        ${location.condition}
+                        </div>
                 </div>
                 <div class="locationInfoCnt">
                     <a class="OvReCo_btn txt_btn" href="#overvieew${location.id}">
@@ -77,7 +97,9 @@ export default class Side {
                     </a>
                 </div>
                 <div class="locationTags>
-                    ${this.renderLocationTags(location.tags)}
+                    ${location.theft}
+                    ${location.costOfLiving}
+                    ${location.anualTemp}
                 </div>
                 <div class="locationInfo">
                 
