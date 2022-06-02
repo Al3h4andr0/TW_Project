@@ -10,12 +10,3 @@ export const getLocationWithinBound = async (bound) => {
         throw e;
     }
 }
-export const getfacilities = async (bound) => {
-    try {
-        let facilities =  await fetch(rootAPI, {method: 'POST', body: JSON.stringify(bound), headers:{'Content-Type': 'application/json'}});
-        facilities = await locations.json();
-        return locations;
-    } catch (e) {
-        throw e;
-    }
-}
