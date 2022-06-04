@@ -1,3 +1,4 @@
+const { verify } = require("crypto");
 const http = require("http");
 const { url } = require("inspector");
 const static = require('node-static');
@@ -5,6 +6,7 @@ const { getRequestData} = require('./utils/utils');
 /** We want the this as a single tone as it is kinda the database at the moment; can't enforce the pattern in js form one i know so we work with what we have*/
 let Todo = new (require('./controller/todos'))();
 let Location = new (require('./controller/locations'))();
+let authenticationController = new (require('./controller/authentication'))();
 
 const port = 8000;
 const host = 'localhost';
@@ -26,8 +28,33 @@ const safeExec = async (fn, request, response) => {
     try {
         await fn(request, response);
     } catch (e) {
+       console.log(e);
+        switch(e.statusCode)
+        {
+            case undefined:
+                response.writeHead(499, {'Content-Type': 'application/json'});
+                break;
+            case 401:
+                response.writeHead(401,{'Content-Type': 'application/json'});
+            default:
+                response.writeHead(404, {'Content-Type': 'application/json'});
+        }
         response.writeHead(404, {'Content-Type': 'application/json'});
-        response.end(JSON.stringify({ message: e}))
+        response.end(JSON.stringify({ message: e.message}))
+    }
+}
+
+const authorizedSafeExec = async (fn, request, response) => {
+
+    try{
+        await authenticationController.verifyIfAuthorized(request,response);
+        safeExec(fn,request,response);
+    }
+    catch (e)
+    {
+        console.log(e);
+        response.writeHead(401, "Unauthorized...", {'Content-Type': 'application/json'});
+        response.end(JSON.stringify({ message: e.message}))
     }
 }
 
@@ -100,10 +127,16 @@ async function requestListener (request, response) {
         safeExec(postTodo, request, response);
     } else if (request.url.includes('/api/todos') && request.method === GET) {
         safeExec(getAllTodos, request, response);
-    }  else if (request.method === GET) {
+    }   else  if(request.url.match(/\api\/login/) && request.method === POST) {
+        safeExec(authenticationController.validateUser,request,response);
+    }  else  if(request.url.match(/\api\/secret/) && request.method === GET) {
+        authorizedSafeExec(getAllTodos, request, response);
+    } else if (request.method === GET) {
         handleFilesRequest(request, response);
     } else {
-        //404 page here!?!
+        //500 page here!?!
+        response.writeHead(500, "SERVER ERROR (WRITTEN IN BACKEND)",  {'Content-Type': 'application/json'});
+        response.end("SERVER ERROR (WRITTEN IN BACKEND)");
     }
 }
 

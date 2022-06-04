@@ -18,3 +18,6 @@ const users = [
         { id: 2, date: { start: "00-00-00", end: "00-00-00" } }]
     }
 ]
+
+
+module.exports = users;

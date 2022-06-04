@@ -1,5 +1,5 @@
 const todos = require('../data/todos');
-const notFound = (id) => ({message: `Todo with id ${id} not found`});
+const notFound = (id) => ({statusCode : 404, message: `Todo with id ${id} not found`});
 
 class TodosControler {
 
