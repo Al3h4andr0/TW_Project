@@ -6,7 +6,7 @@ class LocationsControler {
     getLocationsWithinBound(geoLocation) {
         return allLocations.filter(location => {
             console.log(geoLocation, location.position);
-
+        
             return location.position.lat <= geoLocation._northEast.lat &&
                    location.position.lng <= geoLocation._northEast.lng &&
                    location.position.lat >= geoLocation._southWest.lat &&  location.position.lng >= geoLocation._southWest.lng
