@@ -12,8 +12,8 @@ class AuthenticationController {
         let user = await getUserWithUsernameAndPassword(requestBody);
         let jwtToken = generateJwtToken({username: user.name});
       
-        response.writeHead(200, '200', { 'Content-Type': 'application/json',
-        'Set-Cookie':'jwt=' + jwtToken });
+        response.writeHead(201, { 'Content-Type': 'application/json',
+        'Set-Cookie':'jwt=' + jwtToken + "; HttpOnly;"});
         response.end("Logged in Successfully");
     }
     
@@ -30,7 +30,7 @@ class AuthenticationController {
             const nowUnixSeconds = Math.round(Number(new Date()) / 1000)
             if (payload.exp - nowUnixSeconds < 30) {
                 
-                response.setHeader( 'Set-Cookie','jwt=' + generateJwtToken({ username : payload.username}));
+                response.setHeader( 'Set-Cookie','jwt=' + generateJwtToken({ username : payload.username}) + "; HttpOnly;");
             }
             //////////////////////////////////////
 
@@ -44,6 +44,15 @@ class AuthenticationController {
             
     }); 
     }
+
+    logout(_,response)
+    {   
+      
+        response.writeHead(201, { 'Content-Type': 'application/json',
+        'Set-Cookie':'jwt=DELETED' + "; max-age=0"});
+ 
+        response.end(JSON.stringify({message : "Logged out. See you soon!"}));
+    }
 }
 
 
@@ -55,7 +64,7 @@ getUserWithUsernameAndPassword = async (requestBody) => {
         if (user) {
             resolve(user);
         } else {
-            reject(notFound(401, "username/password invalid. Unauthorized."));
+            reject(notFound(400, "username/password invalid. Unauthorized."));
         }
     });
 }
@@ -93,5 +102,7 @@ if(!cookieHeader) return null;
                 });
 return cookieMap.get(cookieName);
 }
+
+
 module.exports = AuthenticationController;
 

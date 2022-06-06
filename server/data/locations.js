@@ -1,6 +1,7 @@
 const locations = [
     {
         id: 1,
+        ownerId: 1,
         position: {
             lat: 47.157214,
             lng: 27.586982
@@ -43,6 +44,7 @@ const locations = [
     },
     {
         id: 2,
+        ownerId: 2,
         position: {
             lat: 47.161445,
             lng: 27.582023
