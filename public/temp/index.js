@@ -13,6 +13,7 @@ function init () {
         const locations = (await getLocationWithinBound(bound)).locations;
         Map.renderPins(locations);
         side.render(locations);
+        side.addListener(locations);
     }
 
     // Render map

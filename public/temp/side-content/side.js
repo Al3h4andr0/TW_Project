@@ -1,21 +1,21 @@
 import Map from '../map/map.js';
+import { toggleRentFormOff, toggleRentFormOn } from './toggleForms.js';
 export default class Side {
-    constructor (rootElement) {
+    constructor(rootElement) {
         if (!rootElement) {
             throw 'rootElement required so we know where we render the element';
         }
         this.rootElement = rootElement;
         this.locationsIds = [];
     }
-    
-   
+
+
     renderOverview(locationOverview, id) {
-        let v="Rent";
-        let dates=`<span class="subtitleSmaller descText">Available dates:</span>`;
-        if (locationOverview.for=="sale")
-        {
-            v="Sale";
-            dates="";
+        let v = "Rent";
+        let dates = `<span class="subtitleSmaller descText">Available dates:</span>`;
+        if (locationOverview.for == "sale") {
+            v = "Sale";
+            dates = "";
         }
         return `
             <div class="locationOverview">
@@ -34,12 +34,10 @@ export default class Side {
             </div>`
     }
 
-    renderAvaliability(locationOverviewDates)
-    {
-        let res='';
-        for(let value of Object.values(locationOverviewDates))
-        {
-            res+=`<div class="locationOverviewDates">
+    renderAvaliability(locationOverviewDates) {
+        let res = '';
+        for (let value of Object.values(locationOverviewDates)) {
+            res += `<div class="locationOverviewDates">
              <p>${value.start} </br> ${value.end}</p>
             </div>
             `
@@ -57,9 +55,9 @@ export default class Side {
     }
 
     renderReviews(locationReviews, id) {
-        let res=`<div class="locationReviews" id="reviews${id}">`;
-        for(let value of Object.values(locationReviews)){
-           res+= `<div class="locationReview descText" id="locationReview${id}">
+        let res = `<div class="locationReviews" id="reviews${id}">`;
+        for (let value of Object.values(locationReviews)) {
+            res += `<div class="locationReview descText" id="locationReview${id}">
            ${value.title}
            </br>
            ${value.description}
@@ -67,9 +65,9 @@ export default class Side {
            ${value.score}/5
            </div>
             <hr>`
-          }
-          res+= "</div>";
-          return res;
+        }
+        res += "</div>";
+        return res;
     }
 
     renderLocations(locations) {
@@ -134,16 +132,44 @@ export default class Side {
                    <p>anual temperature: ${location.anualTemp}</p> 
                 </div>
                 <div class="locationInfo">
-                    ${this.renderOverview(location.overview,location.id)}
+                    ${this.renderOverview(location.overview, location.id)}
                     ${this.renderContact(location.contact, location.id)}
-                    <span class="subtitle">Reviews</span>
-                   
-                    ${this.renderReviews(location.reviews,location.id)}
+                 <div class="rent_btn_form">
+                    <div class="rent_btn_container">
+                    <button type="button" class="rent_btn" id="rent_btn${location.id}">
+                            ${this.renderBuyRent(location.overview)}
+                    </button>
+                    </div>
+                   <div class="rent_form_container_container">
+                         <div class="rent_form_container" id="rent_form_container${location.id}">
+                             <form action="" class="rent_form">
+                               <button type="button" class="rent_form_cancel" id="rent_form_cancel${location.id}"> Cancel </button>
+                                 <div class="dates row">
+                                   <label for="dates">Select your dates:</label>
+                                   <input type="date" id="start" value="2022-06-20" min="2022-05-10">
+                                   <input type="date" id="end" value="2022-06-20" max="2022-07-10">
+                              </div>
+                              <input type="submit" value="Rent" >
+                              </form>
+                         </div>
+                     </div>
+                 </div>
+                 </div>
+                 <span class="subtitle">Reviews</span>   
+                   <div class="locationInfo">
+                    ${this.renderReviews(location.reviews, location.id)}
                    
                 </div>
+                
             </div>`
         }
         return res;
+    }
+    renderBuyRent(locationOverview) {
+        if (locationOverview.for == "sale")
+            return "buy";
+        else
+            return "rent";
     }
 
     removeDuplicates(locations) {
@@ -161,7 +187,22 @@ export default class Side {
         let locationsToRender = this.removeDuplicates(locations);
         if (locationsToRender.length) {
             let locationsInView = this.renderLocations(locationsToRender);
-            this.rootElement.insertAdjacentHTML('beforeend',`${locationsInView}`);
+            this.rootElement.insertAdjacentHTML('beforeend', `${locationsInView}`);
         }
+    }
+
+    async addListener(locations)
+    {
+        for(let location of locations)
+        {
+            const element = document.getElementById('rent_btn'+location.id);
+            element.addEventListener("click",toggleRentFormOn);
+            element.param=location.id;
+            element.for=location.overview.for;
+            const element2=document.getElementById('rent_form_cancel'+location.id);
+            element2.addEventListener("click",toggleRentFormOff);
+            element2.param=location.id;
+        }
+       
     }
 }

@@ -61,11 +61,11 @@ const locations = [
             surface: 60,
             for: "rent",
             dates: [{
-                start: "20-09-22"
-                , end: "25-10-22"
+                start: "2022-09-20"
+                , end: "2022-10-22"
             }, {
-                start: "20-09-22"
-                , end: "25-10-22"
+                start: "2022-09-22"
+                , end: "2022-10-22"
             }]
         },
         reviews: [
