@@ -2,9 +2,10 @@ import Side from './side-content/side.js';
 import Map from './map/map.js';
 import {getLocationWithinBound} from './api/locations.js';
 import map from './map/map.js';
-
+import Account from './account/account.js';
 
 const side = new Side(document.getElementById('content'));
+const account = new Account(document.getElementById('account'));
 
 function init () {
 
@@ -14,6 +15,11 @@ function init () {
         Map.renderPins(locations);
         side.render(locations);
         side.addListener(locations);
+    }
+     
+   async function onAccountStateChange()
+    {
+        account.addRegisterListener();
     }
 
     // Render map
@@ -33,6 +39,7 @@ function init () {
 
     Map.init();
     onMapStateChange();
+    onAccountStateChange();
 }
 
 function showModal(id) {

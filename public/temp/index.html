@@ -37,6 +37,83 @@
         <div>
             <!-- filter zone here -->
         </div>
+        <div class="account" id="account">
+            <div class="register_container_container">
+                <div class="register_form_container" id="register_form_container">
+                    <form action="" class="register_form">
+                      <button type="button" class="register_form_cancel" id="register_form_cancel"> Cancel </button>
+                        <div class="credentials row">
+                          <label for="username">username:</label>
+                          <input type="text" id="username" placeholder="username">
+                          <label for="password">password:</label>
+                          <input type="text" id="password" placeholder="password">
+                     </div>
+                     <input type="submit" value="register" >
+                     </form>
+                </div>
+            </div>
+
+            
+                <div class="add_apartment_form_container" id="add_apartment_form_container">
+                    <form action="" class="add_apartment_form">
+                      <button type="button" class="add_apartment_form_cancel" id="add_apartment_form_cancel"> Cancel </button>
+                        <div class="credentials row">
+                          <label for="title">Name:</label>
+                          <input type="text" id="title" placeholder="Name" required="required">
+
+                          <label for="images">Images</label>
+                          <input type="text" id="images" placeholder="Images" required="required">
+
+                          <label for="address">Address:</label>
+                          <input type="text" id="address" placeholder="Address" required="required">
+                          
+                          <label for="for">Are you selling or to rent</label>
+                          <select name="for" id="for" form="add_apartment_form">
+                              <option value="sale">sale</option>
+                              <option value="rent">rent</option>
+                          </select>
+
+                          <label for="condition">Condition:</label>
+                          <select name="condition" id="condition" form="add_apartment_form">
+                              <option value="bad">bad</option>
+                              <option value="mediocre">mediocre</option>
+                              <option value="good">good</option>
+                              <option value="very good">very good</option>
+                              <option value="perfect">perfect</option>
+                          </select>
+
+                          <label for="price">Price/Night:</label>
+                          <input type="text" id="price" placeholder="Price">
+
+                          <label for="description">Description</label>
+                          <input type="text" id="description" placeholder="Description" required="required">
+
+                          <label for="mp">Surface(in MP):</label>
+                          <input type="mp" id="mp" placeholder="mp">
+
+                          <select name="facilities" id="facilities" form="add_apartment_form">
+                            <option value="NOTDONE">NOTDONE</option>
+                            <option value="NOTDONE">NOTDONE</option>
+                          </select>
+                          
+                          <label for="phone">Phone number for contanct:</label>
+                          <input type="phone" id="phone" placeholder="Phone" required="required">
+
+                          <label for="website">Website</label>
+                          <input type="website" id="website" placeholder="Website">
+                     </div>
+                     <input type="submit" value="add_apartment" >
+                     </form>
+                </div>
+         </div>
+         <button type="button" id="register_btn">
+            register
+          </button>
+          <button type="button" id="add_apartment_btn">
+            add apartment
+          </button>
+        </div>
+       
     </nav>
     <main>
         <section id="content">
@@ -44,9 +121,9 @@
         </section>
         <section id="map">
             <div id="map-controller">
-                <div>
+                <!-- <div>
                     <i class="bi bi-arrow-right-square"></i>
-                </div>
+                </div> -->
             </div>
             <div id="map_frame"></div>
         </section>
