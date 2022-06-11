@@ -46,7 +46,7 @@ const safeExec = async (fn, request, response) => {
 const authorizedSafeExec = async (fn, request, response) => {
 
     try {
-        await authenticationController.verifyIfAuthorized(request, response);
+        await authenticationController.verifyIfLoggedIn(request, response);
         safeExec(fn, request, response);
     }
     catch (e) {
@@ -81,8 +81,10 @@ async function requestListener(request, response) {
     else if (request.url.match(/\api\/locations\/([0-9]+)/) && request.method === PATCH)
         safeExec(LocationController.updateLocation, request, response);
     else if (request.url.match(/\api\/locations\/([0-9]+)/) && request.method === DELETE) {
-        authorizedSafeExec(LocationController.deleteLocation, request, response);
-    } else if (request.url.match(/\api\/login/) && request.method === POST) {
+        authorizedSafeExec(LocationController.deleteLocation, request, response);}
+    else if (request.url.match(/\api\/locations\/myLocations/) && request.method === GET) {
+        authorizedSafeExec(LocationController.getLocationsOwnedByUser, request, response);}
+    else if (request.url.match(/\api\/login/) && request.method === POST) {
         safeExec(authenticationController.validateUser, request, response);
     } else if (request.url.match(/\api\/logout/) && request.method === POST) {
         safeExec(authenticationController.logout, request, response);

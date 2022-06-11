@@ -20,3 +20,5 @@ const facilities=[
         name: "shop nearby"
     }
 ]
+
+module.exports = facilities;

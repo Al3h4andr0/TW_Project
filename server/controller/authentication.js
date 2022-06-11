@@ -1,7 +1,8 @@
 const allUsers = require('../data/users');
+const locationService = new (require('../service/locationService'))();
 var jwt = require('jsonwebtoken');
 const { getRequestData } = require('../utils/utils');
-const notFound = (statusCode, message) => ({ statusCode: statusCode, message: message });
+const returnError = (statusCode, message) => ({ statusCode: statusCode, message: message });
 
 
 const SECRET = "TWProject"
@@ -10,14 +11,14 @@ class AuthenticationController {
         let requestBody = JSON.parse(await getRequestData(request));
 
         let user = await getUserWithUsernameAndPassword(requestBody);
-        let jwtToken = generateJwtToken({username: user.name});
+        let jwtToken = generateJwtToken({id: user.id,username: user.name});
       
         response.writeHead(201, { 'Content-Type': 'application/json',
         'Set-Cookie':'jwt=' + jwtToken + "; HttpOnly;"});
         response.end("Logged in Successfully");
     }
     
-   verifyIfAuthorized(request,response){
+  async verifyIfLoggedIn(request,response){
     return new Promise((resolve, reject) => {
         let requestJwtFromHeader = getCookieFromHeader(request,"jwt");
        
@@ -30,19 +31,55 @@ class AuthenticationController {
             const nowUnixSeconds = Math.round(Number(new Date()) / 1000)
             if (payload.exp - nowUnixSeconds < 30) {
                 
-                response.setHeader( 'Set-Cookie','jwt=' + generateJwtToken({ username : payload.username}) + "; HttpOnly;");
+                response.setHeader( 'Set-Cookie','jwt=' + generateJwtToken({ username : payload.username,id: payload.id}) + "; HttpOnly;");
             }
-            //////////////////////////////////////
+         //////////////////////////////////////
 
          resolve("Authorized");
         }
         catch(e)
         {
-            console.log(e);
-            reject({message : e.message});
+            //console.log(e);
+            reject(returnError(401,e.message));
         }
             
     }); 
+    }
+
+   async verifyIfAuthorizedToDelete(id,request,_)
+    {
+        const location = await locationService.getLocation(id);
+
+        return new Promise((resolve,reject) => {
+                let requestJwtFromHeader = getCookieFromHeader(request,"jwt");
+                if(requestJwtFromHeader === null)
+                    return  reject({ message: `JWT not found. Unauthorized`});
+
+            let userId = verifyJwtToken(requestJwtFromHeader).id;
+            let userIsOwner = location.ownerId === userId;
+            let userIsAdmin = (allUsers.find(user => user.id === userId)).admin === 1 ? true : false;
+            
+                if(userIsOwner || userIsAdmin)
+                    resolve("Authorized");
+                else
+                    reject(returnError(401, "Not the owner of the apartment or admin. Unauthorized"));
+        })
+    }
+
+    async getJWTPayload(request)
+    {
+        return new Promise((resolve,reject) => {
+            let requestJwtFromHeader = getCookieFromHeader(request,"jwt");
+            if(requestJwtFromHeader === null)
+              return  reject({statusCode: 401, message: `No jwt Token. Unauthorized`});
+            try{
+                let payload = verifyJwtToken(requestJwtFromHeader);
+                resolve(payload);
+            }
+            catch(e)
+            {reject(returnError(401,"Token expired"));}
+           
+        })
     }
 
     logout(_,response)
@@ -59,12 +96,12 @@ class AuthenticationController {
 
 getUserWithUsernameAndPassword = async (requestBody) => {
    return new Promise((resolve, reject) => {
-        if (typeof requestBody.username === 'undefined' || typeof requestBody.password === 'undefined') reject(notFound(400, "Username/Password not found in request. Bad request."));
+        if (typeof requestBody.username === 'undefined' || typeof requestBody.password === 'undefined') reject(returnError(400, "Username/Password not found in request. Bad request."));
         let user = allUsers.find((user) => user.name === requestBody.username && user.password === requestBody.password);
         if (user) {
             resolve(user);
         } else {
-            reject(notFound(400, "username/password invalid. Unauthorized."));
+            reject(returnError(400, "username/password invalid. Unauthorized."));
         }
     });
 }
