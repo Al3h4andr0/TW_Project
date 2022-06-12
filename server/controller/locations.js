@@ -2,7 +2,7 @@ const allLocations = require('../data/locations');
 const { getRequestData } = require('../utils/utils');
 const LocationService = new (require('../service/locationService'))();
 const authenticationService = new (require('../controller/authentication'))();
-const notFound = (id) => ({ message: `Location with id ${id} not found` });
+const notFound = (id) => ({ statusCode: 404,message: `Location with id ${id} not found` });
 
 class LocationsControler {
     getLocationsWithinBound(geoLocation) {
@@ -15,10 +15,9 @@ class LocationsControler {
         });
     }
 
-    async getLocationsOwnedByUser(request,response)
+    async getLocationsOwnedByUser(_,response,userPayload)
     {
-        const payload = await authenticationService.getJWTPayload(request);
-        const locations = await LocationService.getLocationsForUser(payload.id);
+        const locations = await LocationService.getLocationsForUser(userPayload.id);
 
         response.writeHead(200, '200', { 'Content-Type': 'application/json' });
         response.end(JSON.stringify(locations));
@@ -49,7 +48,7 @@ class LocationsControler {
     }
 
     async getTheLocation(request, response) {
-        console.log("GET THE LOCATION CALLED");
+    
         const urlData = request.url.split('/');
         const id = urlData[urlData.length - 1];
         const location = await LocationService.getLocation(id);
@@ -58,38 +57,42 @@ class LocationsControler {
         response.end(JSON.stringify(location));
     }
 
-    async addLocation(request, response) {
+    async addLocation(request, response, userPayload) {
         let location_data = JSON.parse(await getRequestData(request));
-       let payload = await authenticationService.getJWTPayload(request);
-
-        location_data.ownerId = parseInt(payload.id);
+        location_data.ownerId = parseInt(userPayload.id);
         let location = await LocationService.createLocation(location_data);
 
         response.writeHead(200, '200', { 'Content-Type': 'application/json' });
         response.end(JSON.stringify(location));
     }
 
-   async deleteLocation (request, response){
+   async deleteLocation (request, response, userPayload){
         const urlData = request.url.split('/');
         const id = urlData[urlData.length - 1];
-
-        await authenticationService.verifyIfAuthorizedToDelete(parseInt(id),request,response);
+        const toBeDeleted = LocationService.getLocation(id);
+        
+        await authenticationService.verifyIfAuthorizedToModifyLocation(parseInt(id),userPayload);
         let deletedLocation = await LocationService.deleteLocation(id);
     
         response.writeHead(200, '200', { 'Content-Type': 'application/json' });
         response.end(JSON.stringify(deletedLocation));
     }
 
-    async updateLocation(request, response) {
+    async updateLocation(request, response, userPayload) {
         const urlData = request.url.split('/');
         const id = urlData[urlData.length - 1];
         let location_data = await getRequestData(request);
-        let updatedLocation = await LocationService.updateLocation(id, JSON.parse(location_data));
+    
+        await authenticationService.verifyIfAuthorizedToModifyLocation(parseInt(id),userPayload);
+       
+       let updatedLocation = await LocationService.updateLocation(id, JSON.parse(location_data));
+        
+
         response.writeHead(200, '200', { 'Content-Type': 'application/json' });
         response.end(JSON.stringify(updatedLocation));
+       
+      
     }
-
-   
 }
 
 module.exports = LocationsControler;

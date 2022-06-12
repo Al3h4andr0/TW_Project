@@ -21,41 +21,39 @@ class AuthenticationController {
   async verifyIfLoggedIn(request,response){
     return new Promise((resolve, reject) => {
         let requestJwtFromHeader = getCookieFromHeader(request,"jwt");
-       
+   
         if(requestJwtFromHeader === null)
-          return  reject({ message: `JWT not found. Unauthorized`});
+          return  reject({ statusCode: 401, message: `JWT not found. Unauthorized`});
 
          try{
             let payload = verifyJwtToken(requestJwtFromHeader);
         // if token is about to expire refresh it
             const nowUnixSeconds = Math.round(Number(new Date()) / 1000)
             if (payload.exp - nowUnixSeconds < 30) {
-                
-                response.setHeader( 'Set-Cookie','jwt=' + generateJwtToken({ username : payload.username,id: payload.id}) + "; HttpOnly;");
+                let newTokenPayload = generateJwtToken({ username : payload.username,id: payload.id});
+                response.setHeader( 'Set-Cookie','jwt=' + newTokenPayload + "; HttpOnly;");
+                console.log("Renewed JWT for ", newTokenPayload);
+                return resolve(newTokenPayload);
             }
          //////////////////////////////////////
 
-         resolve("Authorized");
-        }
+         resolve(payload);
+            }
         catch(e)
         {
-            //console.log(e);
+            console.log("CATCHED: ", e);
             reject(returnError(401,e.message));
         }
             
     }); 
     }
 
-   async verifyIfAuthorizedToDelete(id,request,_)
+   async verifyIfAuthorizedToModifyLocation(id,userPayload)
     {
         const location = await locationService.getLocation(id);
 
         return new Promise((resolve,reject) => {
-                let requestJwtFromHeader = getCookieFromHeader(request,"jwt");
-                if(requestJwtFromHeader === null)
-                    return  reject({ message: `JWT not found. Unauthorized`});
-
-            let userId = verifyJwtToken(requestJwtFromHeader).id;
+            let userId = userPayload.id;
             let userIsOwner = location.ownerId === userId;
             let userIsAdmin = (allUsers.find(user => user.id === userId)).admin === 1 ? true : false;
             

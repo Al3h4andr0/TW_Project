@@ -1,6 +1,6 @@
 const allFacilities = require('../data/facilities');
 const notFound = (id) => ({statusCode: 404, message: `Facility with id ${id} not found`});
-
+////////// ******************************** CURRENTLY NOT USED *******************************************
 
 class FacilitiesService{
     async getAllFacilities()
@@ -48,6 +48,8 @@ class FacilitiesService{
         });
     }
 
+    ////////// ******************************** CURRENTLY NOT USED *******************************************
+
     async getFacilityWithName(name){
         return new Promise((resolve,reject) => {
             if(typeof id === 'undefined')
@@ -94,3 +96,5 @@ class FacilitiesService{
 }
 
 module.exports = FacilitiesService;
+
+////////// ******************************** CURRENTLY NOT USED *******************************************

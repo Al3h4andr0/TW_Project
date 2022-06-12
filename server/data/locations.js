@@ -14,7 +14,7 @@ const locations = [
         condition: 'good',
         overview: {
             description: '365-roomed complex built between 1906 & 1925 to house government offices, now housing 4 museums.',
-            facilities: [1, 3, 5],
+            facilities: [ "air-conditioning", "fridge", "bath-tub"],
             surface: 60, //mp
             for: "sale",
             dates: [] //no available date cuz its for sale
@@ -57,7 +57,7 @@ const locations = [
         condition: 'good',
         overview: {
             description: 'Majestic neoclassical church known for its soaring, domed towers, mosaics & 16th-century icons.',
-            facilities: [2, 3, 4],
+            facilities: ["parking","fridge","microwave"],
             surface: 60,
             for: "rent",
             dates: [{

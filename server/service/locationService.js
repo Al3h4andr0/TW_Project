@@ -1,6 +1,6 @@
 const locations = require('../data/locations');
 const allLocations = require('../data/locations');
-const notFound = (id) => ({statusCode: 404, message: `Location with id ${id} not found`});
+const notFound = (id) => ({ statusCode: 404, message: `Location with id ${id} not found`});
 const facilitiesService = new (require('./facilitiesService'))();
 
 class LocationsService{
@@ -14,7 +14,7 @@ class LocationsService{
 
     
     async getLocation(id) {
-        let location = await new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             if (typeof id === 'undefined') {
                 return resolve(allLocations);
             }
@@ -28,9 +28,6 @@ class LocationsService{
                 reject(notFound(id));
             }
         });
-        // this is for secondary key facility, turning it into string
-       location.overview.facilities = await facilitiesService.getFacilitiesWithIds(location.overview.facilities);
-       return location;
     }
 
     async createLocation(location) {
@@ -46,18 +43,24 @@ class LocationsService{
 
     async updateLocation(id, values) {
         id = parseInt(id);
-
+      
         return new Promise((resolve, reject) => {
+        
             let locationIndex = allLocations.findIndex((location) => {
                 return location.id === id
             });
-
+         
             if (locationIndex !== -1) {
+             
                 for (let key in values) {
+                  
                     allLocations[locationIndex][key] = values[key];
                 }
-                resolve(allLocations[locationIndex]);
+               
+               return resolve(allLocations[locationIndex]);
+              
             } else {
+                console.log("GOT TO REJECT");
                 reject(notFound(id));
             }
         })
@@ -86,6 +89,16 @@ class LocationsService{
             let locations = allLocations.filter((location) => location.ownerId === userId);
             resolve(locations);
         })
+    }
+}
+
+
+decodeFacilities = async (locations) => {
+
+    if(!isArray(locations))
+    {
+        locations.overview.facilities = await facilitiesService.getFacilitiesWithIds(location.overview.facilities);
+        return locations
     }
 }
 

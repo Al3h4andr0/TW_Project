@@ -1,4 +1,5 @@
 function getRequestData(request) {
+   
     return new Promise((resolve, reject) => {
         try {
             let body = '';
@@ -10,9 +11,10 @@ function getRequestData(request) {
             request.on('end', () => {
                 resolve(body);
             });
-
+           
         } catch (error) {
-            reject(error)
+            console.log("GET REQUEST DATA ERROR: ", error);
+            reject(error);
         }
     })
 }
