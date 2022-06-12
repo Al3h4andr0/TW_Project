@@ -1,0 +1,7 @@
+
+function addApartment(){
+
+    
+}
+
+addApartment();

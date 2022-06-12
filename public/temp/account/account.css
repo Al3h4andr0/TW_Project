@@ -73,6 +73,7 @@
     justify-content: center;
   }
   .add_apartment_form_container {
+    padding: 10px;
     position: fixed;
     right: 0;
     top: 0;
@@ -146,10 +147,12 @@
     }
   }
   .add_apartment_form input[type="submit"] {
-    width: 100%;
+    width: 80%;
+    height: 40px;
     color: white;
     font-weight: bold;
     background-color: #DA4545;
+    border-radius: 7px;
   }
   .add_apartment_form input[type="file"] {
     width: 90%;

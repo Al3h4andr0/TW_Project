@@ -44,6 +44,7 @@
               <button type="button" id="add_apartment_btn">
                 add apartment
               </button>
+
             <div class="register_container_container">
                 <div class="register_form_container" id="register_form_container">
                     <form action="" class="register_form">
@@ -61,7 +62,7 @@
 
                
                 <div class="add_apartment_form_container hidden" id="add_apartment_form_container">
-                    <form action="" class="add_apartment_form">
+                    <form onsubmit="addApartment()" class="add_apartment_form">
                       <button type="button" class="add_apartment_form_cancel" id="add_apartment_form_cancel"> Cancel </button>
                         <div class="credentials row">
                           <label for="title">Name:</label>
@@ -102,13 +103,13 @@
                             <input type="checkbox" id="f1" value="air-conditioning"> 
                                <label for="f1">air-conditioning</label> </br>
                             <input type="checkbox" id="f2" value="parking">
-                            <label for="f2">parking</label> </br>
+                               <label for="f2">parking</label> </br>
                             <input type="checkbox" id="f3" value="fridge">
-                            <label for="f3">fridge</label> </br>
+                               <label for="f3">fridge</label> </br>
                             <input type="checkbox" id="f4" value="microwave">
-                            <label for="f4">microwave</label> </br>
+                               <label for="f4">microwave</label> </br>
                             <input type="checkbox" id="f5" value="shop nearby">
-                            <label for="f5">shop nearby</label> </br>
+                               <label for="f5">shop nearby</label> </br>
                           </fieldset>
                           
                           
@@ -140,5 +141,6 @@
         </section>
     </main>
     <script src="index.js" type="module"></script>
+    <script src="./api/addApartment.js"></script>
 </body>
 </html>
