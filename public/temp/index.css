@@ -36,6 +36,7 @@ body {
     width: 100vw;
     height: auto;
     overflow-x: hidden;
+
 }
 #nav_bar {
     height: var(--nav-height);
@@ -128,5 +129,8 @@ main {
   html{
     scroll-behavior: smooth;
   }
+.stopScroll{
+    overflow-y: hidden;
+}  
 
   

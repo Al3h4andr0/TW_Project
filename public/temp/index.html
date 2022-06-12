@@ -38,6 +38,12 @@
             <!-- filter zone here -->
         </div>
         <div class="account" id="account">
+            <button type="button" id="register_btn">
+                register
+              </button>
+              <button type="button" id="add_apartment_btn">
+                add apartment
+              </button>
             <div class="register_container_container">
                 <div class="register_form_container" id="register_form_container">
                     <form action="" class="register_form">
@@ -51,10 +57,10 @@
                      <input type="submit" value="register" >
                      </form>
                 </div>
-            </div>
+         </div>
 
-            
-                <div class="add_apartment_form_container" id="add_apartment_form_container">
+               
+                <div class="add_apartment_form_container hidden" id="add_apartment_form_container">
                     <form action="" class="add_apartment_form">
                       <button type="button" class="add_apartment_form_cancel" id="add_apartment_form_cancel"> Cancel </button>
                         <div class="credentials row">
@@ -62,12 +68,12 @@
                           <input type="text" id="title" placeholder="Name" required="required">
 
                           <label for="images">Images</label>
-                          <input type="text" id="images" placeholder="Images" required="required">
+                          <input type="file" id="images" required="required" multiple="multiple">
 
                           <label for="address">Address:</label>
                           <input type="text" id="address" placeholder="Address" required="required">
                           
-                          <label for="for">Are you selling or to rent</label>
+                          <label for="for">Are you selling or is it for renting?</label>
                           <select name="for" id="for" form="add_apartment_form">
                               <option value="sale">sale</option>
                               <option value="rent">rent</option>
@@ -85,33 +91,38 @@
                           <label for="price">Price/Night:</label>
                           <input type="text" id="price" placeholder="Price">
 
-                          <label for="description">Description</label>
-                          <input type="text" id="description" placeholder="Description" required="required">
+                          <label for="description">Description:</label>
+                          <textarea name="description" id="description" cols="30" rows="10" placeholder="Description" required="required"></textarea>
 
                           <label for="mp">Surface(in MP):</label>
-                          <input type="mp" id="mp" placeholder="mp">
-
-                          <select name="facilities" id="facilities" form="add_apartment_form">
-                            <option value="NOTDONE">NOTDONE</option>
-                            <option value="NOTDONE">NOTDONE</option>
-                          </select>
+                          <input type="text" id="mp" placeholder="mp">
+                          
+                          <label for="facilities">Facilities:</label>
+                          <fieldset>
+                            <input type="checkbox" id="f1" value="air-conditioning"> 
+                               <label for="f1">air-conditioning</label> </br>
+                            <input type="checkbox" id="f2" value="parking">
+                            <label for="f2">parking</label> </br>
+                            <input type="checkbox" id="f3" value="fridge">
+                            <label for="f3">fridge</label> </br>
+                            <input type="checkbox" id="f4" value="microwave">
+                            <label for="f4">microwave</label> </br>
+                            <input type="checkbox" id="f5" value="shop nearby">
+                            <label for="f5">shop nearby</label> </br>
+                          </fieldset>
+                          
                           
                           <label for="phone">Phone number for contanct:</label>
-                          <input type="phone" id="phone" placeholder="Phone" required="required">
+                          <input type="text" id="phone" placeholder="Phone" required="required">
 
                           <label for="website">Website</label>
-                          <input type="website" id="website" placeholder="Website">
+                          <input type="text" id="website" placeholder="Website">
                      </div>
-                     <input type="submit" value="add_apartment" >
+                     <input type="submit" value="Add Apartment" >
                      </form>
                 </div>
-         </div>
-         <button type="button" id="register_btn">
-            register
-          </button>
-          <button type="button" id="add_apartment_btn">
-            add apartment
-          </button>
+
+         
         </div>
        
     </nav>

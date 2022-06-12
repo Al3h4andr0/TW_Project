@@ -20,6 +20,7 @@ function init () {
    async function onAccountStateChange()
     {
         account.addRegisterListener();
+        account.addAddApartmentListener();
     }
 
     // Render map

@@ -73,7 +73,13 @@
     justify-content: center;
   }
   .add_apartment_form_container {
-    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
     justify-content: center;
     align-items: center; 
     background: #BBBABA;
@@ -91,7 +97,7 @@
     font-family: 'Playfair Display';
   }
   
-  .add_apartment_form input {
+  .add_apartment_form input[type="text"]{
     height: 40px;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -100,20 +106,62 @@
     box-shadow: 0 2px 5px 0 grey;
     padding: 0 10px;
   }
+  .add_apartment_form #description{
+   
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 0 2px 5px 0 grey;
+    padding: 0 10px;
+  }
+
+  .add_apartment_form #price
+  {
+    width: 30%;
+  }
+  .add_apartment_form #mp
+  {
+    width: 30%;
+  }
+  .add_apartment_form select {
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 0 2px 5px 0 grey;
+    padding: 0 10px;
+    width: 30%;
+  }
   
   .add_apartment_form .row {
     display: flex;
     flex-direction: column;
     width:50%;
   }
-  
+  @media only screen and (max-width: 500px) {
+    .add_apartment_form .row{
+      width: 80%;
+    }
+  }
   .add_apartment_form input[type="submit"] {
     width: 100%;
     color: white;
     font-weight: bold;
     background-color: #DA4545;
   }
-  
+  .add_apartment_form input[type="file"] {
+    width: 90%;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 0 2px 5px 0 grey;
+    padding: 0 10px;
+  }
   .add_apartment_form_cancel{
     box-shadow: 0 2px 5px 0 grey;
     padding: 0 10px;
@@ -124,4 +172,11 @@
   }
   .add_apartment_form_cancel:hover{
     cursor: pointer;
+  }
+  fieldset{
+    border: 1px rgb(255, 255, 255) solid;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    width: 70%;
   }
