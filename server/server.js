@@ -91,8 +91,10 @@ async function requestListener(request, response) {
     else if (request.url.match(/\api\/locations\/myLocations/) && request.method === GET) {
         authorizedSafeExec(LocationController.getLocationsOwnedByUser, request, response);}
     else if (request.url.match(/\api\/login/) && request.method === POST) {
-        safeExec(authenticationController.validateUser, request, response);
-    } else if (request.url.match(/\api\/logout/) && request.method === POST) {
+        safeExec(authenticationController.validateUser, request, response);}
+    else if (request.url.match(/\api\/register/) && request.method === POST) {
+        safeExec(authenticationController.addUser, request, response);
+    }else if (request.url.match(/\api\/logout/) && request.method === POST) {
         safeExec(authenticationController.logout, request, response);
     } else if (request.url.match(/\api\/secret/) && request.method === GET) {
         authorizedSafeExec(LocationController.getAllLocations, request, response);

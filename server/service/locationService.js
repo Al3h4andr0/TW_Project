@@ -93,14 +93,6 @@ class LocationsService{
 }
 
 
-decodeFacilities = async (locations) => {
-
-    if(!isArray(locations))
-    {
-        locations.overview.facilities = await facilitiesService.getFacilitiesWithIds(location.overview.facilities);
-        return locations
-    }
-}
 
 
 module.exports = LocationsService;

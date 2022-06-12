@@ -1,5 +1,6 @@
 const allUsers = require('../data/users');
 const locationService = new (require('../service/locationService'))();
+const userService = new (require('../service/userService'))();
 var jwt = require('jsonwebtoken');
 const { getRequestData } = require('../utils/utils');
 const returnError = (statusCode, message) => ({ statusCode: statusCode, message: message });
@@ -7,6 +8,15 @@ const returnError = (statusCode, message) => ({ statusCode: statusCode, message:
 
 const SECRET = "TWProject"
 class AuthenticationController {
+    async addUser(request, response)
+    {
+        let requestBody = JSON.parse(await getRequestData(request));
+        await userService.addUser(requestBody);
+        response.writeHead(201, { 'Content-Type': 'application/json'});
+        response.end("User created Successfully");
+    }
+
+
     async validateUser(request, response) {
         let requestBody = JSON.parse(await getRequestData(request));
 
