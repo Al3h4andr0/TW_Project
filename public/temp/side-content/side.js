@@ -22,7 +22,7 @@ export default class Side {
              <span class="subtitle" id="overview${id}">Overview</span>
              <p class="descText">${locationOverview.description}</p>
              <span class="subtitleSmaller descText">Facilities:</span>
-             <p class="descText">${locationOverview.facilities}</p>
+             <p class="descText">${this.renderFacilities(locationOverview.facilities)}</p>
              <div class="locationSurfaceFor">
              <p class="subtitleSmaller">Surface: ${locationOverview.surface} mp</p>
              <p class="subtitleSmaller">For: <span id="locationFor${v}">${locationOverview.for}</span></p>
@@ -33,7 +33,18 @@ export default class Side {
              </div>
             </div>`
     }
-
+    renderFacilities(locationOverviewFacilities)
+    {
+        let res=`<div class="locationFacilities">`;
+        for(let value of Object.values(locationOverviewFacilities))
+        {
+            res+=`<div class="locationFacility subtitleSmaller">
+            <p>${value}<p/>
+            </div>`
+        }
+        res+=`</div>`
+        return res;
+    }
     renderAvaliability(locationOverviewDates) {
         let res = '';
         for (let value of Object.values(locationOverviewDates)) {

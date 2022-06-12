@@ -102,6 +102,58 @@
   color: rgb(8, 8, 8);
   padding-left: 35px;
 }
+.locationFacilities{
+ display: flex;
+ justify-content: flex-start;
+ padding-left: 35px;
+ 
+}
+.locationFacility{
+  margin:10px;
+  height: 35px;
+  width: 170px;
+  background: #F4ECE6;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+@media only screen and (max-width: 550px) {
+.locationFacilities{
+  padding-left: 0;
+  align-items: center;
+  flex-direction: column;
+}
+.locationSurfaceFor{
+  flex-direction: column;
+  padding-left: 0;
+  align-items: center;
+}
+.locationTags{
+  flex-direction: column;
+  padding-left: 0;
+  align-items: center;
+}
+.OvReCo_btn{
+  height: 20px;
+  width: 100px;
+}
+.locationPriceCondition{
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
+}
+.locationAddress{
+  align-items: center;
+  padding-left: 0;
+}
+.locationTitle{
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
+}
+}
 .subtitleSmaller{
   font-family: 'Poppins';
   font-style: normal;
@@ -154,6 +206,7 @@
 .locationDates{
   display: flex;
   flex-direction: row;
+  padding-left: 35px;
 }
 .locationReview{
   font-family: 'Poppins';
@@ -168,14 +221,7 @@
   padding-left: 35px;
 }
 
-@media only screen and (max-width: 280px) {
-  
-  .locationTags>p{
-    height: 50px;
-    width: 100px;
-  }
 
-}
 
 .rent_btn_container{
   display: flex;
@@ -183,7 +229,7 @@
 }
 .rent_btn{
   height: 40px;
-  width: 20%;
+  width: 100px;
   border-radius: 7px;
   background: #DA4545;
   display: flex;
@@ -207,7 +253,7 @@
 }
 .rent_form_container {
   display: none;
-  width: 30%;
+  width: 200px;
   height: 30%;
   justify-content: center;
   align-items: center; 
