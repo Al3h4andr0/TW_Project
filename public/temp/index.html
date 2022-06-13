@@ -19,15 +19,26 @@
     <nav id="nav_bar">
         <header>
             <div id="nav_bar_wrapper">
-                <div id="logo"></div>
+                <div id="logo">
+                        <span id="logo-E">E<span class="logo-Ma">Ma</span></span>
+                </div>
                 <div id="search">
-                    <div>
+                        <input type="text" placeholder="Search...">
+                        <!-- ICONS -->
+                        <section class="ui-icons">
+                            
+                            <div id="ui-magnifier">
+                                <img id="ui-magnifier-icon" src="./modals/searchBarSVGs/UI_Magnifier.svg" alt="UI_Magnifier" />
+                            </div>
+                        </section>
+                        <!-- END ICONS --> 
+                    <!-- <div>
                         <button type="button" onclick="showModal(1)">
                             <i class="bi bi-toggles2"></i>
                             <span>Filter</span>
                         </button>
                         
-                    </div>
+                    </div> -->
                 </div>
                 <div id="control">
                    
@@ -51,9 +62,9 @@
                       <button type="button" class="register_form_cancel" id="register_form_cancel"> Cancel </button>
                         <div class="credentials row">
                           <label for="username">username:</label>
-                          <input type="text" name="username" id="username" placeholder="username">
+                          <input type="text" name="username" id="username" placeholder="username" required="required">
                           <label for="password">password:</label>
-                          <input type="text" name="password" id="password" placeholder="password">
+                          <input type="text" name="password" id="password" placeholder="password" required="required">
                      </div>
                      <button type="button" id="register">register</button>
                      </form>
