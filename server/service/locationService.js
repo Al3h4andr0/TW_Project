@@ -242,27 +242,31 @@ const checkIfLocationValid = (location, filtersMap) => {
                     const startDateValues = dates[0].split('-');
                     const endDateValues = dates[1].split('-');
                     try {
-                        const startDate = new Date(startDateValues[0], startDateValues[1], startDateValues[2]);
-                        const endDate = new Date(endDateValues[0], endDateValues[1], endDateValues[2]);
+                        var startDate = new Date(startDateValues[0], startDateValues[1], startDateValues[2]);
+                        var endDate = new Date(endDateValues[0], endDateValues[1], endDateValues[2]);
+                        if (startDate.getTime() > endDate.getTime()) {
+                            let a = startDate;
+                            startDate = endDate;
+                            endDate = a;
+                        }
                         let isAvailable = false;
-                        for(let iterator in location.overview.dates)
-                        {
-                           var availableStartDate = location.overview.dates[iterator].start.split('-');
-                           var availableEndDate = location.overview.dates[iterator].end.split('-');
-                        
-                           availableStartDate = new Date(availableStartDate[0],availableStartDate[1],availableStartDate[2]);
-                           availableEndDate = new Date(availableEndDate[0],availableEndDate[1],availableEndDate[2]);
+                        for (let iterator in location.overview.dates) {
+                            var availableStartDate = location.overview.dates[iterator].start.split('-');
+                            var availableEndDate = location.overview.dates[iterator].end.split('-');
 
-                           if(availableStartDate.getTime() <= startDate.getTime() && availableEndDate.getTime() >= endDate.getTime()) // period preferred by user is in available period
+                            availableStartDate = new Date(availableStartDate[0], availableStartDate[1], availableStartDate[2]);
+                            availableEndDate = new Date(availableEndDate[0], availableEndDate[1], availableEndDate[2]);
+
+                            if (availableStartDate.getTime() <= startDate.getTime() && availableEndDate.getTime() >= endDate.getTime()) // period preferred by user is in available period
                             {
                                 isAvailable = true;
                                 break; //from for-loop
                             }
                         }
-                        if(!isAvailable)
+                        if (!isAvailable)
                             return false;
                     }
-                    catch (e) {raiseError('  date-interval invalid dates ', value);console.log(e); }
+                    catch (e) { raiseError('  date-interval invalid dates ', value); console.log(e); }
 
                 }
 
