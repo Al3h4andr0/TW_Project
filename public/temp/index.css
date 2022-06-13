@@ -1,6 +1,7 @@
 @import './side-content/side.css';
 @import './map/map.css';
 @import './account/account.css';
+@import './modals/logo-search.css';
 @media only screen and (max-width: 1130px) {
     :root {
         --nav-height: 100px;
@@ -44,7 +45,7 @@ body {
     position: sticky;
     top: 0px;
     z-index: 10;
-    background-color: blueviolet;
+    background-color: rgb(232, 127, 127);
 }
 
 main {
@@ -57,7 +58,7 @@ main {
     display: flex;
     flex-direction: column;
     width: var(--width-content);
-    background-color: azure;
+    background-color: rgb(255, 255, 255);
 }
 
 .locationImage img {
