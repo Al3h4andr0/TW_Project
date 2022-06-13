@@ -47,15 +47,15 @@
 
             <div class="register_container_container">
                 <div class="register_form_container" id="register_form_container">
-                    <form action="" class="register_form">
+                    <form class="register_form" id="register_form">
                       <button type="button" class="register_form_cancel" id="register_form_cancel"> Cancel </button>
                         <div class="credentials row">
                           <label for="username">username:</label>
-                          <input type="text" id="username" placeholder="username">
+                          <input type="text" name="username" id="username" placeholder="username">
                           <label for="password">password:</label>
-                          <input type="text" id="password" placeholder="password">
+                          <input type="text" name="password" id="password" placeholder="password">
                      </div>
-                     <input type="submit" value="register" >
+                     <button type="button" id="register">register</button>
                      </form>
                 </div>
          </div>
@@ -142,5 +142,6 @@
     </main>
     <script src="index.js" type="module"></script>
     <script src="./api/addApartment.js"></script>
+    <script src="./api/register.js"></script>
 </body>
 </html>
