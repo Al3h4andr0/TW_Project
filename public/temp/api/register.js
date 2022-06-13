@@ -13,9 +13,7 @@ function register(){
     //       console.log(name, ":", value)
     //     }
     //   })
-    console.log("aASDAS")
-    document.getElementById('username').innerHTML='';
-    document.getElementById('password').innerHTML='';
+    console.log("aASDAS");
 }
 
 document.getElementById('register').addEventListener("click",register);

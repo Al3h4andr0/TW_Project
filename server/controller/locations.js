@@ -1,3 +1,4 @@
+const url = require('url');
 const allLocations = require('../data/locations');
 const { getRequestData } = require('../utils/utils');
 const LocationService = new (require('../service/locationService'))();
@@ -43,6 +44,19 @@ class LocationsControler {
     //////////////////////////////////////////////
     async getAllLocations(_, response) {
         const locations = await LocationService.getAllLocations();
+        response.writeHead(200, '200', { 'Content-Type': 'application/json' });
+        response.end(JSON.stringify(locations));
+    }
+
+    async getFilteredLocations(request,response)
+    {
+      const filtersMap = Object.assign({},url.parse(request.url,true).query);
+            for(var key in filtersMap)
+                if(filtersMap[key].includes(','))
+                    filtersMap[key] = filtersMap[key].split(',');
+               
+      const locations = await LocationService.getFilteredLocations(filtersMap);
+
         response.writeHead(200, '200', { 'Content-Type': 'application/json' });
         response.end(JSON.stringify(locations));
     }
