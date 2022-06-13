@@ -1,5 +1,4 @@
 const allFacilities = require('../data/facilities');
-const locations = require('../data/locations');
 const allLocations = require('../data/locations');
 const notFound = (id) => ({ statusCode: 404, message: `Location with id ${id} not found` });
 const facilitiesService = new (require('./facilitiesService'))();
@@ -128,9 +127,9 @@ const checkIfLocationValid = (location, filtersMap) => {
                     return false;
                 break;
             case 'condition':
-                if(!Array.isArray(value))
+                if (!Array.isArray(value))
                     value = [value];
-                if(!value.includes(location.condition)) //if the condition is not from ones specified by user, then the location is not good
+                if (!value.includes(location.condition)) //if the condition is not from ones specified by user, then the location is not good
                     return false;
                 break;
             case 'facilities':
@@ -200,35 +199,74 @@ const checkIfLocationValid = (location, filtersMap) => {
                     raiseError("theft_max", value);
                 else if (location.theft > theftMax)
                     return false;
-            break;
+                break;
             case 'cost_of_living_min':
                 const costOfLivingMin = getNumericalValueFromString(value);
                 if (costOfLivingMin === null)
                     raiseError("cost_of_living_min", value);
                 else if (location.costOfLiving < costOfLivingMin)
                     return false;
-            break;
+                break;
             case 'cost_of_living_max':
                 const costOfLivingMax = getNumericalValueFromString(value);
                 if (costOfLivingMax === null)
                     raiseError("cost_of_living_max", value);
                 else if (location.costOfLiving > costOfLivingMax)
                     return false;
-            break;
+                break;
             case 'anual_temp_min':
                 const anualTempMin = getNumericalValueFromString(value);
                 if (anualTempMin === null)
                     raiseError("anual_temp_min", value);
                 else if (location.anualTemp < anualTempMin)
                     return false;
-            break;
+                break;
             case 'anual_temp_max':
                 const anualTempMax = getNumericalValueFromString(value);
                 if (anualTempMax === null)
                     raiseError("anual_temp_max", value);
                 else if (location.anualTemp > anualTempMax)
                     return false;
-            break;
+                break;
+            case 'date-interval':
+                //values = "2022/02/23-2022/03/01"
+                if (filtersMap.for !== "rent") {
+                    raiseError("date-interval specified but the location is not for renting");
+                    break;
+                }
+
+                const dates = value.split('/');
+                if (dates.length != 2)
+                    raiseError('dates-interval not found; expected format yyyy-mm-dd/yyyy-mm-dd', value);
+                else {
+                    const startDateValues = dates[0].split('-');
+                    const endDateValues = dates[1].split('-');
+                    try {
+                        const startDate = new Date(startDateValues[0], startDateValues[1], startDateValues[2]);
+                        const endDate = new Date(endDateValues[0], endDateValues[1], endDateValues[2]);
+                        let isAvailable = false;
+                        for(let iterator in location.overview.dates)
+                        {
+                           var availableStartDate = location.overview.dates[iterator].start.split('-');
+                           var availableEndDate = location.overview.dates[iterator].end.split('-');
+                        
+                           availableStartDate = new Date(availableStartDate[0],availableStartDate[1],availableStartDate[2]);
+                           availableEndDate = new Date(availableEndDate[0],availableEndDate[1],availableEndDate[2]);
+
+                           if(availableStartDate.getTime() <= startDate.getTime() && availableEndDate.getTime() >= endDate.getTime()) // period preferred by user is in available period
+                            {
+                                isAvailable = true;
+                                break; //from for-loop
+                            }
+                        }
+                        if(!isAvailable)
+                            return false;
+                    }
+                    catch (e) {raiseError('  date-interval invalid dates ', value);console.log(e); }
+
+                }
+
+                break;
             default:
                 console.log("WARNING: Got a filter that is not recognized", key);
         }
@@ -244,7 +282,7 @@ const getNumericalValueFromString = (possibleNumber) => {
 }
 
 const raiseError = (field, wrongValue) => {
-    console.log("WARNING: In" + field + "got a value that is invalid: ", wrongValue);
+    console.log("WARNING: In" + field + " | got a value that is invalid: ", wrongValue);
 }
 
 
