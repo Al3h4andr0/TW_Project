@@ -73,17 +73,17 @@
 
                
                 <div class="add_apartment_form_container hidden" id="add_apartment_form_container">
-                    <form onsubmit="addApartment()" class="add_apartment_form">
+                    <form class="add_apartment_form" id="add_apartment_form">
                       <button type="button" class="add_apartment_form_cancel" id="add_apartment_form_cancel"> Cancel </button>
                         <div class="credentials row">
                           <label for="title">Name:</label>
-                          <input type="text" id="title" placeholder="Name" required="required">
+                          <input type="text" id="title" name="name" placeholder="Name" required="required">
 
                           <label for="images">Images</label>
-                          <input type="file" id="images" required="required" multiple="multiple">
+                          <input type="file" id="images" name="images" required="required" multiple="multiple">
 
                           <label for="address">Address:</label>
-                          <input type="text" id="address" placeholder="Address" required="required">
+                          <input type="text" id="address" name="address" placeholder="Address" required="required">
                           
                           <label for="for">Are you selling or is it for renting?</label>
                           <select name="for" id="for" form="add_apartment_form">
@@ -101,25 +101,25 @@
                           </select>
 
                           <label for="price">Price/Night:</label>
-                          <input type="text" id="price" placeholder="Price">
+                          <input type="text" id="price" name="price" placeholder="Price">
 
                           <label for="description">Description:</label>
-                          <textarea name="description" id="description" cols="30" rows="10" placeholder="Description" required="required"></textarea>
+                          <textarea name="description" id="description" name="description" cols="30" rows="10" placeholder="Description" required="required"></textarea>
 
                           <label for="mp">Surface(in MP):</label>
-                          <input type="text" id="mp" placeholder="mp">
+                          <input type="text" id="mp"  name ="mp" placeholder="mp">
                           
                           <label for="facilities">Facilities:</label>
                           <fieldset>
-                            <input type="checkbox" id="f1" value="air-conditioning"> 
+                            <input type="checkbox" id="f1" value="air-conditioning" class = "facilities"> 
                                <label for="f1">air-conditioning</label> </br>
-                            <input type="checkbox" id="f2" value="parking">
+                            <input type="checkbox" id="f2" value="parking"  class = "facilities">
                                <label for="f2">parking</label> </br>
-                            <input type="checkbox" id="f3" value="fridge">
+                            <input type="checkbox" id="f3" value="fridge"  class = "facilities">
                                <label for="f3">fridge</label> </br>
-                            <input type="checkbox" id="f4" value="microwave">
+                            <input type="checkbox" id="f4" value="microwave"  class = "facilities">
                                <label for="f4">microwave</label> </br>
-                            <input type="checkbox" id="f5" value="shop nearby">
+                            <input type="checkbox" id="f5" value="shop nearby"  class = "facilities">
                                <label for="f5">shop nearby</label> </br>
                           </fieldset>
                           

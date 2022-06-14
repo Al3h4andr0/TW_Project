@@ -1,6 +1,9 @@
 const url = require('url');
+// const fs = require('fs');
+// var formidable = require('formidable');
+// var multiparty = require('multiparty');
 const allLocations = require('../data/locations');
-const { getRequestData } = require('../utils/utils');
+const { getRequestData, getFormRequestData } = require('../utils/utils');
 const LocationService = new (require('../service/locationService'))();
 const authenticationService = new (require('../controller/authentication'))();
 const notFound = (id) => ({ statusCode: 404,message: `Location with id ${id} not found` });
@@ -107,6 +110,39 @@ class LocationsControler {
        
       
     }
+
+    async uploadTest(request,response){
+    const body = await getRequestData(request);
+    // TODOs
+         /*  am incercat cu diferite librarii, nu face niciuna ce trebuie sa faca.
+             Din body-u asta raw ar trebui sa-mi apara toate datele din formular intr-un map, iar fisierele (pozele)
+            sa fie salvate local (cum ar veni pe server), iar cand dau get la apartamente sa fie trimise si pozele, probabil tot ca BLOB.
+            5 hours wasted on this :(  
+         */
+
+
+
+
+
+   //const boundary =request.headers["content-type"].split("boundary=")[1];
+    // var form = new formidable.IncomingForm();
+    // console.log(form);
+    // form.parse(request, (err,fields,files) => {
+    //     if(err)
+    //     {
+    //         console.error(err.message);
+            
+    //     }
+    //     console.log("FIELDS", fields);
+    //     console.log("FILES", files);
+
+    // });
+     }
 }
 
-module.exports = LocationsControler;
+
+
+
+
+
+module.exports = LocationsControler
