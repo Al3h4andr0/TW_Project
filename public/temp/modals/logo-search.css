@@ -1,8 +1,7 @@
 
-#nav_bar_wrapper{
-    width: 70%;
-    padding-top: 20px;
-    display: flex;
+.logo_search{
+  padding-top: 20px;
+  display: flex;
 }
 #logo{
     
@@ -18,44 +17,112 @@
     color: #8d0808;
 }
 #search{
-
+  padding-left: 20px;
   margin-right: 20%;
   display: flex;
   height:40px;
   width: 150px;
   
 }
-@media only screen and (max-width: 550px) {
-   #search{
-    display: none;
-   }
+#ui-magnifier_black{
+  display: none;
+}
+#recommendations{
+  padding-left: 35px;
+  display: flex;
+ }
+.recommendations_btn{
+  height: 20px;
+  background: none;
+  border: none;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.07em;
+  color: rgba(8, 8, 8, 0.65);
+}
+.recommendations_btn:hover{
+  cursor: pointer;
 }
 #search input {
-    border: none;
-    padding-top: 3px;
-    padding-left: 16px;
-    padding-right: 16px;
-    color: #777575;
-    font-size: 15px;
-    border-radius: 4px 4px 4px 4px;
-    height: 100%;
-    width: 100%;
-    outline-width: 0;
-    min-width: 160px;
-  }
+  border: solid;
+  padding-top: 3px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #777575;
+  font-size: 15px;
+  border-radius: 4px 4px 4px 4px;
+  height: 100%;
+  outline-width: 0;
+}
 #search .ui-icons {
-    
-    display: flex;
-    justify-content: center;
-    height: 42px;
-    width: 60px;
+  padding-top: 3px;
+  
+}
+#ui-magnifier:hover {
+  cursor: pointer;
+}
+.filters{
+  padding-left: 20px;
+}
+.filters>button{
+ height: 50px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ text-align: center;
+}
+@media only screen and (max-width: 550px) {
+  .logo_search{
+    padding-top: 10px;
   }
- #ui-magnifier:hover {
-    cursor: pointer;
+  #logo{
+    padding-left: 10px;
+    font-size: 30px;
   }
- #ui-magnifier {
-    display: flex;
-    justify-content: center;
+   #search{
+    height: 25px;
+    padding-left: 10px;
+   }
+   #search>input{
+    width: 100px;
+   }
+   #ui-magnifier{
+    display: none;
+   }
+   #ui-magnifier_black{
+    position: absolute;
+    left: 165px;
+    display: block;
+    padding-top: 3px;
+   }
+   #recommendations{
+    padding-left: 0;
     
-  }  
-
+   }
+   .recommendations_btn{
+   font-size: 15px;
+   }
+   #search input{
+    padding-left: 5px;
+   }
+   .filters{
+    padding-left: 0;
+   }
+   .filters>button{
+    height: 35px;
+   }
+}
+@media only screen and (max-width: 300px) {
+  .filters>button{
+    width: 25px;
+   }
+   #filters_btn_txt{
+    display: none;
+   }
+ }

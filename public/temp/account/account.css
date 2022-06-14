@@ -4,6 +4,7 @@
 }
 .account{
     width: 30%;
+    padding-top: 20px;
 }
 .register_form_container_container{
   display: flex;
@@ -15,6 +16,9 @@
   align-items: center; 
   background: #BBBABA;
   border-radius: 7px;
+  width: 246px;
+  position: fixed;
+  right: 0;
 }
 
 .register_form {
@@ -49,6 +53,20 @@
   color: white;
   font-weight: bold;
   background-color: #DA4545;
+}
+#register{
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0 2px 5px 0 grey;
+  padding: 0 10px;
+  width: 100%;
+  color: white;
+  background-color: #DA4545;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 .hidden{
   display: none;
@@ -144,6 +162,21 @@
   @media only screen and (max-width: 500px) {
     .add_apartment_form .row{
       width: 80%;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    #register_btn{display: none;}
+    #add_apartment_btn{display: none;}
+    #account_btn{position: fixed; right: 10px;}
+  }
+  @media only screen and (max-width: 550px) {
+    .account{
+      padding-top: 10px;
+  }
+  }
+  @media only screen and (max-width: 450px) {
+    .register_form_container {
+      width: 100%;
     }
   }
   .add_apartment_form input[type="submit"] {

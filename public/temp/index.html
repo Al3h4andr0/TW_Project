@@ -17,38 +17,51 @@
 </head>
 <body>
     <nav id="nav_bar">
-        <header>
-            <div id="nav_bar_wrapper">
-                <div id="logo">
+        <header>    
+                <div class="logo_search">
+                    <div id="logo">
                         <span id="logo-E">E<span class="logo-Ma">Ma</span></span>
-                </div>
-                <div id="search">
+                    </div>
+                     <div id="search">
                         <input type="text" placeholder="Search...">
                         <!-- ICONS -->
                         <section class="ui-icons">
-                            
-                            <div id="ui-magnifier">
-                                <img id="ui-magnifier-icon" src="./modals/searchBarSVGs/UI_Magnifier.svg" alt="UI_Magnifier" />
+                            <div id="ui-magnifier_black">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="none" viewBox="0 0 30 70">
+                                    <path fill="black" d="m41.61 38.89-7.11-7.054a17.25 17.25 0 1 0-2.664 2.664l7.053 7.053a1.918 1.918 0 0 0 2.722 0 1.917 1.917 0 0 0 0-2.664ZM21.084 34.5a13.416 13.416 0 1 1 0-26.832 13.416 13.416 0 0 1 0 26.832Z"/>
+                                  </svg>
                             </div>
+                            <div id="ui-magnifier">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="none" viewBox="0 0 46 46">
+                                    <path fill="black" d="m41.61 38.89-7.11-7.054a17.25 17.25 0 1 0-2.664 2.664l7.053 7.053a1.918 1.918 0 0 0 2.722 0 1.917 1.917 0 0 0 0-2.664ZM21.084 34.5a13.416 13.416 0 1 1 0-26.832 13.416 13.416 0 0 1 0 26.832Z"/>
+                                  </svg>
+                            </div>
+                            
                         </section>
-                        <!-- END ICONS --> 
-                    <!-- <div>
-                        <button type="button" onclick="showModal(1)">
-                            <i class="bi bi-toggles2"></i>
-                            <span>Filter</span>
-                        </button>
-                        
-                    </div> -->
+                        <div class="filters">
+                            <button type="button" onclick="showModal(1)">
+                                <i class="bi bi-toggles2"></i>
+                                <span id="filters_btn_txt">Filter</span>
+                            </button> 
+                        </div>
+                    </div>
+                    
+                    
                 </div>
-                <div id="control">
-                   
+                    <div id="recommendations">
+                        <button type="button" class="recommendations_btn">Brasov</button>
+                        <button type="button" class="recommendations_btn">Iasi</button>
+                        <button type="button" class="recommendations_btn">Bucuresti</button>
+                        <button type="button" class="recommendations_btn">Timisoara</button>
+                     </div>
                 </div>
-            </div>
+                
         </header>
         <div>
             <!-- filter zone here -->
         </div>
         <div class="account" id="account">
+            <button type="button" id="account_btn">Acc</button>
             <button type="button" id="register_btn">
                 register
               </button>
