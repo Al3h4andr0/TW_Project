@@ -72,7 +72,41 @@ class Map {
     hookOnMapDragEnd(cb) {
         this.map.on('dragend', this.onMapDragEnd(cb));
     }
-}
+    async addBrasovListener()
+    {
 
+         const element = document.getElementById("brasov_btn");
+         let latlng = [45.652822,25.611141];
+         element.addEventListener("click",moveView,false);
+         element.param=latlng;
+         element.p=this.map;
+         
+    }
+    async addIasiListener(){
+        const element = document.getElementById("iasi_btn");
+        let latlng = [47.158089,27.588944];
+         element.addEventListener("click",moveView,false);
+         element.param=latlng;
+         element.p=this.map;
+    }
+    async addBucurestiListener(){
+        const element = document.getElementById("bucuresti_btn");
+        let latlng = [44.432278,26.102486];
+         element.addEventListener("click",moveView,false);
+         element.param=latlng;
+         element.p=this.map;
+    }
+    async addTimisoaraListener(){
+        const element = document.getElementById("timisoara_btn");
+        let latlng = [45.756101,21.228719];
+         element.addEventListener("click",moveView,false);
+         element.param=latlng;
+         element.p=this.map;
+    }
+}
+function moveView(latlng)
+    {
+       latlng.currentTarget.p.flyTo(latlng.currentTarget.param,13,{duration:1});
+    }
 const map = (new Map());
 export default map;

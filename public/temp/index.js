@@ -22,7 +22,15 @@ function init () {
         account.addRegisterListener();
         account.addAddApartmentListener();
     }
+    async function recommendationsListeners()
+    {
+       
+     Map.addBrasovListener();
+     Map.addIasiListener();
+     Map.addBucurestiListener();
+     Map.addTimisoaraListener();
 
+    }
     // Render map
     Map.hookOnMapClick((e, self) => {
         let popup = L.popup();
@@ -41,6 +49,7 @@ function init () {
     Map.init();
     onMapStateChange();
     onAccountStateChange();
+    recommendationsListeners();
 }
 
 function showModal(id) {
