@@ -8,7 +8,7 @@ function openPopUp() {
       filterZone.style.marginTop = "3.5em";
       filterZone.style.opacity = 1;
     }
-  }
+}
 
 
 let click=document.querySelector('.click');

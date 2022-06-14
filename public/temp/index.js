@@ -19,6 +19,7 @@ function init () {
      
    async function onAccountStateChange()
     {
+        account.addLoginListener();
         account.addRegisterListener();
         account.addAddApartmentListener();
     }
