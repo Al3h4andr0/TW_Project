@@ -1,6 +1,6 @@
 const url = require('url');
-// const fs = require('fs');
-// var formidable = require('formidable');
+ const fs = require('fs');
+ var formidable = require('formidable');
 // var multiparty = require('multiparty');
 const allLocations = require('../data/locations');
 const { getRequestData, getFormRequestData } = require('../utils/utils');
@@ -137,7 +137,15 @@ class LocationsControler {
          */
 
 
-
+                let form= new formidable.IncomingForm();
+                form.parse(request,function(error,fields,file) {
+                   console.log(fields);
+                   let filepath=file.images.filepath;
+                   let newpath='C:/UPLOAD_TEST/';
+                   newpath+=file.images.originalFilename;
+                   fs.rename(filepath,newpath,function(){
+                   });
+                });
 
 
    //const boundary =request.headers["content-type"].split("boundary=")[1];
