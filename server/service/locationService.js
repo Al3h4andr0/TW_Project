@@ -1,4 +1,5 @@
 const allFacilities = require('../data/facilities');
+const locations = require('../data/locations');
 const allLocations = require('../data/locations');
 const notFound = (id) => ({ statusCode: 404, message: `Location with id ${id} not found` });
 const facilitiesService = new (require('./facilitiesService'))();
@@ -92,6 +93,34 @@ class LocationsService {
             let locations = allLocations.filter((location) => location.ownerId === userId);
             resolve(locations);
         })
+    }
+
+    async getSuggestions(keyword)
+    {
+        return new Promise((resolve,reject) =>{
+            if(keyword === "" || keyword === "undefined" || keyword === undefined)
+                return reject({statusCode: 400, message: "Keyword is null"});
+            const suggestions = [];
+            allLocations.forEach((location) => {
+
+
+                if(location.title.toLowerCase().includes(keyword.toLowerCase()))
+                   suggestions.push({id: location.id, title: location.title});
+
+            });
+            resolve(suggestions);
+        })
+     
+    }
+
+    getMultipleLocations(ids){
+        return new Promise((resolve,_) => {
+            if(ids === "undefined")
+             resolve(allLocations);
+            
+          const locations = allLocations.filter((location) => ids.includes(location.id.toString()));
+            resolve(locations);
+        });
     }
 }
 

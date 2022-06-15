@@ -90,7 +90,137 @@ const locations = [
         theft: 10, //cate cazuri au fost pe luna
         costOfLiving: 10, //cat iti trb sa traiesti pe luna
         anualTemp: 20
-    }
+    },
+        {
+        id: 3,
+        ownerId: 1,
+        position: {
+            lat: 47.157214,
+            lng: 27.586982
+        },
+        title: 'Palatul Vietii',
+        imgSrc: 'https://palatulculturii.ro/web/img/og_image.jpg',
+        imgAlt: 'Palatul culturii',
+        address: 'Bulevardul Ștefan cel Mare și Sfânt 1, Iași 700028',
+        price: 15,
+        condition: 'good',
+        overview: {
+            description: '365-roomed complex built between 1906 & 1925 to house government offices, now housing 4 museums.',
+            facilities: [ "air-conditioning", "fridge", "bath-tub"],
+            surface: 60, //mp
+            for: "sale",
+            dates: [] //no available date cuz its for sale
+        },
+        reviews: [
+            {
+                title: 'Awesome place',
+                description: 'Awesome place to sleep in while on a school trip',
+                score: 4.5
+            },
+            {
+                title: 'Decent place',
+                description: 'Awesome place to sleep in while on a school trip. The teacher woke me up!',
+                score: 3
+            }
+        ],
+        contact: {
+            website: {
+                key: "palatulculturii.ro",
+                http: "https://palatulculturii.ro/"
+            },
+            phoneNumber: '0232275979'
+        },
+        theft: 10, //cate cazuri au fost pe luna
+        costOfLiving: 10, //cat iti trb sa traiesti pe luna
+        anualTemp: 20
+    },
+    {
+        id: 4,
+        ownerId: 1,
+        position: {
+            lat: 47.157214,
+            lng: 27.586982
+        },
+        title: 'Palatul Nostru',
+        imgSrc: 'https://palatulculturii.ro/web/img/og_image.jpg',
+        imgAlt: 'Palatul culturii',
+        address: 'Bulevardul Ștefan cel Mare și Sfânt 1, Iași 700028',
+        price: 15,
+        condition: 'good',
+        overview: {
+            description: '365-roomed complex built between 1906 & 1925 to house government offices, now housing 4 museums.',
+            facilities: [ "air-conditioning", "fridge", "bath-tub"],
+            surface: 60, //mp
+            for: "sale",
+            dates: [] //no available date cuz its for sale
+        },
+        reviews: [
+            {
+                title: 'Awesome place',
+                description: 'Awesome place to sleep in while on a school trip',
+                score: 4.5
+            },
+            {
+                title: 'Decent place',
+                description: 'Awesome place to sleep in while on a school trip. The teacher woke me up!',
+                score: 3
+            }
+        ],
+        contact: {
+            website: {
+                key: "palatulculturii.ro",
+                http: "https://palatulculturii.ro/"
+            },
+            phoneNumber: '0232275979'
+        },
+        theft: 10, //cate cazuri au fost pe luna
+        costOfLiving: 10, //cat iti trb sa traiesti pe luna
+        anualTemp: 20
+    },
+    {
+        id: 5,
+        ownerId: 1,
+        position: {
+            lat: 47.157214,
+            lng: 27.586982
+        },
+        title: 'Palatul TW',
+        imgSrc: 'https://palatulculturii.ro/web/img/og_image.jpg',
+        imgAlt: 'Palatul culturii',
+        address: 'Bulevardul Ștefan cel Mare și Sfânt 1, Iași 700028',
+        price: 15,
+        condition: 'good',
+        overview: {
+            description: '365-roomed complex built between 1906 & 1925 to house government offices, now housing 4 museums.',
+            facilities: [ "air-conditioning", "fridge", "bath-tub"],
+            surface: 60, //mp
+            for: "sale",
+            dates: [] //no available date cuz its for sale
+        },
+        reviews: [
+            {
+                title: 'Awesome place',
+                description: 'Awesome place to sleep in while on a school trip',
+                score: 4.5
+            },
+            {
+                title: 'Decent place',
+                description: 'Awesome place to sleep in while on a school trip. The teacher woke me up!',
+                score: 3
+            }
+        ],
+        contact: {
+            website: {
+                key: "palatulculturii.ro",
+                http: "https://palatulculturii.ro/"
+            },
+            phoneNumber: '0232275979'
+        },
+        theft: 10, //cate cazuri au fost pe luna
+        costOfLiving: 10, //cat iti trb sa traiesti pe luna
+        anualTemp: 20
+    },
+    
 ];
 
 module.exports = locations;

@@ -47,10 +47,10 @@ const authorizedSafeExec = async (fn, request, response) => {
     try {
         let userPayload = await authenticationController.verifyIfLoggedIn(request, response);
          console.log("user who called the server: ",userPayload);
-         await fn(request, response, userPayload, userPayload);
+         await fn(request, response, userPayload);
     }
     catch (e) {
-    
+    console.log("EXECERROR:" , e);
         switch (e.statusCode) // de forma : {statusCode : 400, message : "Bad request"}
         {
             case "undefined": response.writeHead(499, { 'Content-Type': 'application/json' });
@@ -90,10 +90,14 @@ async function requestListener(request, response) {
         safeExec(getAllLocationsWithinBounds, request, response);}
     else  if (request.url.match(/\api\/locations\/?$/) && request.method === GET)
         safeExec(LocationController.getAllLocations, request, response);
+    else  if (request.url.match(/\api\/locations\/search\?(.)*/) && request.method === GET)
+        safeExec(LocationController.getSuggestions,request,response);
     else  if (request.url.match(/\api\/locations\/filter\?(.)*/) && request.method === GET)
         safeExec(LocationController.getFilteredLocations, request, response);
     else if (request.url.match(/\api\/locations\/([0-9]+)/) && request.method === GET)
         safeExec(LocationController.getTheLocation, request, response);
+    else if (request.url.match(/\api\/locations\/\?ids(.)*/) && request.method === GET)
+        safeExec(LocationController.getMultipleLocations, request, response);
     else if (request.url.match(/\api\/locations\/add/) && request.method === POST)
         authorizedSafeExec(LocationController.addLocation, request, response);
     else if (request.url.match(/\api\/locations\/([0-9]+)/) && request.method === PATCH)

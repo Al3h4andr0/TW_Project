@@ -74,6 +74,21 @@ class LocationsControler {
         response.end(JSON.stringify(location));
     }
 
+    async getMultipleLocations(request,response){
+        const urlData = request.url.split("?ids=");
+        const ids = urlData[urlData.length-1].split(",");
+        const locations = await LocationService.getMultipleLocations(ids);
+        response.writeHead(200, '200', { 'Content-Type': 'application/json' });
+        response.end(JSON.stringify(locations));
+    }
+
+    async getSuggestions(request,response){
+        const keyword = request.url.split("keyword=")[1];
+        const suggestions = await LocationService.getSuggestions(keyword);
+        response.writeHead(200, '200', { 'Content-Type': 'application/json' });
+        response.end(JSON.stringify(suggestions));
+    }
+
     async addLocation(request, response, userPayload) {
         let location_data = JSON.parse(await getRequestData(request));
         location_data.ownerId = parseInt(userPayload.id);
@@ -117,6 +132,7 @@ class LocationsControler {
          /*  am incercat cu diferite librarii, nu face niciuna ce trebuie sa faca.
              Din body-u asta raw ar trebui sa-mi apara toate datele din formular intr-un map, iar fisierele (pozele)
             sa fie salvate local (cum ar veni pe server), iar cand dau get la apartamente sa fie trimise si pozele, probabil tot ca BLOB.
+            Trimitem un multipart/form-data, vezi in public/temp/addApartment
             5 hours wasted on this :(  
          */
 
