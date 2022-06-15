@@ -19,12 +19,14 @@
 @media only screen and (min-width: 1130px) {
     :root {
         --nav-height: 148px;
-        --main-height: calc(100vh - var(--nav-height));
+        --main-height:
+        calc(100vh - var(--nav-height));
         --width-content: 50vw;
-        /*--map-visibility: visible;*/
+        --map-visibility: visible;
         --map-width: unset;
         --map-frame-width: 50vw;
-        --map-frame-height: calc(100vh - var(--nav-height));
+        --map-frame-height:
+        calc(100vh - var(--nav-height));
         --main-flex-direction: row;
         --map-controller-display: flex;
     }

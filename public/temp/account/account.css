@@ -6,10 +6,27 @@
     width: 30%;
     padding-top: 20px;
 }
+.login_form_container_container{
+  display:flex;
+  justify-content: center;
+}
+
 .register_form_container_container{
   display: flex;
   justify-content: center;
 }
+
+.login_form_container{
+  display:none;
+  justify-content: center;
+  align-items: center;
+  background: #BBBABA;
+  border-radius: 7px;
+  width: 246px;
+  position: fixed;
+  right: 0;
+}
+
 .register_form_container {
     display: none;
   justify-content: center;
@@ -21,6 +38,13 @@
   right: 0;
 }
 
+.login_form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .register_form {
   display: flex;
   flex-direction: column;
@@ -28,8 +52,22 @@
   justify-content: center;
 }
 
+.login_form label{
+  font-family: 'Playfair Display';
+}
+
 .register_form label {
   font-family: 'Playfair Display';
+}
+
+.login_form input {
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0 2px 5px 0 grey;
+  padding: 0 10px;
 }
 
 .register_form input {
@@ -42,10 +80,24 @@
   padding: 0 10px;
 }
 
+.login_form .row {
+  display: flex;
+  flex-direction: column;
+  width:50%;
+}
+
+
 .register_form .row {
   display: flex;
   flex-direction: column;
   width:50%;
+}
+
+.login_form input[type="submit"] {
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  background-color: #DA4545;
 }
 
 .register_form input[type="submit"] {
@@ -54,6 +106,22 @@
   font-weight: bold;
   background-color: #DA4545;
 }
+
+#login{
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0 2px 5px 0 grey;
+  padding: 0 10px;
+  width: 100%;
+  color: white;
+  background-color: #DA4545;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
 #register{
   height: 40px;
   margin-top: 10px;
@@ -82,10 +150,22 @@
   height: 20px;
   width: 100px;
 }
+
+.login_form_cancel{
+  box-shadow: 0 2px 5px 0 grey;
+  padding: 0 10px;
+  border: none;
+  border-radius: 7px;
+  height: 20px;
+  width: 100px;
+}
+
 .register_form_cancel:hover{
   cursor: pointer;
 }
-
+.login_form_cancel:hover{
+  cursor: pointer;
+}
 .add_apartment_form_container_container{
     display: flex;
     justify-content: center;
@@ -166,6 +246,7 @@
   }
   @media only screen and (max-width: 700px) {
     #register_btn{display: none;}
+    #login_btn{display:flex;}
     #add_apartment_btn{display: none;}
     #account_btn{position: fixed; right: 10px;}
   }
@@ -176,6 +257,9 @@
   }
   @media only screen and (max-width: 450px) {
     .register_form_container {
+      width: 100%;
+    }
+    .login_form_container{
       width: 100%;
     }
   }
@@ -216,3 +300,4 @@
     padding: 0 10px;
     width: 70%;
   }
+

@@ -49,10 +49,10 @@
                     
                 </div>
                     <div id="recommendations">
-                        <button type="button" class="recommendations_btn">Brasov</button>
-                        <button type="button" class="recommendations_btn">Iasi</button>
-                        <button type="button" class="recommendations_btn">Bucuresti</button>
-                        <button type="button" class="recommendations_btn">Timisoara</button>
+                        <button type="button" id="brasov_btn" class="recommendations_btn">Brasov</button>
+                        <button type="button" id="iasi_btn" class="recommendations_btn">Iasi</button>
+                        <button type="button" id="bucuresti_btn" class="recommendations_btn">Bucuresti</button>
+                        <button type="button" id="timisoara_btn" class="recommendations_btn">Timisoara</button>
                      </div>
                 </div>
                 
@@ -61,13 +61,28 @@
             <!-- filter zone here -->
         </div>
         <div class="account" id="account">
-            <button type="button" id="account_btn">Acc</button>
+            <button type="button" id="account_btn">Account</button>
             <button type="button" id="register_btn">
                 register
               </button>
               <button type="button" id="add_apartment_btn">
                 add apartment
               </button>
+            
+              <div class="login_container_container">
+                <div class="login_form_container" id="login_form_container">
+                    <form class="login_form" id="login_form">
+                      <button type="button" class="login_form_cancel" id="login_form_cancel"> Cancel </button>
+                        <div class="credentials row">
+                          <label for="username_for_login">username:</label>
+                          <input type="text" name="username_for_login" id="username_for_login" placeholder="username..." required="required">
+                          <label for="password_for_login">password:</label>
+                          <input type="text" name="password_for_login" id="password_for_login" placeholder="password..." required="required">
+                     </div>
+                     <button type="button" id="login">login</button>
+                     </form>
+                </div>
+         </div>
 
             <div class="register_container_container">
                 <div class="register_form_container" id="register_form_container">
