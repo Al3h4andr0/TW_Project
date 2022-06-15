@@ -101,7 +101,8 @@
 
                
                 <div class="add_apartment_form_container hidden" id="add_apartment_form_container">
-                    <form class="add_apartment_form" id="add_apartment_form">
+                    <form class="add_apartment_form" id="add_apartment_form" action="http://localhost:8000/api/locations/upload"
+                    method="post" enctype="multipart/form-data">
                       <button type="button" class="add_apartment_form_cancel" id="add_apartment_form_cancel"> Cancel </button>
                         <div class="credentials row">
                           <label for="title">Name:</label>
@@ -180,7 +181,6 @@
         </section>
     </main>
     <script src="index.js" type="module"></script>
-    <script src="./api/addApartment.js"></script>
     <script src="./api/register.js"></script>
 </body>
 </html>
