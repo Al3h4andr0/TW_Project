@@ -4,10 +4,12 @@ import {getLocationWithinBound} from './api/locations.js';
 import map from './map/map.js';
 import Account from './account/account.js';
 import Suggestions from './api/suggestions.js';
+import FilterModal from './modals/filter/filterModal.js'
 
 const side = new Side(document.getElementById('content'));
 const account = new Account(document.getElementById('account'));
 const suggestions = new Suggestions(document.getElementById("searchInput"),document.getElementById("autocomplete-box"), side);
+const filterModal = new FilterModal(document.getElementById("filter-zone"),document.getElementById("filters-modal-toggle"));
 
 function init () {
 
@@ -53,14 +55,10 @@ function init () {
     onMapStateChange();
     onAccountStateChange();
     recommendationsListeners();
+
     suggestions.bindListeners();
+    filterModal.render();
 }
 
-function showModal(id) {
-    switch(id) {
-        case 1:
-
-    }
-}
 
 init();

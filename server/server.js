@@ -28,16 +28,15 @@ const handleFilesRequest = (request, response) => {
 const safeExec = async (fn, request, response) => {
     try {
         await fn(request, response);
+
     } catch (e) {
         console.log(e);
         switch (e.statusCode) // de forma : {statusCode : 400, message : "Bad request"}
         {
-            case undefined: response.writeHead(e.statusCode, { 'Content-Type': 'application/json' });
+            case undefined, "undefined": response.writeHead(500, { 'Content-Type': 'application/json' });
             default:
                 response.writeHead(e.statusCode, { 'Content-Type': 'application/json' });
         }
-
-        response.writeHead(404, { 'Content-Type': 'application/json' });
         response.end(JSON.stringify({ message: e.message }))
     }
 }
@@ -53,11 +52,10 @@ const authorizedSafeExec = async (fn, request, response) => {
     console.log("EXECERROR:" , e);
         switch (e.statusCode) // de forma : {statusCode : 400, message : "Bad request"}
         {
-            case "undefined": response.writeHead(499, { 'Content-Type': 'application/json' });
+            case "undefined",undefined: response.writeHead(499, { 'Content-Type': 'application/json' });
             default:
                 response.writeHead(e.statusCode, { 'Content-Type': 'application/json' });
         }
-        response.writeHead(404, { 'Content-Type': 'application/json' });
         response.end(JSON.stringify({ message: e.message }))
     }
 }

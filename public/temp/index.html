@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,170 +9,319 @@
 
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-    crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-   crossorigin=""></script>
-   
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+
 </head>
+
 <body>
     <nav id="nav_bar">
-        <header>    
-                <div class="logo_search">
-                    <div id="logo">
-                        <span id="logo-E">E<span class="logo-Ma">Ma</span></span>
-                    </div>
-                     <div id="search">
-                        <input type="text" placeholder="Search..." id="searchInput">
-                        <div class = "autocomplete-box" id = "autocomplete-box">
-                        </div>
-                        <!-- ICONS -->
-                        <section class="ui-icons">
-                            <div id="ui-magnifier_black">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="none" viewBox="0 0 30 70">
-                                    <path fill="black" d="m41.61 38.89-7.11-7.054a17.25 17.25 0 1 0-2.664 2.664l7.053 7.053a1.918 1.918 0 0 0 2.722 0 1.917 1.917 0 0 0 0-2.664ZM21.084 34.5a13.416 13.416 0 1 1 0-26.832 13.416 13.416 0 0 1 0 26.832Z"/>
-                                  </svg>
-                            </div>
-                            <div id="ui-magnifier">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="none" viewBox="0 0 46 46">
-                                    <path fill="black" d="m41.61 38.89-7.11-7.054a17.25 17.25 0 1 0-2.664 2.664l7.053 7.053a1.918 1.918 0 0 0 2.722 0 1.917 1.917 0 0 0 0-2.664ZM21.084 34.5a13.416 13.416 0 1 1 0-26.832 13.416 13.416 0 0 1 0 26.832Z"/>
-                                  </svg>
-                            </div>
-                            
-                        </section>
-                        <div class="filters">
-                            <button type="button" onclick="showModal(1)">
-                                <i class="bi bi-toggles2"></i>
-                                <span id="filters_btn_txt">Filter</span>
-                            </button> 
-                        </div>
-                    </div>
-                    
-                    
+        <header>
+            <div class="logo_search">
+                <div id="logo">
+                    <span id="logo-E">E<span class="logo-Ma">Ma</span></span>
                 </div>
-                    <div id="recommendations">
-                        <button type="button" id="brasov_btn" class="recommendations_btn">Brasov</button>
-                        <button type="button" id="iasi_btn" class="recommendations_btn">Iasi</button>
-                        <button type="button" id="bucuresti_btn" class="recommendations_btn">Bucuresti</button>
-                        <button type="button" id="timisoara_btn" class="recommendations_btn">Timisoara</button>
-                     </div>
+                <div id="search">
+                    <input type="text" placeholder="Search..." id="searchInput">
+                    <div class="autocomplete-box" id="autocomplete-box">
+                    </div>
+                    <!-- ICONS -->
+                    <section class="ui-icons">
+                        <div id="ui-magnifier_black">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="none"
+                                viewBox="0 0 30 70">
+                                <path fill="black"
+                                    d="m41.61 38.89-7.11-7.054a17.25 17.25 0 1 0-2.664 2.664l7.053 7.053a1.918 1.918 0 0 0 2.722 0 1.917 1.917 0 0 0 0-2.664ZM21.084 34.5a13.416 13.416 0 1 1 0-26.832 13.416 13.416 0 0 1 0 26.832Z" />
+                            </svg>
+                        </div>
+                        <div id="ui-magnifier">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="none"
+                                viewBox="0 0 46 46">
+                                <path fill="black"
+                                    d="m41.61 38.89-7.11-7.054a17.25 17.25 0 1 0-2.664 2.664l7.053 7.053a1.918 1.918 0 0 0 2.722 0 1.917 1.917 0 0 0 0-2.664ZM21.084 34.5a13.416 13.416 0 1 1 0-26.832 13.416 13.416 0 0 1 0 26.832Z" />
+                            </svg>
+                        </div>
+
+                    </section>
+                    <div class="filters" id="filters">
+                        <button type="button" id="filters-modal-toggle">
+                            <i class="bi bi-toggles2"></i>
+                            <span id="filters_btn_txt">Filter</span>
+                        </button>
+                    </div>
                 </div>
-                
+
+
+            </div>
+            <div id="recommendations">
+                <button type="button" id="brasov_btn" class="recommendations_btn">Brasov</button>
+                <button type="button" id="iasi_btn" class="recommendations_btn">Iasi</button>
+                <button type="button" id="bucuresti_btn" class="recommendations_btn">Bucuresti</button>
+                <button type="button" id="timisoara_btn" class="recommendations_btn">Timisoara</button>
+            </div>
+            </div>
+
         </header>
-        <div>
+        <div id="filter-zone">
             <!-- filter zone here -->
+
+
+            <div id="filters-modal" class="modal open" role="dialog" tabindex="-1">
+                <div class="modal-inner">
+                    <div class="modal-header">
+                        <h3>Filters</h3>
+                        <div><button id="filters-submit">Submit</button>
+                            <button class="modal-close" id="filters-modal-close" aria-label="Close">
+                                &times;
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form class="filters-form" id="filters-form">
+                            <h4>Price:</h4>
+
+                            <label for="price-min" class="price-min-max"> Minimum price: </label>
+                            <input type="number" name="price-min" id="price-min" class="price-min-max" placeholder="Lei"> </input>
+                            <label for="price-max" class="price-min-max"> Maximum price: </label>
+                            <input type="number" name="price-max" id="price-max" class="price-min-max" placeholder="Lei"> </input><br />
+
+
+                            <h4> Date Interval: </h4>
+                            <label for="date_start">Start:</label>
+                            <input type="date" name="date_start" id="date_start" class="date_interval">
+                            <br /><br /><label for="date_start">End:</label>
+                            <input type="date" name="date_end" id="date_end" class="date_interval">
+
+
+                            <h4>Condition:</h4>
+
+                            <input type="checkbox" id="condition-bad" class="condition" name="condition" value = "bad">
+                            <label for="condition"> Bad </label><br />
+                            <input type="checkbox" id="condition-mediocre" class="condition" name="condition" value = "mediocre">
+                            <label for="condition"> Mediocre </label><br />
+                            <input type="checkbox" id="condition-good" class="condition" name="condition" value = "good">
+                            <label for="condition"> Good </label><br />
+                            <input type="checkbox" id="condition-very-good" class="condition" name="condition" value = "very-good">
+                            <label for="condition"> Very good </label><br />
+                            <input type="checkbox" id="condition-perfect" class="condition" name="condition"
+                                value="perfect">
+                            <label for="condition"> Perfect </label><br />
+
+                            <h4>Facilities:</h4>
+
+
+                            <input type="checkbox" class="facilities" value="air-conditioning" name = "facilities">
+                            <label for="condition"> Air Conditioning </label><br />
+                            <input type="checkbox" class="facilities" value="parking" name = "facilities">
+                            <label for="condition"> Parking </label><br />
+                            <input type="checkbox" class="facilities" value="fridge" name = "facilities">
+                            <label for="condition"> Fridge </label><br />
+                            <input type="checkbox" class="facilities" value="microwave" name = "facilities">
+                            <label for="condition"> Microwave </label><br />
+                            <input type="checkbox" class="facilities" value="bath-tub"  name = "facilities">
+                            <label for="condition"> Bath tub </label><br />
+                            <input type="checkbox" class="facilities" value="shop-nearby" name = "facilities" >
+                            <label for="condition"> Shop nearby </label><br />
+
+                            <h4>Surface: </h4>
+
+                            <label for="surface-min" class="surface-min-max"> Minimum surface: </label>
+                            <input type="number" name="surface-min" id="surface-min" class="surface-min-max" placeholder="mp"> </input>
+                            <label for="surface-max" class="surface-max"> Maximum surface: </label>
+                            <input type="number" name="surface-max" id="surface-max"class="surface-min-max" placeholder="mp"> </input><br />
+
+                            <h4> For: </h4>
+
+
+                            <label for="for">Are you selling or is it for renting?</label>
+                            <select name="for" class="for_sale_rent">
+                                <option value="sale">sale</option>
+                                <option value="rent">rent</option>
+                            </select>
+
+
+
+                            <h4> Rating: </h4>
+                            <label for="min-rating" name="min-rating" class = "min-max-rating"> Min. rating: </label>
+                            <select name="min-rating:" id="min-rating" class = "min-max-rating">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select> <br /><br />
+
+
+
+                            <label for="max-rating" name="max-rating" class = "min-max-rating" > Max. rating: </label>
+                            <select name="max-rating:" id="max-rating" class = "min-max-rating">
+                                <option value="5">5</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+
+                            <label for="theft-max" class="theft-max" id="theft-max">
+                                <h4>Maximum thefts per month:</h4>
+                            </label>
+                            <input type="number" name="theft-max" class="theft-max" id="theft-max"> </input><br />
+
+                            <h4>Cost of living</h4>
+
+                            <label for="cost_of_living_min" class="cost_of_living_min_max"> Minimum price: </label>
+                            <input type="number" name="cost_of_living_min" id="cost_of_living_min" class="cost_of_living_min_max" placeholder="Lei">
+                            </input>
+                            <label for="cost_of_living_max" class="cost_of_living_max"> Maximum price: </label>
+                            <input type="number" name="cost_of_living_max" id="cost_of_living_max" class="cost_of_living_min_max" placeholder="Lei">
+                            </input><br />
+
+
+                            <h4>Anual average temperature:</h4>
+
+                            <label for="anual_temp_min" class="anual_temp_min_max"> Minimum temperature: </label>
+                            <input type="number" name="anual_temp_min" id="anual_temp_min"  class="anual_temp_min_max" placeholder="Lei"> </input>
+                            <label for="anual_temp_max" class="anual_temp_max"> Maximum tepmerature: </label>
+                            <input type="number" name="anual_temp_max" id="anual_temp_max"  class="anual_temp_min_max" placeholder="Lei">
+                            </input><br />
+
+
+
+
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
         </div>
+
+
+
+
+
+
+
+
         <div class="account" id="account">
             <button type="button" id="account_btn">Account</button>
             <button type="button" id="register_btn">
                 register
-              </button>
-              <button type="button" id="add_apartment_btn">
+            </button>
+            <button type="button" id="add_apartment_btn">
                 add apartment
-              </button>
-            
-              <div class="login_container_container">
+            </button>
+
+            <div class="login_container_container">
                 <div class="login_form_container" id="login_form_container">
                     <form class="login_form" id="login_form">
-                      <button type="button" class="login_form_cancel" id="login_form_cancel"> Cancel </button>
+                        <button type="button" class="login_form_cancel" id="login_form_cancel"> Cancel </button>
                         <div class="credentials row">
-                          <label for="username_for_login">username:</label>
-                          <input type="text" name="username_for_login" id="username_for_login" placeholder="username..." required="required">
-                          <label for="password_for_login">password:</label>
-                          <input type="text" name="password_for_login" id="password_for_login" placeholder="password..." required="required">
-                     </div>
-                     <button type="button" id="login">login</button>
-                     </form>
+                            <label for="username_for_login">username:</label>
+                            <input type="text" name="username_for_login" id="username_for_login"
+                                placeholder="username..." required="required">
+                            <label for="password_for_login">password:</label>
+                            <input type="text" name="password_for_login" id="password_for_login"
+                                placeholder="password..." required="required">
+                        </div>
+                        <button type="button" id="login">login</button>
+                    </form>
                 </div>
-         </div>
+            </div>
 
             <div class="register_container_container">
                 <div class="register_form_container" id="register_form_container">
                     <form class="register_form" id="register_form">
-                      <button type="button" class="register_form_cancel" id="register_form_cancel"> Cancel </button>
+                        <button type="button" class="register_form_cancel" id="register_form_cancel"> Cancel </button>
                         <div class="credentials row">
-                          <label for="username">username:</label>
-                          <input type="text" name="username" id="username" placeholder="username" required="required">
-                          <label for="password">password:</label>
-                          <input type="text" name="password" id="password" placeholder="password" required="required">
-                     </div>
-                     <button type="button" id="register">register</button>
-                     </form>
+                            <label for="username">username:</label>
+                            <input type="text" name="username" id="username" placeholder="username" required="required">
+                            <label for="password">password:</label>
+                            <input type="text" name="password" id="password" placeholder="password" required="required">
+                        </div>
+
+                        <button type="button" id="register">register</button>
+                    </form>
                 </div>
-         </div>
+            </div>
 
-               
-                <div class="add_apartment_form_container hidden" id="add_apartment_form_container">
-                    <form class="add_apartment_form" id="add_apartment_form" action="http://localhost:8000/api/locations/upload"
-                    method="post" enctype="multipart/form-data">
-                      <button type="button" class="add_apartment_form_cancel" id="add_apartment_form_cancel"> Cancel </button>
-                        <div class="credentials row">
-                          <label for="title">Name:</label>
-                          <input type="text" id="title" name="name" placeholder="Name" required="required">
 
-                          <label for="images">Images</label>
-                          <input type="file" id="images" name="images" required="required" multiple="multiple">
+            <div class="add_apartment_form_container hidden" id="add_apartment_form_container">
+                <form class="add_apartment_form" id="add_apartment_form"
+                    action="http://localhost:8000/api/locations/upload" method="post" enctype="multipart/form-data">
+                    <button type="button" class="add_apartment_form_cancel" id="add_apartment_form_cancel"> Cancel
+                    </button>
+                    <div class="credentials row">
+                        <label for="title">Name:</label>
+                        <input type="text" id="title" name="name" placeholder="Name" required="required">
 
-                          <label for="address">Address:</label>
-                          <input type="text" id="address" name="address" placeholder="Address" required="required">
-                          
-                          <label for="for">Are you selling or is it for renting?</label>
-                          <select name="for" id="for" form="add_apartment_form">
-                              <option value="sale">sale</option>
-                              <option value="rent">rent</option>
-                          </select>
+                        <label for="images">Images</label>
+                        <input type="file" id="images" name="images" required="required" multiple="multiple">
 
-                          <label for="condition">Condition:</label>
-                          <select name="condition" id="condition" form="add_apartment_form">
-                              <option value="bad">bad</option>
-                              <option value="mediocre">mediocre</option>
-                              <option value="good">good</option>
-                              <option value="very good">very good</option>
-                              <option value="perfect">perfect</option>
-                          </select>
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" placeholder="Address" required="required">
 
-                          <label for="price">Price/Night:</label>
-                          <input type="text" id="price" name="price" placeholder="Price">
+                        <label for="for">Are you selling or is it for renting?</label>
+                        <select name="for" id="for" form="add_apartment_form">
+                            <option value="sale">sale</option>
+                            <option value="rent">rent</option>
+                        </select>
 
-                          <label for="description">Description:</label>
-                          <textarea name="description" id="description" name="description" cols="30" rows="10" placeholder="Description" required="required"></textarea>
+                        <label for="condition">Condition:</label>
+                        <select name="condition" id="condition" form="add_apartment_form">
+                            <option value="bad">bad</option>
+                            <option value="mediocre">mediocre</option>
+                            <option value="good">good</option>
+                            <option value="very good">very good</option>
+                            <option value="perfect">perfect</option>
+                        </select>
 
-                          <label for="mp">Surface(in MP):</label>
-                          <input type="text" id="mp"  name ="mp" placeholder="mp">
-                          
-                          <label for="facilities">Facilities:</label>
-                          <fieldset>
-                            <input type="checkbox" id="f1" value="air-conditioning" class = "facilities"> 
-                               <label for="f1">air-conditioning</label> </br>
-                            <input type="checkbox" id="f2" value="parking"  class = "facilities">
-                               <label for="f2">parking</label> </br>
-                            <input type="checkbox" id="f3" value="fridge"  class = "facilities">
-                               <label for="f3">fridge</label> </br>
-                            <input type="checkbox" id="f4" value="microwave"  class = "facilities">
-                               <label for="f4">microwave</label> </br>
-                            <input type="checkbox" id="f5" value="shop nearby"  class = "facilities">
-                               <label for="f5">shop nearby</label> </br>
-                          </fieldset>
-                          
-                          
-                          <label for="phone">Phone number for contanct:</label>
-                          <input type="text" id="phone" placeholder="Phone" required="required">
+                        <label for="price">Price/Night:</label>
+                        <input type="text" id="price" name="price" placeholder="Price">
 
-                          <label for="website">Website</label>
-                          <input type="text" id="website" placeholder="Website">
-                     </div>
-                     <input type="submit" value="Add Apartment" >
-                     </form>
-                </div>
+                        <label for="description">Description:</label>
+                        <textarea name="description" id="description" name="description" cols="30" rows="10"
+                            placeholder="Description" required="required"></textarea>
 
-         
+                        <label for="mp">Surface(in MP):</label>
+                        <input type="text" id="mp" name="mp" placeholder="mp">
+
+                        <label for="facilities">Facilities:</label>
+                        <fieldset>
+                            <input type="checkbox" id="f1" value="air-conditioning" class="facilities">
+                            <label for="f1">air-conditioning</label> </br>
+                            <input type="checkbox" id="f2" value="parking" class="facilities">
+                            <label for="f2">parking</label> </br>
+                            <input type="checkbox" id="f3" value="fridge" class="facilities">
+                            <label for="f3">fridge</label> </br>
+                            <input type="checkbox" id="f4" value="microwave" class="facilities">
+                            <label for="f4">microwave</label> </br>
+                            <input type="checkbox" id="f5" value="shop nearby" class="facilities">
+                            <label for="f5">shop nearby</label> </br>
+                        </fieldset>
+
+
+                        <label for="phone">Phone number for contanct:</label>
+                        <input type="text" id="phone" placeholder="Phone" required="required">
+
+                        <label for="website">Website</label>
+                        <input type="text" id="website" placeholder="Website">
+                    </div>
+                    <input type="submit" value="Add Apartment">
+                </form>
+            </div>
+
+
         </div>
-       
+
     </nav>
     <main>
         <section id="content">
-            
+
         </section>
         <section id="map">
             <div id="map-controller">
@@ -185,4 +335,5 @@
     <script src="index.js" type="module"></script>
     <script src="./api/register.js"></script>
 </body>
+
 </html>

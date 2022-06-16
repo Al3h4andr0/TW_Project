@@ -45,9 +45,8 @@ export default class Suggestions{
      
         
         var locations =await fetch((rootAPIGetLocation + "/?ids=" + listOfIds), {method: 'GET'})
-        locations = await locations.json();
+        // locations = await locations.json();
         console.log("LOCATIONS AFTER ENTER: ", locations);}
-        this.side.renderLocations(locations);
         //now they hould be rendered but idk how
     });
 

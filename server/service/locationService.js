@@ -257,7 +257,7 @@ const checkIfLocationValid = (location, filtersMap) => {
                 else if (location.anualTemp > anualTempMax)
                     return false;
                 break;
-            case 'date-interval':
+            case 'date_interval':
                 //values = "2022/02/23-2022/03/01"
                 if (filtersMap.for !== "rent") {
                     raiseError("date-interval specified but the location is not for renting");
