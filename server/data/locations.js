@@ -95,8 +95,8 @@ const locations = [
         id: 3,
         ownerId: 1,
         position: {
-            lat: 47.157214,
-            lng: 27.586982
+            lat: 47.857214,
+            lng: 27.386982
         },
         title: 'Palatul Vietii',
         imgSrc: 'https://palatulculturii.ro/web/img/og_image.jpg',
@@ -138,8 +138,8 @@ const locations = [
         id: 4,
         ownerId: 1,
         position: {
-            lat: 47.157214,
-            lng: 27.586982
+            lat: 47.159214,
+            lng: 27.589982
         },
         title: 'Palatul Nostru',
         imgSrc: 'https://palatulculturii.ro/web/img/og_image.jpg',
@@ -181,8 +181,8 @@ const locations = [
         id: 5,
         ownerId: 1,
         position: {
-            lat: 47.157214,
-            lng: 27.586982
+            lat: 47.158214,
+            lng: 27.581982
         },
         title: 'Palatul TW',
         imgSrc: 'https://palatulculturii.ro/web/img/og_image.jpg',
