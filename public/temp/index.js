@@ -6,6 +6,7 @@ import Account from './account/account.js';
 import Suggestions from './api/suggestions.js';
 import FilterModal from './modals/filter/filterModal.js'
 
+
 const side = new Side(document.getElementById('content'));
 const account = new Account(document.getElementById('account'));
 const suggestions = new Suggestions(document.getElementById("searchInput"),document.getElementById("autocomplete-box"), side);

@@ -205,6 +205,16 @@
     box-shadow: 0 2px 5px 0 grey;
     padding: 0 10px;
   }
+  .add_apartment_form input[type="number"]{
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 0 2px 5px 0 grey;
+    padding: 0 10px;
+    width: 20%;
+  }
   .add_apartment_form #description{
    
     margin-top: 10px;
