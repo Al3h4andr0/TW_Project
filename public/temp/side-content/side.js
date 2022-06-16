@@ -83,10 +83,10 @@ export default class Side {
 
     renderLocations(locations) {
         let res = '';
-
+        console.log(locations);
         for (let location of locations) {
             res += `
-            <div class="location">
+            <div class="location" id="location${location.id}">
                 <div class="locationImage">
                     <img src='${location.imgSrc}' alt='${location.imgAlt}'>
                 <div/>
@@ -199,6 +199,7 @@ export default class Side {
         if (locationsToRender.length) {
             let locationsInView = this.renderLocations(locationsToRender);
             this.rootElement.insertAdjacentHTML('beforeend', `${locationsInView}`);
+            
         }
     }
 

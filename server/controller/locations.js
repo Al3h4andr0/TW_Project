@@ -1,12 +1,17 @@
+
 const url = require('url');
  const fs = require('fs');
  var formidable = require('formidable');
 // var multiparty = require('multiparty');
 const allLocations = require('../data/locations');
 const { getRequestData, getFormRequestData } = require('../utils/utils');
+const LocationsService = require('../service/locationService');
 const LocationService = new (require('../service/locationService'))();
 const authenticationService = new (require('../controller/authentication'))();
 const notFound = (id) => ({ statusCode: 404,message: `Location with id ${id} not found` });
+
+
+
 
 class LocationsControler {
     getLocationsWithinBound(geoLocation) {
@@ -127,7 +132,7 @@ class LocationsControler {
     }
 
     async uploadTest(request,response){
-    const body = await getRequestData(request);
+    //const body = await getRequestData(request);
     // TODOs
          /*  am incercat cu diferite librarii, nu face niciuna ce trebuie sa faca.
              Din body-u asta raw ar trebui sa-mi apara toate datele din formular intr-un map, iar fisierele (pozele)
@@ -138,13 +143,73 @@ class LocationsControler {
 
 
                 let form= new formidable.IncomingForm();
-                form.parse(request,function(error,fields,file) {
+                form.parse(request,async function(error,fields,file) {
                    console.log(fields);
                    let filepath=file.images.filepath;
-                   let newpath='C:/UPLOAD_TEST/';
+                   let newpath='../\public\/temp/\images/';
                    newpath+=file.images.originalFilename;
                    fs.rename(filepath,newpath,function(){
                    });
+                   let fac=[];
+                   newpath='.\/images/';
+                   newpath+=file.images.originalFilename;
+                   if(fields.facilities1!=null)  
+                   {
+                    fac.push(fields.facilities1);
+                   }
+                   if(fields.facilities2!=null)  
+                   {
+                    fac.push(fields.facilities2);
+                   }
+                   if(fields.facilities3!=null)  
+                   {
+                    fac.push(fields.facilities3);
+                   }
+                   if(fields.facilities4!=null)  
+                   {
+                    fac.push(fields.facilities4);
+                   }
+                   if(fields.facilities5!=null)  
+                   {
+                    fac.push(fields.facilities5);
+                   }
+                   
+
+                   let location={
+                    id:7,
+                    ownerId:1,
+                    position:{
+                        lat:22,
+                        lng:22
+                    },
+                    title:fields.name,
+                    imgSrc:newpath,
+                    imagAlt:fields.name,
+                    address:fields.address,
+                    price:fields.price,
+                    condition:fields.condition,
+                    overview:{
+                        description:fields.description,
+                        facilities:fac,
+                        surface:fields.mp,
+                        for:fields.for,
+                        dates:[]
+                    },
+                    reviews:[],
+                    contact:{
+                        website:{
+                            key:fields.website,
+                            http:fields.website
+                        },
+                        phoneNumber:fields.phone
+                    },
+                    theft:fields.theft,
+                    costOfliving:fields.costOfLiving,
+                    anualTemp:fields.anualTemp
+                   }
+                   
+                  let new_location = await LocationService.createLocation(location);
+                   console.log(new_location);
                 });
 
 

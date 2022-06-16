@@ -24,8 +24,7 @@ export default class Suggestions{
     this.inputElement.addEventListener('input',async (_) => {
         const keyword = this.inputElement.value;
         if(keyword.length == 0)
-               this.renderSuggestionsElement(null); //empty div
-    
+         {this.suggestionsElement.innerHTML=''; return;}
         if(keyword.length == 3)
             this.suggestions = await this.fetchSuggestions(this.inputElement.value);
         else
@@ -46,8 +45,8 @@ export default class Suggestions{
         
         var locations =await fetch((rootAPIGetLocation + "/?ids=" + listOfIds), {method: 'GET'})
         locations = await locations.json();
-        console.log("LOCATIONS AFTER ENTER: ", locations);}
-        this.side.renderLocations(locations);
+        //console.log("LOCATIONS AFTER ENTER: ", locations);
+        this.side.render(locations);}
         //now they hould be rendered but idk how
     });
 

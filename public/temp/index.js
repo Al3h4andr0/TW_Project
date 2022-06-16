@@ -5,6 +5,7 @@ import map from './map/map.js';
 import Account from './account/account.js';
 import Suggestions from './api/suggestions.js';
 
+
 const side = new Side(document.getElementById('content'));
 const account = new Account(document.getElementById('account'));
 const suggestions = new Suggestions(document.getElementById("searchInput"),document.getElementById("autocomplete-box"), side);
