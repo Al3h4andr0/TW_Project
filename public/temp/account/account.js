@@ -1,5 +1,5 @@
 
-import {startLogIn, toggleRegisterFormOn , toggleRegisterFormOff, toggleLoginFormOn, toggleLoginFormOff, toggleAddApartmentFormOff, toggleAddApartmentFormOn } from "./toggleForms.js";
+import {toggleRegisterFormOn , toggleRegisterFormOff, toggleLoginFormOn, toggleLoginFormOff, toggleAddApartmentFormOff, toggleAddApartmentFormOn } from "./toggleForms.js";
 
 export default class Account{
     constructor(rootElement) {
@@ -16,12 +16,10 @@ export default class Account{
          element2.addEventListener("click",toggleRegisterFormOff);
     }
     async addLoginListener(){
-        const element = document.getElementById("account_btn");
+        const element = document.getElementById("login_btn");
         element.addEventListener('click', toggleLoginFormOn);
          const element2=document.getElementById('login_form_cancel');
          element2.addEventListener("click",toggleLoginFormOff);
-         const element3 = document.getElementById('login');
-         element3.addEventListener("click", startLogIn);
 }
     async addAddApartmentListener(){
         const element = document.getElementById("add_apartment_btn");
