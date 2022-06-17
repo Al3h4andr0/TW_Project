@@ -203,6 +203,12 @@ export default class Side {
         }
     }
 
+    
+  async renderAndReplace(locations){
+    this.rootElement.innerHTML = "";
+    this.render(locations);
+    }
+
     async addListener(locations)
     {
         for(let location of locations)

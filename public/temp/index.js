@@ -10,7 +10,7 @@ import FilterModal from './modals/filter/filterModal.js'
 const side = new Side(document.getElementById('content'));
 const account = new Account(document.getElementById('account'));
 const suggestions = new Suggestions(document.getElementById("searchInput"),document.getElementById("autocomplete-box"), side);
-const filterModal = new FilterModal(document.getElementById("filter-zone"),document.getElementById("filters-modal-toggle"));
+const filterModal = new FilterModal(document.getElementById("filter-zone"),document.getElementById("filters-modal-toggle"),side);
 
 function init () {
 
