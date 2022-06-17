@@ -107,6 +107,19 @@ border-radius:3px;
  justify-content: center;
  text-align: center;
 }
+#filters-modal-toggle{
+    color: white;
+    height: 50px;
+    width: 50px;
+    background: #8d0808;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: solid;
+    border-width: 2px;
+}
 @media only screen and (max-width: 550px) {
   .logo_search{
     padding-top: 10px;
@@ -152,6 +165,11 @@ border-radius:3px;
    #search .autocomplete-box{
     display:none;
    }
+   #filters-modal-toggle{
+    padding-top: 0;
+    height: 40px;
+    width: 40px;
+   }
 }
 @media only screen and (max-width: 300px) {
   .filters>button{
@@ -160,5 +178,7 @@ border-radius:3px;
    #filters_btn_txt{
     display: none;
    }
-  
+   #filters-modal-toggle{
+    width: 30px;
+   }
  }
