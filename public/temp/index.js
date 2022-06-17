@@ -9,17 +9,18 @@ import FilterModal from './modals/filter/filterModal.js'
 
 const side = new Side(document.getElementById('content'));
 const account = new Account(document.getElementById('account'));
-const suggestions = new Suggestions(document.getElementById("searchInput"),document.getElementById("autocomplete-box"), side);
-const filterModal = new FilterModal(document.getElementById("filter-zone"),document.getElementById("filters-modal-toggle"),side);
+const suggestions = new Suggestions(document.getElementById("searchInput"),document.getElementById("autocomplete-box"), side,Map);
+const filterModal = new FilterModal(document.getElementById("filter-zone"),document.getElementById("filters-modal-toggle"),side,Map);
 
 function init () {
 
     async function onMapStateChange() {
         const bound = Map.getLocation();
         const locations = (await getLocationWithinBound(bound)).locations;
-        Map.renderPins(locations);
-        side.render(locations);
-        side.addListener(locations);
+        
+        //Map.renderPins(locations);
+        //side.render(locations);
+        //side.addListener(locations);
     }
      
    async function onAccountStateChange()

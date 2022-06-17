@@ -11,7 +11,7 @@ const locations = [
         imgAlt: 'Palatul culturii',
         address: 'Bulevardul Ștefan cel Mare și Sfânt 1, Iași 700028',
         price: 15,
-        condition: 'good',
+        condition: 'mediocre',
         overview: {
             description: '365-roomed complex built between 1906 & 1925 to house government offices, now housing 4 museums.',
             facilities: [ "air-conditioning", "fridge", "bath-tub"],
@@ -146,7 +146,7 @@ const locations = [
         imgAlt: 'Palatul culturii',
         address: 'Bulevardul Ștefan cel Mare și Sfânt 1, Iași 700028',
         price: 15,
-        condition: 'good',
+        condition: 'bad',
         overview: {
             description: '365-roomed complex built between 1906 & 1925 to house government offices, now housing 4 museums.',
             facilities: [ "air-conditioning", "fridge", "bath-tub"],

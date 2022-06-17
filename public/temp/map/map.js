@@ -11,6 +11,7 @@ class Map {
             });
             this.locationsIds = [];
             this.markers = [];
+            
     }
 
     onMapClick(cb) {
@@ -45,15 +46,19 @@ class Map {
     }
 
     renderPins(locations) {
+        for(var i = 0; i < this.markers.length; i++){
+            this.map.removeLayer(this.markers[i]);
+        }
         for(let location of locations) {
-            if (!this.locationsIds.includes(location.id)) {
+           
+                console.log("location to add marker",location)
                 this.locationsIds.push(location.id);
                 let marker = L.marker([location.position.lat, location.position.lng]).addTo(this.map);
                 marker.bindPopup(this.renderPrettyPopupDescription(location));
-            }
+                this.markers.push(marker);
+            
         }
     }
-
     init() {
         this.leafletLayer.addTo(this.map)
     }

@@ -3,7 +3,7 @@ const rootAPI = "http://localhost:8000/api/locations/search"
 const rootAPIGetLocation = "http://localhost:8000/api/locations"
 
 export default class Suggestions{
-    constructor(inputElement,suggestionsElement, side){
+    constructor(inputElement,suggestionsElement, side,Map){
         if (!inputElement || !suggestionsElement) {
             throw 'inputElement,suggestionsElemen required so we know where we render the things';
         }
@@ -11,6 +11,7 @@ export default class Suggestions{
         this.suggestionsElement = suggestionsElement;
         this.suggestions = [];
         this.side = side;
+        this.Map=Map;
     }
 
     async fetchSuggestions(keyword){
@@ -46,7 +47,9 @@ export default class Suggestions{
         var locations =await fetch((rootAPIGetLocation + "/?ids=" + listOfIds), {method: 'GET'})
         locations = await locations.json();
         //console.log("LOCATIONS AFTER ENTER: ", locations);
-        this.side.render(locations);}
+        this.side.renderAndReplace(locations);
+        this.Map.renderPins(locations);
+        this.side.addListener(locations);}
         //now they hould be rendered but idk how
     });
 

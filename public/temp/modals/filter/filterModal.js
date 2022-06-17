@@ -1,13 +1,14 @@
 const rootAPI = "http://localhost:8000/api/locations/filter";
 
 export default class FilterModal {
-  constructor(rootElement, triggerElement, side) {
+  constructor(rootElement, triggerElement, side,Map) {
     if (!rootElement || !triggerElement)
       throw 'rootElement/triggerElement required so we know where we render the things and what button should the user press in order to pop the modal';
 
     this.rootElement = rootElement;
     this.triggerElement = triggerElement;
     this.side = side;
+    this.Map=Map
   }
 
 
@@ -16,6 +17,8 @@ export default class FilterModal {
     this.rootElement.insertAdjacentHTML('beforeend', `${modalTemplate}`);
     this.modal = document.getElementById("filters-modal");
     this.addListenersToElements();
+
+   
   }
 
 
@@ -186,6 +189,8 @@ export default class FilterModal {
       console.log("RESPONSE: ", locations);
 
       this.side.renderAndReplace(locations);
+      this.Map.renderPins(locations);
+      this.side.addListener(locations);
     })
 
     //
