@@ -1,4 +1,6 @@
-
+.header{
+  width: 0;
+}
 .logo_search{
   padding-top: 20px;
   display: flex;
@@ -135,6 +137,8 @@ border-radius:3px;
    }
    .recommendations_btn{
    font-size: 15px;
+   letter-spacing: 0;
+   padding: 3px;
    }
    #search input{
     padding-left: 5px;

@@ -69,4 +69,15 @@ var body = document.querySelector('body');
 
 
 
+export function toggleAccountButtons(){
+  var divElement=document.getElementById('account_buttons');
+
+  if (divElement.classList.contains("expanded_acc"))
+ { divElement.classList.remove("expanded_acc"); divElement.classList.add("hidden");}
+ 
+  else
+ if (divElement.classList.contains("hidden"))
+ { divElement.classList.remove("hidden"); divElement.classList.add("expanded_acc");}
+ 
+}
 document.getElementById('login').addEventListener("click",login);

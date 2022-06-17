@@ -59,6 +59,7 @@ function init () {
 
     suggestions.bindListeners();
     filterModal.render();
+    account.addAccountListener();
 }
 
 

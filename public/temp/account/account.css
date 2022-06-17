@@ -3,14 +3,76 @@
     justify-content: space-between;
 }
 .account{
-    width: 30%;
     padding-top: 20px;
+    direction: rtl;
+    padding-top: 20px;
+    padding-right: 35px;
+}
+.login_container_container{
+  direction: ltr;
+ 
+}
+.register_container_container{
+  direction: ltr;
+ 
+}
+.add_apartment_form_container{
+  direction: ltr;
+
 }
 .login_form_container_container{
   display:flex;
   justify-content: center;
 }
+#account_buttons{
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #F4ECE6;
+  border-radius: 7px;
+  border: none;
+}
+.expanded_acc{
+  display: flex;
+}
+.acc_btn{
+  margin: 10px;
+  height: 40px;
+  width: 150px;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0 2px 5px 0 grey;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.07em;
+  color: rgba(8, 8, 8, 0.65);
+  
+ } 
 
+#acc{
+  height: 40px;
+  width: 40px;
+  padding-top: 0;
+}
+#my_account{
+  direction: ltr;
+font-family: 'Poppins';
+font-style: normal;
+font-weight:bold;
+font-size: 20px;
+line-height: 36px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.07em;
+color: rgba(8, 8, 8, 0.65);
+height: 40px;
+}
 .register_form_container_container{
   display: flex;
   justify-content: center;
@@ -255,23 +317,27 @@
       width: 80%;
     }
   }
-  @media only screen and (max-width: 700px) {
-    #register_btn{display: none;}
-    #login_btn{display:none;}
-    #add_apartment_btn{display: none;}
-    #login_btn{position: fixed; right: 10px;}
-  }
+  
   @media only screen and (max-width: 550px) {
     .account{
-      padding-top: 10px;
+      padding-top: 7px;
+      padding-right: 10px;
   }
   }
   @media only screen and (max-width: 450px) {
     .register_form_container {
       width: 100%;
+      top:0;
     }
     .login_form_container{
       width: 100%;
+      top:0;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    #account_buttons{
+      position: fixed;
+      right: 0;
     }
   }
   .add_apartment_form input[type="submit"] {
