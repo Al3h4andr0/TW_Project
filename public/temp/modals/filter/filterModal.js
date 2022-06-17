@@ -23,7 +23,7 @@ export default class FilterModal {
 
 
   renderModal() {
-    return `  <div id="filters-modal" class="modal open" role="dialog" tabindex="-1">
+    return `  <div id="filters-modal" class="modal" role="dialog" tabindex="-1">
     <div class="modal-inner">
         <div class="modal-header">
             <h3>Filters</h3>

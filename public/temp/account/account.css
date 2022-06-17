@@ -32,6 +32,22 @@
   border-radius: 7px;
   border: none;
 }
+#not_logged_in_buttons{
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #F4ECE6;
+  border-radius: 7px;
+  border: none;
+}
+#logged_in_buttons{
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #F4ECE6;
+  border-radius: 7px;
+  border: none;
+}
 .expanded_acc{
   display: flex;
 }
@@ -336,6 +352,14 @@ height: 40px;
   }
   @media only screen and (max-width: 600px) {
     #account_buttons{
+      position: fixed;
+      right: 0;
+    }
+    #not_logged_in_buttons{
+      position: fixed;
+      right: 0;
+    }
+    #logged_in_buttons{
       position: fixed;
       right: 0;
     }

@@ -80,4 +80,4 @@ export function toggleAccountButtons(){
  { divElement.classList.remove("hidden"); divElement.classList.add("expanded_acc");}
  
 }
-document.getElementById('login').addEventListener("click",login);
+

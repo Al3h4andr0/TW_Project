@@ -1,5 +1,4 @@
 export function toggleRentFormOn(element) {
-    
         var divElement = document.getElementById('rent_form_container'+element.currentTarget.param);
         if(element.currentTarget.for=="rent"){
         if (divElement.classList.contains("hidden")) 
@@ -14,7 +13,6 @@ export function toggleRentFormOn(element) {
 }
 
 export function toggleRentFormOff(element) {
-
     var divElement = document.getElementById('rent_form_container'+element.currentTarget.param);
     if (divElement.classList.contains("expanded"))
      { divElement.classList.remove("expanded"); }
