@@ -79,9 +79,10 @@
   justify-content: space-around;
 }
 .locationTags>p{
+  color:white;
   height: 35px;
   width: 170px;
-  background: #DA4545;
+  background: #8d0808;
   border-radius: 7px;
   display: flex;
   justify-content: center;
@@ -187,7 +188,7 @@
  text-transform: uppercase;
 }
 #locationForSale{
-  color:#DA4545;
+  color:#8d0808;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -230,7 +231,7 @@
   height: 40px;
   width: 100px;
   border-radius: 7px;
-  background: #DA4545;
+  background: #8d0808;
   display: flex;
   justify-content: center;
   font-family: 'Poppins';
