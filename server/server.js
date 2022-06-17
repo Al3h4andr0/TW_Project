@@ -33,7 +33,7 @@ const safeExec = async (fn, request, response) => {
         console.log(e);
         switch (e.statusCode) // de forma : {statusCode : 400, message : "Bad request"}
         {
-            case undefined, "undefined": response.writeHead(500, { 'Content-Type': 'application/json' });
+            case undefined: response.writeHead(499, { 'Content-Type': 'application/json' });
             default:
                 response.writeHead(e.statusCode, { 'Content-Type': 'application/json' });
         }
@@ -106,6 +106,8 @@ async function requestListener(request, response) {
         authorizedSafeExec(LocationController.getLocationsOwnedByUser, request, response);}
     else if (request.url.match(/\api\/login/) && request.method === POST) {
         safeExec(authenticationController.validateUser, request, response);}
+ else if (request.url.match(/\api\/ping/) && request.method === GET) {
+         safeExec(authenticationController.getPayloadFromCookie, request, response);}
     else if (request.url.match(/\api\/register/) && request.method === POST) {
         safeExec(authenticationController.addUser, request, response);
     }else if (request.url.match(/\api\/logout/) && request.method === POST) {

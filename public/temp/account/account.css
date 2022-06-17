@@ -43,6 +43,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  vertical-align: top;
 }
 
 .register_form {
@@ -256,7 +257,7 @@
   }
   @media only screen and (max-width: 700px) {
     #register_btn{display: none;}
-    #login_btn{display:flex;}
+    #login_btn{display:none;}
     #add_apartment_btn{display: none;}
     #account_btn{position: fixed; right: 10px;}
   }
