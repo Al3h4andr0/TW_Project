@@ -15,7 +15,11 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
         integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
         crossorigin=""></script>
+    <!-- geosearch -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css" />
 
+    <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
+    <!--  -->
 </head>
 
 <body>
@@ -79,123 +83,131 @@
 
         <div class="account" id="account">
             <div id="hello"></div>
-            <svg id='acc' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z"></path> <path d="M3 4.995C3 3.893 3.893 3 4.995 3h14.01C20.107 3 21 3.893 21 4.995v14.01A1.995 1.995 0 0 1 19.005 21H4.995A1.995 1.995 0 0 1 3 19.005V4.995zM5 5v14h14V5H5zm2.972 13.18a9.983 9.983 0 0 1-1.751-.978A6.994 6.994 0 0 1 12.102 14c2.4 0 4.517 1.207 5.778 3.047a9.995 9.995 0 0 1-1.724 1.025A4.993 4.993 0 0 0 12.102 16c-1.715 0-3.23.864-4.13 2.18zM12 13a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7zm0-2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path> </g> </svg>
-             
+            <svg id='acc' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                        d="M3 4.995C3 3.893 3.893 3 4.995 3h14.01C20.107 3 21 3.893 21 4.995v14.01A1.995 1.995 0 0 1 19.005 21H4.995A1.995 1.995 0 0 1 3 19.005V4.995zM5 5v14h14V5H5zm2.972 13.18a9.983 9.983 0 0 1-1.751-.978A6.994 6.994 0 0 1 12.102 14c2.4 0 4.517 1.207 5.778 3.047a9.995 9.995 0 0 1-1.724 1.025A4.993 4.993 0 0 0 12.102 16c-1.715 0-3.23.864-4.13 2.18zM12 13a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7zm0-2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                    </path>
+                </g>
+            </svg>
+
             <div id="account_buttons" class="hidden">
-                <div id="not_logged_in_buttons" class="not_logged_in_buttons expanded_acc"> 
-                <button type="button" id="login_btn" class="acc_btn">Login</button>
-                <button type="button" id="register_btn" class="acc_btn">
-                    Register
-                </button>
+                <div id="not_logged_in_buttons" class="not_logged_in_buttons expanded_acc">
+                    <button type="button" id="login_btn" class="acc_btn">Login</button>
+                    <button type="button" id="register_btn" class="acc_btn">
+                        Register
+                    </button>
                 </div>
                 <div id="logged_in_buttons" class="logged_in_buttons hidden">
-                <button type="button" id="add_apartment_btn" class="acc_btn">
-                    Add apartment
-                </button>
-                <button type="button" id="logout_btn" class="acc_btn" onclick="logout()"> Logout</button>
-                <button type="button" id="myApartments_btn" class="acc_btn">My estates</button>
-                </div>
-            </div>
-         </div>
-
-              <div class="login_container_container" style="position: fixed; vertical-align: top;">
-                <div class="login_form_container" id="login_form_container">
-                    <form class="login_form" id="login_form">
-                      <button type="button" class="login_form_cancel" id="login_form_cancel"> Cancel </button>
-                    
-                        <div class="credentials row">
-                          <label for="username_for_login">username:</label>
-                          <input type="text" name="username_for_login" id="username_for_login" placeholder="username..." required="required">
-                          <label for="password_for_login">password:</label>
-                          <input type="text" name="password_for_login" id="password_for_login" placeholder="password..." required="required">
-                     </div>
-                     <button type="button" id="login" action="login()">login</button>
-                     </form>
-                </div>
-            </div>
-
-            <div class="register_container_container">
-                <div class="register_form_container" id="register_form_container">
-                    <form class="register_form" id="register_form">
-                        <button type="button" class="register_form_cancel" id="register_form_cancel"> Cancel </button>
-                        <div class="credentials row">
-                            <label for="username">username:</label>
-                            <input type="text" name="username" id="username" placeholder="username" required="required">
-                            <label for="password">password:</label>
-                            <input type="text" name="password" id="password" placeholder="password" required="required">
-                        </div>
-
-                        <button type="button" id="register">register</button>
-                    </form>
-                </div>
-            </div>
-
-
-            <div class="add_apartment_form_container hidden" id="add_apartment_form_container">
-                <form class="add_apartment_form" id="add_apartment_form"
-                    action="http://localhost:8000/api/locations/upload" method="post" enctype="multipart/form-data">
-                    <button type="button" class="add_apartment_form_cancel" id="add_apartment_form_cancel"> Cancel
+                    <button type="button" id="add_apartment_btn" class="acc_btn">
+                        Add apartment
                     </button>
-                    <div class="credentials row">
-                        <label for="title">Name:</label>
-                        <input type="text" id="title" name="name" placeholder="Name" required="required">
-
-                        <label for="images">Images</label>
-                        <input type="file" id="images" name="images" required="required" multiple="multiple">
-
-                        <label for="address">Address:</label>
-                        <input type="text" id="address" name="address" placeholder="Address" required="required">
-
-                        <label for="for">Are you selling or is it for renting?</label>
-                        <select name="for" id="for" form="add_apartment_form">
-                            <option value="sale">sale</option>
-                            <option value="rent">rent</option>
-                        </select>
-
-                        <label for="condition">Condition:</label>
-                        <select name="condition" id="condition" form="add_apartment_form">
-                            <option value="bad">bad</option>
-                            <option value="mediocre">mediocre</option>
-                            <option value="good">good</option>
-                            <option value="very good">very good</option>
-                            <option value="perfect">perfect</option>
-                        </select>
-
-                          <label for="mp">Surface(in MP):</label>
-                          <input type="text" id="mp"  name ="mp" placeholder="mp">
-                          
-                          <label for="facilities">Facilities:</label>
-                          <fieldset>
-                            <input type="checkbox" id="f1" value="air-conditioning" class = "facilities" name="facilities1"> 
-                               <label for="f1">air-conditioning</label> </br>
-                            <input type="checkbox" id="f2" value="parking"  class = "facilities" name="facilities2">
-                               <label for="f2">parking</label> </br>
-                            <input type="checkbox" id="f3" value="fridge"  class = "facilities" name="facilities3">
-                               <label for="f3">fridge</label> </br>
-                            <input type="checkbox" id="f4" value="microwave"  class = "facilities" name="facilities4">
-                               <label for="f4">microwave</label> </br>
-                            <input type="checkbox" id="f5" value="shop nearby"  class = "facilities" name="facilities5">
-                               <label for="f5">shop nearby</label> </br>
-                          </fieldset>
-
-                           <label for="theft">Theft rate/month:</label>
-                           <input type="number" name="theft" min="0" max="10" id="theft">
-                            
-                           <label for="costOfLiving">Cost of living/month in $:</label>
-                           <input type="number" name="costOfLiving" min="20" max="3000" id="costOfLiving">
-
-                           <label for="anualTemp">Anual temperature in the area:</label>
-                           <input type="number" name="anualTemp" min="-40" max="60" id="anualTemp">
-
-                          <label for="phone">Phone number for contanct:</label>
-                          <input type="text" id="phone" placeholder="Phone" required="required" name="phone">
-
-                          <label for="website">Website:</label>
-                          <input type="text" id="website" placeholder="Website" name="website">
-                     </div>
-                     <input type="submit" value="Add Apartment" >
-                     </form>
+                    <button type="button" id="logout_btn" class="acc_btn" onclick="logout()"> Logout</button>
+                    <button type="button" id="myApartments_btn" class="acc_btn">My estates</button>
                 </div>
+            </div>
+        </div>
+
+        <div class="login_container_container" style="position: fixed; vertical-align: top;">
+            <div class="login_form_container" id="login_form_container">
+                <form class="login_form" id="login_form">
+                    <button type="button" class="login_form_cancel" id="login_form_cancel"> Cancel </button>
+
+                    <div class="credentials row">
+                        <label for="username_for_login">username:</label>
+                        <input type="text" name="username_for_login" id="username_for_login" placeholder="username..."
+                            required="required">
+                        <label for="password_for_login">password:</label>
+                        <input type="text" name="password_for_login" id="password_for_login" placeholder="password..."
+                            required="required">
+                    </div>
+                    <button type="button" id="login" action="login()">login</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="register_container_container">
+            <div class="register_form_container" id="register_form_container">
+                <form class="register_form" id="register_form">
+                    <button type="button" class="register_form_cancel" id="register_form_cancel"> Cancel </button>
+                    <div class="credentials row">
+                        <label for="username">username:</label>
+                        <input type="text" name="username" id="username" placeholder="username" required="required">
+                        <label for="password">password:</label>
+                        <input type="text" name="password" id="password" placeholder="password" required="required">
+                    </div>
+
+                    <button type="button" id="register">register</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="add_apartment_form_container hidden" id="add_apartment_form_container">
+            <form class="add_apartment_form" id="add_apartment_form">
+                <button type="button" class="add_apartment_form_cancel" id="add_apartment_form_cancel"> Cancel
+                </button>
+                <div class="credentials row">
+                    <label for="title">Name:</label>
+                    <input type="text" id="title" name="name" placeholder="Name" required="required">
+
+                    <label for="images">Images</label>
+                    <input type="file" id="images" name="images" required="required" multiple="multiple">
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Address" required="required">
+
+                    <label for="for">Are you selling or is it for renting?</label>
+                    <select name="for" id="for" form="add_apartment_form">
+                        <option value="sale">sale</option>
+                        <option value="rent">rent</option>
+                    </select>
+
+                    <label for="condition">Condition:</label>
+                    <select name="condition" id="condition" form="add_apartment_form">
+                        <option value="bad">bad</option>
+                        <option value="mediocre">mediocre</option>
+                        <option value="good">good</option>
+                        <option value="very good">very good</option>
+                        <option value="perfect">perfect</option>
+                    </select>
+
+                    <label for="mp">Surface(in MP):</label>
+                    <input type="text" id="mp" name="mp" placeholder="mp">
+
+                    <label for="facilities">Facilities:</label>
+                    <fieldset>
+                        <input type="checkbox" id="f1" value="air-conditioning" class="facilities" name="facilities1">
+                        <label for="f1">air-conditioning</label> </br>
+                        <input type="checkbox" id="f2" value="parking" class="facilities" name="facilities2">
+                        <label for="f2">parking</label> </br>
+                        <input type="checkbox" id="f3" value="fridge" class="facilities" name="facilities3">
+                        <label for="f3">fridge</label> </br>
+                        <input type="checkbox" id="f4" value="microwave" class="facilities" name="facilities4">
+                        <label for="f4">microwave</label> </br>
+                        <input type="checkbox" id="f5" value="shop nearby" class="facilities" name="facilities5">
+                        <label for="f5">shop nearby</label> </br>
+                    </fieldset>
+
+                    <label for="theft">Theft rate/month:</label>
+                    <input type="number" name="theft" min="0" max="10" id="theft">
+
+                    <label for="costOfLiving">Cost of living/month in $:</label>
+                    <input type="number" name="costOfLiving" min="20" max="3000" id="costOfLiving">
+
+                    <label for="anualTemp">Anual temperature in the area:</label>
+                    <input type="number" name="anualTemp" min="-40" max="60" id="anualTemp">
+
+                    <label for="phone">Phone number for contanct:</label>
+                    <input type="text" id="phone" placeholder="Phone" required="required" name="phone">
+
+                    <label for="website">Website:</label>
+                    <input type="text" id="website" placeholder="Website" name="website">
+                </div>
+                <input type="submit" value="Add Apartment">
+            </form>
+        </div>
 
         </div>
 
@@ -218,6 +230,7 @@
     <script src="./api/login.js"></script>
     <script src="./api/logout.js"></script>
     <script src="./api/myEstates.js"></script>
+    <script src="./api/addApartment.js"></script>
 </body>
 
 </html>
