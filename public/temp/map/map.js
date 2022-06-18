@@ -46,18 +46,32 @@ class Map {
     }
 
     renderPins(locations) {
+        let bounds = L.latLngBounds();
         for(var i = 0; i < this.markers.length; i++){
             this.map.removeLayer(this.markers[i]);
         }
         for(let location of locations) {
            
-                console.log("location to add marker",location)
+                //console.log("location to add marker",location)
                 this.locationsIds.push(location.id);
                 let marker = L.marker([location.position.lat, location.position.lng]).addTo(this.map);
                 marker.bindPopup(this.renderPrettyPopupDescription(location));
                 this.markers.push(marker);
-            
+
+                
+                bounds.extend([location.position.lat, location.position.lng]); 
+                console.log('extending map',bounds,locations.length);
         }
+       if(locations.length==1)
+       {
+          for(let location of locations)
+          {
+            this.map.flyTo( [location.position.lat,location.position.lng],14,{duration:1})
+          }
+          
+       }
+       else
+        {this.map.fitBounds(bounds);}
     }
     init() {
         this.leafletLayer.addTo(this.map)
