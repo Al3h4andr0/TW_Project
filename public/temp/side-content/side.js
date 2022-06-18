@@ -198,7 +198,7 @@ export default class Side {
         let locationsToRender = locations;
         // this.removeDuplicates(locations);
         if (locationsToRender.length) {
-            console.log("locations",locations)
+            //console.log("locations",locations)
             let locationsInView = this.renderLocations(locationsToRender);
             this.rootElement.insertAdjacentHTML('beforeend', `${locationsInView}`);
             
@@ -215,7 +215,7 @@ export default class Side {
     {
         for(let location of locations)
         {
-            console.log("location to add listener",location);
+            //console.log("location to add listener",location);
             const element = document.getElementById('rent_btn'+location.id);
             element.addEventListener("click",toggleRentFormOn);
             element.param=location.id;
