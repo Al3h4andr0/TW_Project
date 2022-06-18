@@ -8,9 +8,9 @@ async function logout(){
          alert("logged out. see u soon.");
          const acc = document.querySelector('.not_logged_in_buttons');
          acc.classList.remove('hidden');
-         acc.classList.add('expanded');
+         acc.classList.add('expanded_acc');
          const acc_logged = document.querySelector('.logged_in_buttons');
-         acc_logged.classList.remove('expanded');
+         acc_logged.classList.remove('expanded_acc');
          acc_logged.classList.add('hidden');
      }
      })

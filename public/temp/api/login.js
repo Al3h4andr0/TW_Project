@@ -18,14 +18,14 @@ async function login(){
       const form= document.querySelector('.login_form_container');
         form.classList.remove('expanded');
         form.classList.add('hidden');
+
         const acc = document.querySelector('.not_logged_in_buttons');
-        acc.classList.remove('expanded');
+        acc.classList.remove('expanded_acc');
         acc.classList.add('hidden');
         const acc_logged = document.querySelector('.logged_in_buttons');
         acc_logged.classList.remove('hidden');
-        acc_logged.classList.add('expanded');
+        acc_logged.classList.add('expanded_acc');
 
-        
        // asteaptaPing(); // sau ping()?
     }
     })

@@ -6,7 +6,8 @@
     padding-top: 20px;
     direction: rtl;
     padding-top: 20px;
-    padding-right: 35px;
+    position: fixed;
+    right: 35px;
 }
 .login_container_container{
   direction: ltr;
@@ -337,7 +338,8 @@ height: 40px;
   @media only screen and (max-width: 550px) {
     .account{
       padding-top: 7px;
-      padding-right: 10px;
+      padding-right: 5px;
+      right:0;
   }
   }
   @media only screen and (max-width: 450px) {
@@ -356,11 +358,10 @@ height: 40px;
       right: 0;
     }
     #not_logged_in_buttons{
-      position: fixed;
+     
       right: 0;
     }
     #logged_in_buttons{
-      position: fixed;
       right: 0;
     }
   }
