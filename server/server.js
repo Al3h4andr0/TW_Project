@@ -75,16 +75,8 @@ async function requestListener(request, response) {
 
     //Act as Get but I'm lazy to parse URL params so we use POST to be able to have a body
     if(request.url.match(/\api\/locations\/upload/)&& request.method === POST)
-    {
-
-        safeExec(LocationController.uploadTest,request,response);
-        
-        response.writeHead(200, '200', { 'Content-Type': 'application/json' });
-        response.end(JSON.stringify("GOOD"));
-    }
-    else
-    //TEST
-    if (request.url.match(/\api\/locations\/bound/) && request.method === POST) {
+        authorizedSafeExec(LocationController.uploadTest,request,response);
+    else  if (request.url.match(/\api\/locations\/bound/) && request.method === POST) {
         safeExec(getAllLocationsWithinBounds, request, response);}
     else  if (request.url.match(/\api\/locations\/?$/) && request.method === GET)
         safeExec(LocationController.getAllLocations, request, response);
