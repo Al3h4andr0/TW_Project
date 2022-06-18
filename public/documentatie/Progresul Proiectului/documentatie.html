@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ro" style=" scroll-behavior: smooth;">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Progresul proiectului</title>
+    <link href = "style.css" rel = "stylesheet" type = "text/css">
+    <script src="https://kit.fontawesome.com/7a29751d8c.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id = "contentinfo" style="font-size:larger;">
+      <dl>
+        <dt>Authors</dt>
+        <dd>
+          Alupoaie Mircea
+          &amp;
+          Fomin Bogdan
+          &amp;
+          Mihailescu Alessandro
+        </dd>
+      </dl>
+    </div>
+
+    <a href = "#contentinfo" class="gotop"> <i class="fa-solid fa-angles-up"></i></a>
+
+    <section id="content">
+        <h1> Content </h1>
+        
+             <p style="font-size: larger;">I.<a href="#Introducere">Design-ul interfetei pana in saptamana 8</a></p>
+                <ol>
+                    <li> <a href="#Schita">Schita pe foaie a interfetei</a></li>
+                    <li> <a href="#Tasks">Impartirea taskurilor</a></li>
+                    <li> <a href="#Source">Managementul codului sursa folosind GitHub</a></li>
+                    <li> <a href="#Implementare">Implementarea interfetei si scrierea documentatiei</a></li>
+                </ol>
+<br>
+             <p style="font-size: larger;">II. <a href="#after8">Progresul dupa saptamana 8</a></p>
+                <ol>
+                    <li> <a href="#refacere">Refaceara interfetei de la zero</a></li>
+                    <li> <a href="#server">Crearea serverului</a></li>
+                    <li> <a href="#front">Implementarea functionalitatilor pe front</a></li>
+                    <li> <a href="#backend">Implementarea serviciilor pe backend</a></li>
+                    <li> <a href="#api">Legarea Front-end-ului de Back-end cu API calls</a></li>
+                    <li> <a href="#doc">Crearea diagramelor si alte documentatii necesare</a></li>
+                </ol>
+    </section>
+
+<br>
+<br>
+
+
+
+
+    <section typeof= "sa:Introducere" id="Introducere">
+    
+      <h2>Designul interfetei pana in saptamana 8</h2>
+      <h4 id="Schita">Schita</h4>
+     <p>La inceput ne am adunat toti membrii echipei sa facem o schita pe foaie a interfei, cu sectiunile cele mai importante:</p>
+     <p>O bara de navigare in partea de sus</p> 
+     <p>In coltul drept sectiunea de account</p> 
+     <p>in partea stanga a paginii cam 30% din lungime, descrierea apartamentelor</p> 
+     <p>partea dreapta restul de 70%, harta</p> 
+    
+      <h4 id="Tasks">Impartirea taskurilor</h4>
+        <p>Aceasta interfata a fost prezentata in saptamana 8(urmeaza sa fie luata de la zero):</p>
+        <p>Alupoaie Mircea s-a ocupat de partea stanga, descrierea apartamentelor</p>
+        <p>Bogdan Fomin a facut partea de navigare a interfetei</p>    
+        <p>Alessandro Mihailescu a facut partea de account</p>  
+
+        <h4 id="Source">Managementul codului sursa</h4>
+        <p>Pentru codul sursa am folosit GitHub, Alessandro Mihailescu a creat repository-ul pentru proiect si ne-a dat toate permisiunile de editare.</p>
+        <p>In aceasta faza am lucrat separat, fiecare cate pe un branch iar la final am dat merge la toate branch-urile si am dat push pe main, insa dupa saptamana 8 am lucrat toti pe main, fiind mai usor.</p>
+        <p>Toti membrii echipei au dat push la contributiile lor pentru proiect, desigur, ne-am ajutat unul pe altul daca cineva avea o problema.</p>
+        <h4 id="Implementare">Implementarea Interfetei</h4>
+         <p>Fiecare membru a facut partea sa respectiva de html/css mai intai intr o maniera non responsive apoi am incercat sa imbinam partile noastre cand am dat merge branches incat sa fie responsive. Din pacate nu am reusit si am luat interfata de la zero.</p>
+         <p>Documentatia a fost scrisa la comun, fiecare a contribuit cu descrierea sectiunilor atribuite la inceput plus alte sectiuni ce erau necesare in documentatie</p>
+   </section>
+
+    <section>
+      <h2 id = "after8">Progresul dupa saptamana 8</h2>
+
+      <h4 id = "refacere">Refacerea Interfetei</h4>
+      <p>
+      Toti membrii echipei au lucrat la refacerea bazei interfetei astfel incat sectiunile care ni le-am atribuit inainte de saptamana 8 sa fie responive.
+      </p>
+      <p>Acest pas a fost realizat lucrand toti 3 pe acelasi PC ca sa avem o baza comuna.</p>
+
+      <h4 id = "server">Crearea serverului</h4>
+      <p>Bogdan Fomin a creat serverul si a creat router-ul care duce comenzile sa fie executate spre handlere</p>
+      <p>Mihailescu Alessandro a creat niste handlere basic pentru niste elemente ca testare daca merg serviciile get, post, etc..</p>
+      <p>Alupoaie Mircea a creat data modelul pentru locatiile imobilelor, fiecare avand orice detaliu necesar din enuntul problemei</p>
+
+      <h4 id="front">Implementarea functionalitatilor pe front</h4>
+        <p>
+          Functionalitatile de pe front au fost realizate concurent cu serviciile de pe back end si au fost implementate in ordinea urmatoare
+        </p>
+        <p>Functionalitatile de pe front:</p>
+        <ul>
+          <li><p> Alupoaie Mircea a facut partea de afisare detaliata a imobilelor in partea de "side-content" in partea stanga,impreuna cu implementarea formularului de inchiriere a unui imobil, toate fiind responsive</p></li>
+          <li><p>Alupoaie Mircea a facut logoul aplicatiei, search-bar-ul si butonul de filtrare din partea de navigare, toate in mod responsive</p></li>
+          <li><p>Bogdan Fomin a facut formularul de filtrare a imobilelor si formularul de adaugat un apartament, in mod responsive</p></li>
+          <li><p>Mihailescu Alessandro a facut partea ce tine de account, cu toate butoanele necesare functionale, in mod responsive</p></li>
+        </ul>
+
+      <h4 id="backend">Implementarea serviciilor pe backend</h4>
+      <p>In general fiecare a facut ceva pe back-end, ne-am ajutat mult unul pe altul daca aveam probleme, ordinea in care am implementat serviciile este urmatoarea</p>
+      <p>Serviciile de pe back:</p>
+      <ul>
+        <li><p>Alupoaie Mircea, Bogdan Fomin au facut adaugarea unui apartament nou, stergerea, modificarea unuia existent</p></li>
+        <li><p>Bogdan Fomin, Mihailescu Alessandro au facut partea ce tine de cont: adaugarea unui user, logarea, delogharea, verificarea daca este logat.</p></li>
+        <li><p> Mihailescu Alessandro a facut verificarea unor imobile daca apartin utilizatorului logat sau nu.</p></li>
+        <li><p>Bogdan Fomin a facut filtrarea si search-ul imobilelor dupa un query, search-ul unui imobil dupa coordonatele hartei la o pozitie anume.</p></li>
+      </ul>
+
+      <h4 id="api">Legarea Front-end-ului de Back-end cu API calls</h4>
+      <p>Unele servicii au fost deja legate de front-end in etapa anterioara: side-content, adaugarea unui imobil,logare,register,logout 
+         si altele au fost facut ulterior, in aceasta etapa</p>
+        <p>Bogdan Fomin a facut filtrarea apartamentelor si search-ul dupa un query.</p>
+        <p>Mihailescu Alessandro a facut luarea imobilelor care sunt detinute de un utilizator.</p>
+
+        <h4 id="doc">Crearea diagramelor si alte documentatii necesare</h4>
+        <p>Mihailescu Alessandro a refacut documentatia pentru saptamana 8, ca sa fie conform aplicatiei noastre in momentul cand este gata</p>
+        <p>Alupoaie Mircea a facut diagramele, etapele intermediare de dezvolare, si progresul proiectului</p>
+        <p>Bogdan Fomin a facut manualul utilizatorului</p>
+        <p>Videoul a fost facut de ???</p>
+
+        
+
+    </section>
+
+    
+
+  </body>
+</html>
