@@ -76,7 +76,7 @@
 .autocomplete-box li{
 background-color: #f9f9f9f9 ;
 list-style:none;
-padding: none;
+padding: 0;
 padding: 0.5em 0.2em 1em 0.8em;
 overflow-y: auto;
 overflow-x: hidden;
