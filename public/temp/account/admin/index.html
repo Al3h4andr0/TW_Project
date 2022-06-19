@@ -20,6 +20,25 @@
         <input type="submit" value="Delete">
        </form>
     </div>
-   
+    <div>
+      <form id="import_loc">
+        <label for="import_locations">Import locations as json:</label>
+        <input type="file" id="import_locations" name="import_locations" required="required">
+        <input type="submit" value="Import">
+      </form>
+      <a href="../../../../server/data/locations.json" download>
+        Export locations data(download)
+      </a>
+    </div>
+    <div>
+      <form id="import_us">
+        <label for="import_users">Import users as json:</label>
+        <input type="file" id="import_users" name="import_users" required="required">
+        <input type="submit" value="Import">
+      </form>
+      <a href="../../../../server/data/users.json" download>
+        Export users data(download)
+      </a>
+    </div>
    <script src="./forms.js"></script>
   </body></html>

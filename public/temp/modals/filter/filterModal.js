@@ -158,7 +158,6 @@ export default class FilterModal {
     // Saved so I can unbind the listener after modal is closed
     const onEscapeListener = (e) => {
       if (e.key !== "Escape") return;
-
       this.modal.classList.toggle("open");
       document.removeEventListener("keydown", onEscapeListener);
     }

@@ -218,6 +218,21 @@ class LocationsControler {
             response.end(JSON.stringify(new_location));
         });
     }
+
+    async uploadLocations(request,response)
+    {
+        let form = new formidable.IncomingForm();
+        form.parse(request, async function (error, fields, file) {
+            //console.log(file);
+            let filepath = file.import_locations.filepath;
+            let newpath = './data/locations.json';
+            fs.rename(filepath, newpath, function () {
+            });
+
+            response.writeHead(200, '200', { 'Content-Type': 'application/json' });
+            response.end();
+        });
+    }
 }
 
 

@@ -1,4 +1,6 @@
+
 async function login(){
+ 
    console.log("login started");
     const rootAPI = `http://localhost:8000/api/login`;
     console.log(document.getElementById('username_for_login').value);
@@ -7,47 +9,31 @@ async function login(){
         password:document.getElementById('password_for_login').value
     }
 
-    
-            
+
+    fetch(rootAPI, {method: 'POST', body: JSON.stringify(body), headers:{'Content-Type': 'application/json'}})
+    .then((res) => {
+        if (res.status === 400) {
+            alert("username or password incorrect. please try again.");
+        }else
+        if(res.status >=200 && res.status <=399){
+        alert("logged in");
+        const form= document.querySelector('.login_form_container');
+        form.classList.remove('expanded');
+        form.classList.add('hidden');
         
-            fetch(rootAPI, {method: 'POST', body: JSON.stringify(body), headers:{'Content-Type': 'application/json'}})
-            .then(async (res) => {
-                if (res.status === 400) {
-                    alert("username or password incorrect. please try again.");
-                }else
-                if(res.status >=200 && res.status <=399){
-                    const rootAPI2 = 'http://localhost:8000/api/ping'
-                  let response= await fetch(rootAPI2,{method:'GET',headers:{'Content-Type': 'application/json'}})
-                  response= await response.json();
-                    console.log(response);
-                alert("logged in");
-              const form= document.querySelector('.login_form_container');
-                form.classList.remove('expanded');
-                form.classList.add('hidden');
-        
-                const acc = document.querySelector('.not_logged_in_buttons');
-                acc.classList.remove('expanded_acc');
-                acc.classList.add('hidden');
-                const acc_logged = document.querySelector('.logged_in_buttons');
-                acc_logged.classList.remove('hidden');
-                acc_logged.classList.add('expanded_acc');
-                  
-                console.log(document.getElementById('username_for_login').value);
-                 
-                
-                if(response.isAdmin==1)
-                {window.location.replace("http://localhost:8000/temp/account/admin/");}
-       
-               // asteaptaPing(); // sau ping()?
-            }
-            })
-            .catch(ex => {
-                throw ex;
-            });
-        
-                
-        
-        
+        const acc = document.querySelector('.not_logged_in_buttons');
+        acc.classList.remove('expanded_acc');
+        acc.classList.add('hidden');
+        const acc_logged = document.querySelector('.logged_in_buttons');
+        acc_logged.classList.remove('hidden');
+        acc_logged.classList.add('expanded_acc');
+       // asteaptaPing(); // sau ping()?
+    }
+    })
+    .catch(ex => {
+        throw ex;
+    });
+
         document.getElementById('username_for_login').value='';
         document.getElementById('password_for_login').value='';
 }

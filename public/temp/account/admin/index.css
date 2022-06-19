@@ -21,6 +21,10 @@ form >label{
   letter-spacing: 0.07em;
   color: rgba(8, 8, 8, 0.65);
 }
+form input[type="file"] {
+    
+    width: 100%;
+  }
 form > input{
     height: 30px;
     width: 30%;
@@ -36,3 +40,4 @@ form input[type="submit"] {
     font-weight: bold;
     background-color: #DA4545;
   }
+  

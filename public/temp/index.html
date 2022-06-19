@@ -78,14 +78,6 @@
         <div id="filter-zone">
             <!-- filter zone here -->
         </div>
-
-
-
-
-
-
-
-
         <div class="account" id="account">
             <div id="hello"></div>
             <svg id='acc' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -112,23 +104,22 @@
                     <button type="button" id="myApartments_btn" class="acc_btn">My estates</button>
                 </div>
             </div>
-        </div>
+         </div>
 
-        <div class="login_container_container" style="position: fixed; vertical-align: top;">
-            <div class="login_form_container" id="login_form_container">
-                <form class="login_form" id="login_form">
-                    <button type="button" class="login_form_cancel" id="login_form_cancel"> Cancel </button>
-
-                    <div class="credentials row">
-                        <label for="username_for_login">username:</label>
-                        <input type="text" name="username_for_login" id="username_for_login" placeholder="username..."
-                            required="required">
-                        <label for="password_for_login">password:</label>
-                        <input type="text" name="password_for_login" id="password_for_login" placeholder="password..."
-                            required="required">
-                    </div>
-                    <button type="button" id="login" action="login()">login</button>
-                </form>
+              <div class="login_container_container" style="position: fixed; vertical-align: top;">
+                <div class="login_form_container" id="login_form_container">
+                    <form class="login_form" id="login_form">
+                      <button type="button" class="login_form_cancel" id="login_form_cancel"> Cancel </button>
+                    
+                        <div class="credentials row">
+                          <label for="username_for_login">username:</label>
+                          <input type="text" name="username_for_login" id="username_for_login" placeholder="username..." required="required">
+                          <label for="password_for_login">password:</label>
+                          <input type="text" name="password_for_login" id="password_for_login" placeholder="password..." required="required">
+                     </div>
+                     <button type="button" id="login">login</button>
+                     </form>
+                </div>
             </div>
         </div>
 
@@ -159,6 +150,9 @@
 
                     <label for="images">Images</label>
                     <input type="file" id="images" name="images" required="required" multiple="multiple">
+                     
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" name="description" required="required"  placeholder="Description">
 
                     <label for="address">Address:</label>
                     <input type="text" id="address" name="address" placeholder="Address" required="required">
@@ -168,6 +162,9 @@
                         <option value="sale">sale</option>
                         <option value="rent">rent</option>
                     </select>
+                      
+                    <label for="price">Price(/night for renting):</label>
+                    <input type="text" id="price" name="price" placeholder="Price" required="required">
 
                     <label for="condition">Condition:</label>
                     <select name="condition" id="condition" form="add_apartment_form">
@@ -215,12 +212,14 @@
         </div>
 
         </div>
-
     </nav>
     <main>
         <section id="content">
 
         </section>
+        <div class="my_estates_content" id="my_estates_content" style='width: 20em; height: 80%; align-self: center;'>
+
+        </div>
         <section id="map">
             <div id="map-controller">
                 <!-- <div>
@@ -232,10 +231,9 @@
     </main>
     <script src="index.js" type="module"></script>
     <script src="./api/register.js"></script>
-    <script src="./api/login.js"></script>
+    <script src="./api/login.js" type="module"></script>
     <script src="./api/logout.js"></script>
     <script src="./api/myEstates.js"></script>
-    <script src="./api/addApartment.js"></script>
 </body>
 
 </html>

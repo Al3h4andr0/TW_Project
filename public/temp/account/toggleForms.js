@@ -21,10 +21,12 @@ divElement.classList.add("hidden");
 export function toggleLoginFormOn() {
     
     var divElement = document.getElementById('login_form_container');
-    var divElementRegister = document.getElementById("register_form_container");
+    var divElementRegister = document.getElementById("login_form_container");
     if (divElement.classList.contains("hidden") && divElementRegister.classList.contains("expanded")) 
     { divElement.classList.remove("hidden"); 
-      divElementRegister.classList.remove("expanded");}
+      divElementRegister.classList.remove("expanded");
+
+    }
     divElement.classList.add("expanded");
     divElementRegister.classList.add("hidden");
 }

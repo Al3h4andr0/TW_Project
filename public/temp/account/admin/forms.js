@@ -17,6 +17,7 @@ const locationListener = () => {
             }else
             if(res.status >=200 && res.status <=399){
             alert("deleted");
+
             document.getElementById('location').value='';
             document.getElementById('user').value='';
         }
@@ -54,5 +55,56 @@ const userListener = () => {
         )
 
 }
+
+const uploadLocations =() =>
+{
+    const myForm = document.getElementById("import_loc");
+    myForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        let rootAPI = `http://localhost:8000/api/admin/uploadLocations`;
+        const formData = new FormData(myForm);
+
+        fetch(rootAPI, {method: 'POST', body:formData})
+        .then((res) => {
+            if (res.status === 404) {
+                alert("Sth went wrong");
+            }else
+            if(res.status >=200 && res.status <=399){
+            alert("Uploaded");
+         
+        }
+        })
+        }
+    
+
+        )
+
+}
+const uploadUsers =() =>
+{
+    const myForm = document.getElementById("import_us");
+    myForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        let rootAPI = `http://localhost:8000/api/admin/uploadUsers`;
+        const formData = new FormData(myForm);
+
+        fetch(rootAPI, {method: 'POST', body:formData})
+        .then((res) => {
+            if (res.status === 404) {
+                alert("Sth went wrong");
+            }else
+            if(res.status >=200 && res.status <=399){
+            alert("Uploaded");
+         
+        }
+        })
+        }
+    
+
+        )
+
+}
+uploadUsers();
+uploadLocations();
 locationListener();
 userListener();
