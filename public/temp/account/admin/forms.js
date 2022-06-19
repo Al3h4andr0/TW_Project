@@ -108,14 +108,32 @@ function getLocations()
 {
     let rootAPI = `http://localhost:8000/api/admin/getLocations`;
     fetch(rootAPI, {method: 'POST'})
-        .then((res) => {
+        .then(async (res) => {
             if (res.status === 404) {
                 alert("Sth went wrong");
             }else
             if(res.status >=200 && res.status <=399){
-            res=res.json();
-            console.log(res);
-         
+            res= await res.json();
+            res=JSON.stringify(res);
+            //console.log(res);
+            var textFile=null;
+            var data = new Blob([res], {type: 'text/plain'});
+
+            // If we are replacing a previously generated file we need to
+            // manually revoke the object URL to avoid memory leaks.
+            if (textFile !== null) {
+              window.URL.revokeObjectURL(textFile);
+            }
+        
+            textFile = window.URL.createObjectURL(data);
+           var link= document.createElement('a');
+           link.setAttribute('download','locations.json');
+           link.href=textFile;
+           var txt =document.createElement('p');
+           txt.textContent="Download locations.json";
+           link.appendChild(txt);
+           document.body.appendChild(link);
+
         }
         })
 
@@ -124,13 +142,31 @@ function getUsers()
 {
     let rootAPI = `http://localhost:8000/api/admin/getUsers`;
     fetch(rootAPI, {method: 'POST'})
-        .then((res) => {
+        .then(async (res) => {
             if (res.status === 404) {
                 alert("Sth went wrong");
             }else
             if(res.status >=200 && res.status <=399){
-            res=res.json();
-            console.log(res);
+                res= await res.json();
+                res=JSON.stringify(res);
+                //console.log(res);
+                var textFile=null;
+                var data = new Blob([res], {type: 'text/plain'});
+    
+                // If we are replacing a previously generated file we need to
+                // manually revoke the object URL to avoid memory leaks.
+                if (textFile !== null) {
+                  window.URL.revokeObjectURL(textFile);
+                }
+            
+                textFile = window.URL.createObjectURL(data);
+               var link= document.createElement('a');
+               link.setAttribute('download','locations.json');
+               link.href=textFile;
+               var txt =document.createElement('p');
+               txt.textContent="Download users.json";
+               link.appendChild(txt);
+               document.body.appendChild(link);
          
         }
         })

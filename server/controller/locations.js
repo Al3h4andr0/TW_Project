@@ -53,6 +53,18 @@ class LocationsControler {
         response.writeHead(200, '200', { 'Content-Type': 'application/json' });
         response.end(JSON.stringify(locations));
     }
+    
+    async getLocations(request,response)
+    {
+        fs.readFile( "./data/locations.json", (error, data) => {
+            if(error) {
+                throw error;
+            }
+            //console.log(data.toString());
+            response.writeHead(200, '200', { 'Content-Type': 'application/json','Content-Disposition': 'attachment; filename="locations.json' });
+            response.end(data);
+        });
+    }
 
     async getFilteredLocations(request, response) {
         const filtersMap = Object.assign({}, url.parse(request.url, true).query);
@@ -233,6 +245,7 @@ class LocationsControler {
             response.end();
         });
     }
+
 }
 
 

@@ -160,7 +160,7 @@ class AuthenticationController {
             if(error) {
                 throw error;
             }
-            console.log(data.toString());
+            //console.log(data.toString());
             response.writeHead(200, '200', { 'Content-Type': 'application/json','Content-Disposition': 'attachment; filename="users.json' });
             response.end(data);
         });
