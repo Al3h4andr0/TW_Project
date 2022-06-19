@@ -35,10 +35,10 @@ function init () {
     async function recommendationsListeners()
     {
        
-     Map.addBrasovListener();
-     Map.addIasiListener();
-     Map.addBucurestiListener();
-     Map.addTimisoaraListener();
+     Map.addBrasovListener(side);
+     Map.addIasiListener(side);
+     Map.addBucurestiListener(side);
+     Map.addTimisoaraListener(side);
 
     }
     // Render map

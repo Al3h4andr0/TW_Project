@@ -87,7 +87,7 @@ export default class Suggestions{
             var location = await fetch(rootAPIGetLocation + "/" + locationID,{method: 'GET'});
             location = await location.json();
         
-            this.side.renderAndReplace([location]);
+        this.side.renderAndReplace([location]);
         this.Map.renderPins([location]);
         this.side.addListener([location]);
               //delete what is in search bar and suggestions

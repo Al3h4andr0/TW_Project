@@ -94,6 +94,8 @@ async function requestListener(request, response) {
         authorizedSafeExec(LocationController.addLocation, request, response);
     else if (request.url.match(/\api\/locations\/([0-9]+)/) && request.method === PATCH)
         authorizedSafeExec(LocationController.updateLocation, request, response);
+    else if (request.url.match(/\api\/locations\/withKeyword/) && request.method === GET)
+        safeExec(LocationController.getLocationsWithKeyword, request, response);
     else if (request.url.match(/\api\/locations\/([0-9]+)/) && request.method === DELETE) {
         authorizedSafeExec(LocationController.deleteLocation, request, response);}
     else if (request.url.match(/\api\/admin\/users\/([0-9]+)/) && request.method === DELETE) {

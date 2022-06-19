@@ -127,6 +127,21 @@ class LocationsService {
 
     }
 
+    
+    async getLocationsWithKeyword(keyword) {
+        return new Promise((resolve, reject) => {
+            if (keyword === "" || keyword === "undefined" || keyword === undefined)
+                return reject({ statusCode: 400, message: "Keyword is null" });
+            const locations = [];
+            allLocations.forEach((location) => {
+                if (location.title.toLowerCase().includes(keyword.toLowerCase()) || location.address.toLowerCase().latinise().includes(keyword.toLowerCase()))
+                    locations.push(location);
+            });
+            resolve(locations);
+        })
+
+    }
+
     getMultipleLocations(ids) {
         return new Promise((resolve, _) => {
             if (ids === "undefined")

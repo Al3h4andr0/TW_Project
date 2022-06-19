@@ -104,6 +104,13 @@ class LocationsControler {
         response.end(JSON.stringify(suggestions));
     }
 
+    async getLocationsWithKeyword(request, response) {
+        const keyword = request.url.split("keyword=")[1].replace("+", " ");;
+        const locations = await LocationService.getLocationsWithKeyword(keyword);
+        response.writeHead(200, '200', { 'Content-Type': 'application/json' });
+        response.end(JSON.stringify(locations));
+    }
+
     async addLocation(request, response, userPayload) {
         let location_data = JSON.parse(await getRequestData(request));
         location_data.ownerId = parseInt(userPayload.id);
