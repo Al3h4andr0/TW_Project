@@ -1,5 +1,6 @@
 const rootAPIDelete = `http://localhost:8000/api/locations/`;
 const rootAPIGet = `http://localhost:8000/api/locations/myLocations`;
+import { deleteEstate } from "./deleteEstate.js";
 export default class myEstatesModal{
     constructor(rootElement, triggerElement){
         if(!rootElement)
@@ -17,10 +18,21 @@ export default class myEstatesModal{
         }else{
         this.modal = document.getElementById("estates-modal");
         const estates = await this.getEstates();
-        const modalTemplate = this.renderEverything(estates);
+        const modalTemplate = await this.renderEverything(estates);
         this.rootElement.insertAdjacentHTML('beforeend', "");
-        this.rootElement.insertAdjacentHTML('beforeend', `${modalTemplate}`);
+        this.rootElement.insertAdjacentHTML('beforeend',modalTemplate);
+        for(let estate of estates)
+        {
+         console.log("adding delete for","delete_btn" +estate);
+         const element = document.getElementById("delete_btn"+estate.id);
+         console.log("tsest",);
+         element.addEventListener("click",(e) => {deleteEstate(estate.id);
+         this.render();
+    });
+        element.param=estate.id;
+         }
        // this.addListenersToElements();
+            return estates;
         }
     }
 
@@ -38,11 +50,12 @@ export default class myEstatesModal{
         console.log('a fost apelat renderestates');
         let res='';
         console.log("List: ", list);
-       for(let estate of list)
-        console.log("locations for my estates: " + estate.title);
+      
+
         if(list.length === 0)
         console.log("empty list for this user. try adding some apartments.");
         for(let estate of list){
+            console.log(estate.id);
             res+= `
                     <div id="estate${estate.id}" style="padding-top: 1em; padding-left: 2em;">
                         <div class="estateImage">
@@ -52,7 +65,7 @@ export default class myEstatesModal{
                             <p>${estate.title}</p>
                         </div>
                         <div class="optionsEstates">
-                            <button type="button" id="delete_btn${estate.id}" class="delete_btn" action='deleteEstate(${estate.id})' align = "right">Delete</button>
+                            <button type="button" id="delete_btn${estate.id}" class="delete_btn">Delete</button>
                         </div>
                     </div>
                 `
@@ -81,17 +94,6 @@ export default class myEstatesModal{
         return response;
     }
 
-    async deleteEstate(id){
-        fetch(rootAPIDelete + '${id}', {method: 'DELETE', headers:{'Content-Type': 'application/json'}})
-    .then((res) => {
-        if(res.status >=200 && res.status <=399){
-        alert("instance deleted successfully. ");
-    }
-    })
-    .catch(ex => {
-        throw ex;
-    });
-    }
         
     addListenersToElements(){
         this.triggerElement.addEventListener('click', (_)=> {
@@ -108,24 +110,12 @@ export default class myEstatesModal{
             divv.classList.remove('hidden');
             divv.classList.add('expanded');
             this.render();
+
             }
             console.log("am trecut de ifuri");
         })
     }
-
+  
 
    
-}
-
-function closeEstates(){
-    console.log('closeestates has been called ');
-
-    const divvX = document.querySelector(".my_estates_content");
-    if(divvX.classList.contains('expanded')){
-    divvX.classList.remove('expanded');
-    divvX.classList.add('hidden');
-    }else if(divvX.classList.contains('hidden')){
-        divvX.classList.remove('expanded');
-        divvX.classList.add('hidden');
-    }
 }

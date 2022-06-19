@@ -224,6 +224,5 @@ export default class Side {
             element2.addEventListener("click",toggleRentFormOff);
             element2.param=location.id;
         }
-       
     }
 }
