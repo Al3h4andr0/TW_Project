@@ -244,59 +244,38 @@
     "anualTemp": 20
   },
   {
+    "ownerId": 1,
     "position": {
-      "lat": 47.161445,
-      "lng": 27.582023
+      "lat": "47.1753569",
+      "lng": "27.5566032815234"
     },
-    "title": "ceva title",
-    "imgSrc": "https://d1bvpoagx8hqbg.cloudfront.net/originals/the-metropolitan-cathedral-ia-65e10ac69e76974c0b1133e182ed1f03.jpg",
-    "imgAlt": "Metropolitan Cathedral",
-    "address": "Bulevardul Ștefan cel Mare și Sfânt 16, Iași 700064",
-    "price": 10,
-    "condition": "good",
+    "title": "aaaaaaaaaaa",
+    "imgSrc": "./images/Screenshot (8).png",
+    "imagAlt": "aaaaaaaaaaa",
+    "address": "Toma Cozma 81 Iasi",
+    "price": "11",
+    "condition": "bad",
     "overview": {
-      "description": "Majestic neoclassical church known for its soaring, domed towers, mosaics & 16th-century icons.",
+      "description": "qqqqqqqqqqqq",
       "facilities": [
-        "parking",
-        "fridge",
+        "air-conditioning",
         "microwave"
       ],
-      "surface": 60,
-      "for": "rent",
-      "dates": [
-        {
-          "start": "2022-09-20",
-          "end": "2022-10-22"
-        },
-        {
-          "start": "2022-10-27",
-          "end": "2022-10-29"
-        }
-      ]
+      "surface": "22",
+      "for": "sale",
+      "dates": []
     },
-    "reviews": [
-      {
-        "title": "Awesome place",
-        "description": "Awesome place to sleep in while on a school trip",
-        "score": 4.5
-      },
-      {
-        "title": "Decent place",
-        "description": "Awesome place to sleep in while on a school trip. The teacher woke me up!",
-        "score": 3
-      }
-    ],
+    "reviews": [],
     "contact": {
       "website": {
-        "key": "mmb.ro",
-        "http": "https://mmb.ro/"
+        "key": "22",
+        "http": "22"
       },
-      "phoneNumber": "0232215454"
+      "phoneNumber": "22"
     },
-    "theft": 10,
-    "costOfLiving": 10,
-    "anualTemp": 20,
-    "ownerId": 2,
-    "id": 6
+    "theft": "1",
+    "costOfliving": "22",
+    "anualTemp": "22",
+    "id": 7
   }
 ]
