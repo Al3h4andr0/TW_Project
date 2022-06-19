@@ -156,7 +156,7 @@ getUserWithUsernameAndPassword = async (requestBody) => {
 
 generateJwtToken = (payload) => {
     // to be rewritten to be actual JWT
-    var jwtToken = jwt.sign(payload, SECRET, { expiresIn: '1min' });
+    var jwtToken = jwt.sign(payload, SECRET, { expiresIn: '10min' });
     return jwtToken;
 }
 
