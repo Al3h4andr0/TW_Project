@@ -3,8 +3,8 @@
     "id": 1,
     "ownerId": 1,
     "position": {
-      "lat": 47.17274,
-      "lng": 27.54379
+      "lat": 47.172740,
+      "lng": 27.543790
     },
     "title": "Apartament Nicu",
     "imgSrc": "http://localhost:8000/api/photo/?photo=2-camere-tip-III-B_01.png",
@@ -22,16 +22,14 @@
       ],
       "surface": 100,
       "for": "rent",
-      "dates": [
-        {
-          "start": "2022-07-07",
-          "end": "2022-09-10"
-        },
-        {
-          "start": "2022-12-20",
-          "end": "2022-12-30"
-        }
-      ]
+      "dates": [{
+        "start": "2022-07-07",
+        "end": "2022-09-10"
+      },
+      {
+        "start": "2022-12-20",
+        "end": "2022-12-30"
+      }]
     },
     "reviews": [
       {
@@ -64,7 +62,7 @@
       "lng": 27.582023
     },
     "title": "Metropolitan Cathedral",
-    "imgSrc": "http://localhost:8000/api/photo/?photo=app1.jpg",
+    "imgSrc": "https://d1bvpoagx8hqbg.cloudfront.net/originals/the-metropolitan-cathedral-ia-65e10ac69e76974c0b1133e182ed1f03.jpg",
     "imgAlt": "Metropolitan Cathedral",
     "address": "Bulevardul Ștefan cel Mare și Sfânt 16, Iași 700064",
     "price": 10,
@@ -113,14 +111,61 @@
     "anualTemp": 20
   },
   {
+    "id": 3,
+    "ownerId": 1,
+    "position": {
+      "lat": 47.857214,
+      "lng": 27.386982
+    },
+    "title": "Palatul Culturii",
+    "imgSrc": "https://palatulculturii.ro/web/img/og_image.jpg",
+    "imgAlt": "Palatul culturii",
+    "address": "Bulevardul Ștefan cel Mare și Sfânt 1, Iași",
+    "price": 15,
+    "condition": "good",
+    "overview": {
+      "description": "365-roomed complex built between 1906 & 1925 to house government offices, now housing 4 museums.",
+      "facilities": [
+        "air-conditioning",
+        "fridge",
+        "bath-tub"
+      ],
+      "surface": 60,
+      "for": "sale",
+      "dates": []
+    },
+    "reviews": [
+      {
+        "title": "Awesome place",
+        "description": "Awesome place to sleep in while on a school trip",
+        "score": 4.5
+      },
+      {
+        "title": "Decent place",
+        "description": "Awesome place to sleep in while on a school trip. The teacher woke me up!",
+        "score": 3
+      }
+    ],
+    "contact": {
+      "website": {
+        "key": "palatulculturii.ro",
+        "http": "https://palatulculturii.ro/"
+      },
+      "phoneNumber": "0232275979"
+    },
+    "theft": 10,
+    "costOfLiving": 10,
+    "anualTemp": 20
+  },
+  {
     "id": 4,
     "ownerId": 1,
     "position": {
-      "lat": 47.14758,
-      "lng": 27.60617
+      "lat": 47.147580 ,
+      "lng": 27.606170
     },
     "title": "Apartament Zona industriala",
-    "imgSrc": "http://localhost:8000/api/photo/?photo=app3.jpg",
+    "imgSrc": "https://palatulculturii.ro/web/img/og_image.jpg",
     "imgAlt": "Apartament Zona industriala",
     "address": "Calea Chișinăului 2A, Iași",
     "price": 15,
@@ -129,7 +174,7 @@
       "description": "We have Carrefour nearby so we're the best",
       "facilities": [
         "shop nearby",
-        "fridge"
+        "fridge"       
       ],
       "surface": 50,
       "for": "sale",
@@ -162,11 +207,11 @@
     "id": 5,
     "ownerId": 1,
     "position": {
-      "lat": 47.15264,
-      "lng": 27.57466
+      "lat": 47.152640,
+      "lng": 27.574660
     },
     "title": "Pensiunea Cantemir",
-    "imgSrc": "http://localhost:8000/api/photo/?photo=app4.jpg",
+    "imgSrc": "https://palatulculturii.ro/web/img/og_image.jpg",
     "imgAlt": "Pensiunea Cantemir",
     "address": "Bulevardul Nicolae Iorga 7D, Iași",
     "price": 30,
@@ -181,16 +226,14 @@
       ],
       "surface": 90,
       "for": "rent",
-      "dates": [
-        {
-          "start": "2022-04-10",
-          "end": "2022-06-22"
-        },
-        {
-          "start": "2022-07-27",
-          "end": "2022-08-29"
-        }
-      ]
+      "dates": [{
+        "start": "2022-04-10",
+        "end": "2022-06-22"
+      },
+      {
+        "start": "2022-07-27",
+        "end": "2022-08-29"
+      }]
     },
     "reviews": [
       {
@@ -217,7 +260,7 @@
       "lng": "26.056650"
     },
     "title": "Apartament Bucuresti",
-    "imgSrc": "http://localhost:8000/api/photo/?photo=app5.jpg",
+    "imgSrc": "./images/Screenshot (8).png",
     "imagAlt": "Apartament Bucuresti",
     "address": "Pasajul Pietonal Halta Grivița, București 012244",
     "price": "100",
@@ -252,7 +295,7 @@
       "lng": "21.22624474301332"
     },
     "title": "Apartment in old town",
-    "imgSrc": "http://localhost:8000/api/photo/?photo=app7.jpg",
+    "imgSrc": "./images/old-town-by-welcome-apartment.jpg",
     "imagAlt": "Apartment in old town",
     "address": "Bulevardul Mihai Eminescu 1, Timisoara",
     "condition": "good",
@@ -286,7 +329,7 @@
       "lng": "25.608870"
     },
     "title": "Apartment Brasov",
-    "imgSrc": "http://localhost:8000/api/photo/?photo=app6.jpg",
+    "imgSrc": "./images/old-town-by-welcome-apartment.jpg",
     "imagAlt": "Apartment Brasov",
     "address": "Bulevardul Gării 3A, Brașov 500148",
     "condition": "good",
@@ -299,24 +342,20 @@
       ],
       "surface": "110",
       "for": "rent",
-      "dates": [
-        {
-          "start": "2022-04-10",
-          "end": "2022-06-22"
-        },
-        {
-          "start": "2022-07-27",
-          "end": "2022-08-29"
-        }
-      ]
-    },
-    "reviews": [
+      "dates": [{
+        "start": "2022-04-10",
+        "end": "2022-06-22"
+      },
       {
-        "title": "Nice",
-        "description": "I like Brasov what can I say, It is a nice place",
-        "score": 4.5
-      }
-    ],
+        "start": "2022-07-27",
+        "end": "2022-08-29"
+      }]
+    },
+    "reviews": [{
+      "title": "Nice",
+      "description": "I like Brasov what can I say, It is a nice place",
+      "score": 4.5
+    }],
     "contact": {
       "website": {
         "key": "Apartament Brasov",
@@ -329,4 +368,5 @@
     "anualTemp": "18",
     "id": 8
   }
+ 
 ]

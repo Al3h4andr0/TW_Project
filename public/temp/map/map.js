@@ -44,7 +44,6 @@ class Map {
             <img src="${location.imgSrc}">
             <p><b>${location.title}</b></p>
             <a href="#location${location.id}">See more</a>
-            <p>${location.overview.description}</p>
         </div>`
     }
 
