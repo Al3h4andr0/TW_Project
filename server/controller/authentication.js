@@ -15,12 +15,22 @@ class AuthenticationController {
         response.end("User created Successfully");
     }
 
+   async deleteUser(request, response)
+   {
+    const urlData = request.url.split('/');
+    const id = urlData[urlData.length - 1];
+    
+    let deletedUser = await userService.deleteUser(id);
+
+    response.writeHead(200, '200', { 'Content-Type': 'application/json' });
+    response.end(JSON.stringify(deletedUser));
+   }
 
     async validateUser(request, response) {
         let requestBody = JSON.parse(await getRequestData(request));
 
         let user = await getUserWithUsernameAndPassword(requestBody);
-        let jwtToken = generateJwtToken({ id: user.id, username: user.name });
+        let jwtToken = generateJwtToken({ id: user.id, username: user.name, isAdmin: user.admin });
 
         response.writeHead(201, {
             'Content-Type': 'application/json',
@@ -41,7 +51,7 @@ class AuthenticationController {
                 // if token is about to expire refresh it
                 const nowUnixSeconds = Math.round(Number(new Date()) / 1000)
                 if (payload.exp - nowUnixSeconds < 30) {
-                    let newTokenPayload = generateJwtToken({ username: payload.username, id: payload.id });
+                    let newTokenPayload = generateJwtToken({ username: payload.username, id: payload.id, isAdmin: user.admin });
                     response.setHeader('Set-Cookie', 'jwt=' + newTokenPayload + "; HttpOnly;");
                     console.log("Renewed JWT for ", newTokenPayload);
                     return resolve(newTokenPayload);

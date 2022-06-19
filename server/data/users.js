@@ -25,6 +25,15 @@ const users = [
         ownedApatments: [1, 2],
         rented: [{ id: 1, date: { start: "00-00-00", end: "00-00-00" } },
         { id: 2, date: { start: "00-00-00", end: "00-00-00" } }]
+    },
+    {
+        id: 4,
+        name: "admin",
+        admin:1,
+        password: "abc",
+        ownedApatments: [1, 2],
+        rented: [{ id: 1, date: { start: "00-00-00", end: "00-00-00" } },
+        { id: 2, date: { start: "00-00-00", end: "00-00-00" } }]
     }
 ]
 

@@ -23,7 +23,22 @@ class UserService{
         });
     }
 
-    
+    async deleteUser(id)
+    {
+        id = parseInt(id);
+
+        return new Promise((resolve, reject) => {
+            let userIndex = allUsers.findIndex((user) => user.id === id);
+
+            allUsers.splice(userIndex, 1);
+            if (userIndex !== -1) {
+                resolve({ message: 'Location with id ' + id + ' deleted.' });
+            } else {
+                reject(notFound(id));
+            }
+
+        });
+    }
 }
 
 module.exports = UserService;
