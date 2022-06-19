@@ -100,7 +100,7 @@ export default class FilterModal {
 
 
                 <h4> Rating: </h4>
-                <label for="min-rating" name="min-rating" class = "min-max-rating"> Min. rating: </label>
+                <label for="min-rating" class = "min-max-rating"> Min. rating: </label>
                 <select name="min-rating:" id="min-rating" class = "min-max-rating">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -111,7 +111,7 @@ export default class FilterModal {
 
 
 
-                <label for="max-rating" name="max-rating" class = "min-max-rating" > Max. rating: </label>
+                <label for="max-rating" class = "min-max-rating" > Max. rating: </label>
                 <select name="max-rating:" id="max-rating" class = "min-max-rating">
                     <option value="5">5</option>
                     <option value="4">4</option>
@@ -120,8 +120,8 @@ export default class FilterModal {
                     <option value="1">1</option>
                 </select>
 
-                <label for="theft-max" class="theft-max" id="theft-max">
-                    <h4>Maximum thefts per month:</h4>
+                <label for="theft-max" class="theft-max" >
+                    Maximum thefts per month:
                 </label>
                 <input type="number" name="theft-max" class="theft-max" id="theft-max"> </input><br />
 

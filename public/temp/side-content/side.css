@@ -182,12 +182,12 @@
   text-decoration: none;
 
 }
-#locationForRent{
+.locationForRent{
  color: black;
  font-weight: 100;
  text-transform: uppercase;
 }
-#locationForSale{
+.locationForSale{
   color:#8d0808;
   font-weight: bold;
   text-transform: uppercase;
