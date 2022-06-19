@@ -5,7 +5,7 @@ const rootAPIGetLocation = "http://localhost:8000/api/locations"
 export default class Suggestions{
     constructor(inputElement,suggestionsElement, side,Map){
         if (!inputElement || !suggestionsElement) {
-            throw 'inputElement,suggestionsElemen required so we know where we render the things';
+            throw 'inputElement,suggestionsElement required so we know where we render the things';
         }
         this.inputElement = inputElement;
         this.suggestionsElement = suggestionsElement;
@@ -22,17 +22,19 @@ export default class Suggestions{
 
     async bindListeners()
     {
-    this.inputElement.addEventListener('input',async (_) => {
+    this.inputElement.addEventListener('input',async (e) => {
+
         const keyword = this.inputElement.value;
-        if(keyword.length == 0)
-         {this.suggestionsElement.innerHTML=''; return;}
-        if(keyword.length == 3)
-            this.suggestions = await this.fetchSuggestions(this.inputElement.value);
-        else
-        {
-            this.suggestions.sort((s1,s2) => { // is something like true - (minus) false, it sorts first elements to match the case; if the keyword is deleted, it fetches the new one from backend
-                return (s2.title.toLowerCase()).includes(keyword.toLowerCase()) - (s1.title.toLowerCase()).includes(keyword.toLowerCase())});   
-        }
+        
+        if(keyword.length == 0) // if search is empty, then empty the suggestions too
+            {this.suggestionsElement.innerHTML=''; return;}
+
+        //  if(e.inputType !== "insertText"){  // if the user is deleting something from search, don't pull again until it writes something
+        //     return;
+        // }
+        
+        this.suggestions = await this.fetchSuggestions(this.inputElement.value);
+
         this.renderSuggestionsElement(this.suggestions); 
     });
 
@@ -49,8 +51,11 @@ export default class Suggestions{
         //console.log("LOCATIONS AFTER ENTER: ", locations);
         this.side.renderAndReplace(locations);
         this.Map.renderPins(locations);
-        this.side.addListener(locations);}
-        //now they hould be rendered but idk how
+        this.side.addListener(locations);
+        //delete what is in search bar and suggestions
+        this.inputElement.value = "";
+        this.suggestionsElement.innerHTML = "";}
+    
     });
 
     }
@@ -58,7 +63,6 @@ export default class Suggestions{
     renderSuggestionsElement(suggestionsList)
     {
         this.suggestionsElement.innerHTML = '';
-        if(suggestionsList !== null)
        
         for(var i in suggestionsList.slice(0,7)) //first 7 occurences
        this.suggestionsElement.innerHTML+=this.renderSuggestion(suggestionsList[i]);
@@ -82,10 +86,14 @@ export default class Suggestions{
             const locationID = suggestion.id.split("ID")[1];
             var location = await fetch(rootAPIGetLocation + "/" + locationID,{method: 'GET'});
             location = await location.json();
-            console.log("LOCATION AFTER CLICK" ,location);
-            //now it should be rendered on side but idk how
-            // this.side.render([location]);
-            // this.side.addListener([location]);
+        
+            this.side.renderAndReplace([location]);
+        this.Map.renderPins([location]);
+        this.side.addListener([location]);
+              //delete what is in search bar and suggestions
+        this.inputElement.value = "";
+        this.suggestionsElement.innerHTML = "";
+     
         });
     }
 
@@ -96,3 +104,4 @@ export default class Suggestions{
         console.log(ids);
     }
 }
+

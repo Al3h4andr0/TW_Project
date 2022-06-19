@@ -1,4 +1,16 @@
-const allUsers = require("../data/users")
+const readJson = require('../utils/jsonReader');
+const writeJson = require('../utils/jsonWriter');
+
+const USERS_PATH = "./data/users.json";
+var allUsers = [];
+readJson(USERS_PATH,(err, data) =>{
+    if(err)
+        console.log(err);
+    else
+        {
+            allUsers = JSON.parse(data);
+        }
+})
 
 
 
@@ -18,8 +30,12 @@ class UserService{
                 password: user.password,
                 id: allUsers[allUsers.length - 1].id + 1
             }
+         
             allUsers.push(newUser);
-            resolve("created");
+            writeJson(USERS_PATH, allUsers, () => {
+                resolve("created");
+            })
+          
         });
     }
 
