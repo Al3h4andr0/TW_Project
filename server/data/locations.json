@@ -204,7 +204,7 @@
       "lng": 27.581982
     },
     "title": "Palatul TW",
-    "imgSrc": "https://palatulculturii.ro/web/img/og_image.jpg",
+    "imgSrc": "http://localhost:8000/api/photo?photo=oldTown",
     "imgAlt": "Palatul culturii",
     "address": "Bulevardul Ștefan cel Mare și Sfânt 1, Iași 700028",
     "price": 15,
@@ -242,75 +242,6 @@
     "theft": 10,
     "costOfLiving": 10,
     "anualTemp": 20
-  },
-  {
-    "ownerId": 1,
-    "position": {
-      "lat": "47.1753569",
-      "lng": "27.5566032815234"
-    },
-    "title": "aaaaaaaaaaa",
-    "imgSrc": "./images/Screenshot (8).png",
-    "imagAlt": "aaaaaaaaaaa",
-    "address": "Toma Cozma 81 Iasi",
-    "price": "11",
-    "condition": "bad",
-    "overview": {
-      "description": "qqqqqqqqqqqq",
-      "facilities": [
-        "air-conditioning",
-        "microwave"
-      ],
-      "surface": "22",
-      "for": "sale",
-      "dates": []
-    },
-    "reviews": [],
-    "contact": {
-      "website": {
-        "key": "22",
-        "http": "22"
-      },
-      "phoneNumber": "22"
-    },
-    "theft": 10,
-    "costOfLiving": 10,
-    "anualTemp": 20,
-    "id": 6
-  },
-  {
-    "ownerId": 1,
-    "position": {
-      "lat": "45.75192935",
-      "lng": "21.22624474301332"
-    },
-    "title": "Apartment in old town",
-    "imgSrc": "./images/old-town-by-welcome-apartment.jpg",
-    "imagAlt": "Apartment in old town",
-    "address": "Bulevardul Mihai Eminescu 1, Timisoara",
-    "condition": "good",
-    "overview": {
-      "facilities": [
-        "air-conditioning",
-        "parking",
-        "fridge"
-      ],
-      "surface": "100",
-      "for": "rent",
-      "dates": []
-    },
-    "reviews": [],
-    "contact": {
-      "website": {
-        "key": "",
-        "http": ""
-      },
-      "phoneNumber": "0748851321"
-    },
-    "theft": "1",
-    "costOfliving": "700",
-    "anualTemp": "20",
-    "id": 7
   }
  
 ]
