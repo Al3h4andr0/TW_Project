@@ -156,8 +156,9 @@ class LocationsControler {
         let form = new formidable.IncomingForm();
         form.parse(request, async function (error, fields, file) {
             console.log(fields);
+            if(error)
+            {console.log(error);}
             let filepath = file.images.filepath;
-            __dirname
             let newpath = '../server/data/photos/';
             newpath += file.images.originalFilename;
             fs.rename(filepath, newpath, function () {

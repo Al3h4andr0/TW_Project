@@ -3,8 +3,8 @@
     "id": 1,
     "ownerId": 1,
     "position": {
-      "lat": 47.172740,
-      "lng": 27.543790
+      "lat": 47.17274,
+      "lng": 27.54379
     },
     "title": "Apartament Nicu",
     "imgSrc": "https://palatulculturii.ro/web/img/og_image.jpg",
@@ -22,14 +22,16 @@
       ],
       "surface": 100,
       "for": "rent",
-      "dates": [{
-        "start": "2022-07-07",
-        "end": "2022-09-10"
-      },
-      {
-        "start": "2022-12-20",
-        "end": "2022-12-30"
-      }]
+      "dates": [
+        {
+          "start": "2022-07-07",
+          "end": "2022-09-10"
+        },
+        {
+          "start": "2022-12-20",
+          "end": "2022-12-30"
+        }
+      ]
     },
     "reviews": [
       {
@@ -161,8 +163,8 @@
     "id": 4,
     "ownerId": 1,
     "position": {
-      "lat": 47.147580 ,
-      "lng": 27.606170
+      "lat": 47.14758,
+      "lng": 27.60617
     },
     "title": "Apartament Zona industriala",
     "imgSrc": "https://palatulculturii.ro/web/img/og_image.jpg",
@@ -174,7 +176,7 @@
       "description": "We have Carrefour nearby so we're the best",
       "facilities": [
         "shop nearby",
-        "fridge"       
+        "fridge"
       ],
       "surface": 50,
       "for": "sale",
@@ -207,8 +209,8 @@
     "id": 5,
     "ownerId": 1,
     "position": {
-      "lat": 47.152640,
-      "lng": 27.574660
+      "lat": 47.15264,
+      "lng": 27.57466
     },
     "title": "Palatul TW",
     "imgSrc": "http://localhost:8000/api/photo?photo=oldTown",
@@ -226,14 +228,16 @@
       ],
       "surface": 90,
       "for": "rent",
-      "dates": [{
-        "start": "2022-04-10",
-        "end": "2022-06-22"
-      },
-      {
-        "start": "2022-07-27",
-        "end": "2022-08-29"
-      }]
+      "dates": [
+        {
+          "start": "2022-04-10",
+          "end": "2022-06-22"
+        },
+        {
+          "start": "2022-07-27",
+          "end": "2022-08-29"
+        }
+      ]
     },
     "reviews": [
       {
@@ -252,6 +256,40 @@
     "theft": 10,
     "costOfLiving": 10,
     "anualTemp": 20
+  },
+  {
+    "ownerId": 1,
+    "position": {
+      "lat": "47.1753569",
+      "lng": "27.5566032815234"
+    },
+    "title": "aasdasd",
+    "imgSrc": "http://localhost:8000/api/photo?photo=Screenshot(3).png",
+    "imagAlt": "aasdasd",
+    "address": "Toma Cozma 81 Iasi",
+    "price": "adfs",
+    "condition": "bad",
+    "overview": {
+      "description": "asdfa",
+      "facilities": [
+        "parking",
+        "microwave"
+      ],
+      "surface": "123eq3",
+      "for": "sale",
+      "dates": []
+    },
+    "reviews": [],
+    "contact": {
+      "website": {
+        "key": "22",
+        "http": "22"
+      },
+      "phoneNumber": "22"
+    },
+    "theft": "1",
+    "costOfliving": "22",
+    "anualTemp": "22",
+    "id": 6
   }
- 
 ]
