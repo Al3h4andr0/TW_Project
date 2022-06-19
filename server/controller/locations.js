@@ -190,7 +190,6 @@ class LocationsControler {
                 fac.push(fields.facilities5);
             }
 
-
             let location = {
                 ownerId: userPayload.id,
                 position: {
