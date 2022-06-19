@@ -94,10 +94,15 @@ class Map {
     }
     async addBrasovListener()
     {
-
+       
          const element = document.getElementById("brasov_btn");
          let latlng = [45.652822,25.611141];
-         element.addEventListener("click",moveView,false);
+         element.addEventListener("click",async ()=>{moveView
+            let rootAPI="http://localhost:8000/api/locations";
+            let res = await fetch((rootAPI, {method: 'GET', headers:{'Content-Type': 'application/json'}}));
+           // res=await res.json();
+            console.log(res);
+        },false);
          element.param=latlng;
          element.p=this.map;
          

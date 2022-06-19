@@ -3,11 +3,11 @@
     "id": 1,
     "ownerId": 1,
     "position": {
-      "lat": 47.17274,
-      "lng": 27.54379
+      "lat": 47.172740,
+      "lng": 27.543790
     },
     "title": "Apartament Nicu",
-    "imgSrc": "https://palatulculturii.ro/web/img/og_image.jpg",
+    "imgSrc": "http://localhost:8000/api/photo/?photo=2-camere-tip-III-B_01.png",
     "imgAlt": "Apartament Nicu",
     "address": "Bulevardul Ștefan cel Mare și Sfânt 1, Iași 700028",
     "price": 15,
@@ -22,16 +22,14 @@
       ],
       "surface": 100,
       "for": "rent",
-      "dates": [
-        {
-          "start": "2022-07-07",
-          "end": "2022-09-10"
-        },
-        {
-          "start": "2022-12-20",
-          "end": "2022-12-30"
-        }
-      ]
+      "dates": [{
+        "start": "2022-07-07",
+        "end": "2022-09-10"
+      },
+      {
+        "start": "2022-12-20",
+        "end": "2022-12-30"
+      }]
     },
     "reviews": [
       {
@@ -163,8 +161,8 @@
     "id": 4,
     "ownerId": 1,
     "position": {
-      "lat": 47.14758,
-      "lng": 27.60617
+      "lat": 47.147580 ,
+      "lng": 27.606170
     },
     "title": "Apartament Zona industriala",
     "imgSrc": "https://palatulculturii.ro/web/img/og_image.jpg",
@@ -176,7 +174,7 @@
       "description": "We have Carrefour nearby so we're the best",
       "facilities": [
         "shop nearby",
-        "fridge"
+        "fridge"       
       ],
       "surface": 50,
       "for": "sale",
@@ -209,15 +207,15 @@
     "id": 5,
     "ownerId": 1,
     "position": {
-      "lat": 47.15264,
-      "lng": 27.57466
+      "lat": 47.152640,
+      "lng": 27.574660
     },
-    "title": "Palatul TW",
-    "imgSrc": "http://localhost:8000/api/photo?photo=oldTown",
-    "imgAlt": "Palatul culturii",
-    "address": "Bulevardul Ștefan cel Mare și Sfânt 1, Iași 700028",
-    "price": 15,
-    "condition": "good",
+    "title": "Pensiunea Cantemir",
+    "imgSrc": "https://palatulculturii.ro/web/img/og_image.jpg",
+    "imgAlt": "Pensiunea Cantemir",
+    "address": "Bulevardul Nicolae Iorga 7D, Iași",
+    "price": 30,
+    "condition": "very-good",
     "overview": {
       "description": "I dont know anything about this zone, I forgot it existed",
       "facilities": [
@@ -228,16 +226,14 @@
       ],
       "surface": 90,
       "for": "rent",
-      "dates": [
-        {
-          "start": "2022-04-10",
-          "end": "2022-06-22"
-        },
-        {
-          "start": "2022-07-27",
-          "end": "2022-08-29"
-        }
-      ]
+      "dates": [{
+        "start": "2022-04-10",
+        "end": "2022-06-22"
+      },
+      {
+        "start": "2022-07-27",
+        "end": "2022-08-29"
+      }]
     },
     "reviews": [
       {
@@ -253,43 +249,124 @@
       },
       "phoneNumber": "0232456356"
     },
-    "theft": 10,
-    "costOfLiving": 10,
-    "anualTemp": 20
+    "theft": 2,
+    "costOfLiving": 40,
+    "anualTemp": 23
   },
   {
     "ownerId": 1,
     "position": {
-      "lat": "47.1753569",
-      "lng": "27.5566032815234"
+      "lat": "44.461320",
+      "lng": "26.056650"
     },
-    "title": "aasdasd",
-    "imgSrc": "http://localhost:8000/api/photo?photo=Screenshot(3).png",
-    "imagAlt": "aasdasd",
-    "address": "Toma Cozma 81 Iasi",
-    "price": "adfs",
+    "title": "Apartament Bucuresti",
+    "imgSrc": "./images/Screenshot (8).png",
+    "imagAlt": "Apartament Bucuresti",
+    "address": "Pasajul Pietonal Halta Grivița, București 012244",
+    "price": "100",
     "condition": "bad",
     "overview": {
-      "description": "asdfa",
+      "description": "Look we are in Bucharest, haha it is nice out here",
       "facilities": [
-        "parking",
+        "air-conditioning",
         "microwave"
       ],
-      "surface": "123eq3",
+      "surface": "120",
       "for": "sale",
       "dates": []
     },
     "reviews": [],
     "contact": {
       "website": {
-        "key": "22",
-        "http": "22"
+        "key": "Apartament Bucuresti",
+        "http": "https://www.imobiliare.ro/vanzare-apartamente/bucuresti/parcul-carol/apartament-de-vanzare-3-camere-XCKN0000B?lista=2349706&listing=1&pagina=lista&sla=lista"
       },
-      "phoneNumber": "22"
+      "phoneNumber": "0772675989"
+    },
+    "theft": 7,
+    "costOfLiving": 60,
+    "anualTemp": 30,
+    "id": 6
+  },
+  {
+    "ownerId": 1,
+    "position": {
+      "lat": "45.75192935",
+      "lng": "21.22624474301332"
+    },
+    "title": "Apartment in old town",
+    "imgSrc": "./images/old-town-by-welcome-apartment.jpg",
+    "imagAlt": "Apartment in old town",
+    "address": "Bulevardul Mihai Eminescu 1, Timisoara",
+    "condition": "good",
+    "overview": {
+      "facilities": [
+        "air-conditioning",
+        "parking",
+        "fridge"
+      ],
+      "surface": "100",
+      "for": "rent",
+      "dates": []
+    },
+    "reviews": [],
+    "contact": {
+      "website": {
+        "key": "",
+        "http": ""
+      },
+      "phoneNumber": "0748851321"
     },
     "theft": "1",
-    "costOfliving": "22",
-    "anualTemp": "22",
-    "id": 6
+    "costOfliving": "700",
+    "anualTemp": "20",
+    "id": 7
+  },
+  {
+    "ownerId": 2,
+    "position": {
+      "lat": "45.660850",
+      "lng": "25.608870"
+    },
+    "title": "Apartment Brasov",
+    "imgSrc": "./images/old-town-by-welcome-apartment.jpg",
+    "imagAlt": "Apartment Brasov",
+    "address": "Bulevardul Gării 3A, Brașov 500148",
+    "condition": "good",
+    "overview": {
+      "facilities": [
+        "air-conditioning",
+        "parking",
+        "fridge",
+        "microwave"
+      ],
+      "surface": "110",
+      "for": "rent",
+      "dates": [{
+        "start": "2022-04-10",
+        "end": "2022-06-22"
+      },
+      {
+        "start": "2022-07-27",
+        "end": "2022-08-29"
+      }]
+    },
+    "reviews": [{
+      "title": "Nice",
+      "description": "I like Brasov what can I say, It is a nice place",
+      "score": 4.5
+    }],
+    "contact": {
+      "website": {
+        "key": "Apartament Brasov",
+        "http": "https://alphaville-arena.ro/?gclid=Cj0KCQjwkruVBhCHARIsACVIiOxhvx8OW7tUsR6ZEVrt5g6GzbhTVWvrieDHfh7q3gnQglhYqfeJYMAaAtO2EALw_wcB"
+      },
+      "phoneNumber": "0748859076"
+    },
+    "theft": "9",
+    "costOfliving": "200",
+    "anualTemp": "18",
+    "id": 8
   }
+ 
 ]
