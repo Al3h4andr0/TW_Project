@@ -106,11 +106,34 @@ const uploadUsers =() =>
 }
 function getLocations()
 {
+    let rootAPI = `http://localhost:8000/api/admin/getLocations`;
+    fetch(rootAPI, {method: 'POST'})
+        .then((res) => {
+            if (res.status === 404) {
+                alert("Sth went wrong");
+            }else
+            if(res.status >=200 && res.status <=399){
+            res=res.json();
+            console.log(res);
+         
+        }
+        })
 
 }
 function getUsers()
 {
-
+    let rootAPI = `http://localhost:8000/api/admin/getUsers`;
+    fetch(rootAPI, {method: 'POST'})
+        .then((res) => {
+            if (res.status === 404) {
+                alert("Sth went wrong");
+            }else
+            if(res.status >=200 && res.status <=399){
+            res=res.json();
+            console.log(res);
+         
+        }
+        })
 }
 uploadUsers();
 uploadLocations();

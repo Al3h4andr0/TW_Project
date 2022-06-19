@@ -103,6 +103,11 @@ async function requestListener(request, response) {
     else if (request.url.match(/\api\/admin\/uploadUsers/) && request.method === POST) {
         authorizedSafeExec(authenticationController.uploadUsers, request, response);}
 
+    else if (request.url.match(/\api\/admin\/getLocations/) && request.method === POST) {
+        authorizedSafeExec(LocationController.getLocations, request, response);}
+    else if (request.url.match(/\api\/admin\/getUsers/) && request.method === POST) {
+        authorizedSafeExec(authenticationController.getUsers, request, response);}
+
     else if (request.url.match(/\api\/locations\/myLocations/) && request.method === GET) {
         authorizedSafeExec(LocationController.getLocationsOwnedByUser, request, response);}
     else if (request.url.match(/\api\/login/) && request.method === POST) {

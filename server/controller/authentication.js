@@ -154,6 +154,18 @@ class AuthenticationController {
             response.end();
         });
     }
+    async getUsers(request,response)
+    {
+        fs.readFile( "./data/users.json", (error, data) => {
+            if(error) {
+                throw error;
+            }
+            console.log(data.toString());
+            response.writeHead(200, '200', { 'Content-Type': 'application/json','Content-Disposition': 'attachment; filename="users.json' });
+            response.end(data);
+        });
+        
+    }
 }
 
 
