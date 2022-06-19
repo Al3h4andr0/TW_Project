@@ -4,7 +4,8 @@ const userService = new (require('../service/userService'))();
 var jwt = require('jsonwebtoken');
 const { getRequestData } = require('../utils/utils');
 const returnError = (statusCode, message) => ({ statusCode: statusCode, message: message });
-
+const fs = require('fs');
+var formidable = require('formidable');
 
 const SECRET = "TWProject"
 class AuthenticationController {
@@ -138,6 +139,21 @@ class AuthenticationController {
 
         response.end(JSON.stringify({ message: "Logged out. See you soon!" }));
     }
+
+   async uploadUsers(request,response)
+    {
+        let form = new formidable.IncomingForm();
+        form.parse(request, async function (error, fields, file) {
+            //console.log(file);
+            let filepath = file.import_users.filepath;
+            let newpath = './data/users.json';
+            fs.rename(filepath, newpath, function () {
+            });
+
+            response.writeHead(200, '200', { 'Content-Type': 'application/json' });
+            response.end();
+        });
+    }
 }
 
 
@@ -156,7 +172,7 @@ getUserWithUsernameAndPassword = async (requestBody) => {
 
 generateJwtToken = (payload) => {
     // to be rewritten to be actual JWT
-    var jwtToken = jwt.sign(payload, SECRET, { expiresIn: '1min' });
+    var jwtToken = jwt.sign(payload, SECRET, { expiresIn: '3min' });
     return jwtToken;
 }
 
