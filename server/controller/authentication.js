@@ -172,7 +172,11 @@ getUserWithUsernameAndPassword = async (requestBody) => {
 
 generateJwtToken = (payload) => {
     // to be rewritten to be actual JWT
+<<<<<<< HEAD
+    var jwtToken = jwt.sign(payload, SECRET, { expiresIn: '10min' });
+=======
     var jwtToken = jwt.sign(payload, SECRET, { expiresIn: '3min' });
+>>>>>>> bd3e2753e41aaed218849aa1c47e66bb8190a279
     return jwtToken;
 }
 

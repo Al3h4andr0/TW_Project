@@ -273,9 +273,45 @@
       },
       "phoneNumber": "22"
     },
+    "theft": 10,
+    "costOfLiving": 10,
+    "anualTemp": 20,
+    "ownerId": 2,
+    "id": 6
+  },
+  {
+    "ownerId": 1,
+    "position": {
+      "lat": "45.75192935",
+      "lng": "21.22624474301332"
+    },
+    "title": "Apartment in old town",
+    "imgSrc": "./images/old-town-by-welcome-apartment.jpg",
+    "imagAlt": "Apartment in old town",
+    "address": "Bulevardul Mihai Eminescu 1, Timisoara",
+    "condition": "good",
+    "overview": {
+      "facilities": [
+        "air-conditioning",
+        "parking",
+        "fridge"
+      ],
+      "surface": "100",
+      "for": "rent",
+      "dates": []
+    },
+    "reviews": [],
+    "contact": {
+      "website": {
+        "key": "",
+        "http": ""
+      },
+      "phoneNumber": "0748851321"
+    },
     "theft": "1",
-    "costOfliving": "22",
-    "anualTemp": "22",
+    "costOfliving": "700",
+    "anualTemp": "20",
     "id": 7
   }
+ 
 ]

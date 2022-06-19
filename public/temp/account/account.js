@@ -32,5 +32,10 @@ export default class Account{
         const element = document.getElementById("acc");
         element.addEventListener("click",toggleAccountButtons);
     }
+    async addEstatesListener(){
+        const element = document.getElementById("myApartments_btn");
+        element.addEventListener("click", toggleEstatesOn);
+        
+    }
 }
 

@@ -3,13 +3,16 @@
 @import './account/account.css';
 @import './modals/logo-search.css';
 @import './modals/filter/filterModal.css';
+@import './modals/myEstates/myEstatesModal.css';
 @media only screen and (max-width: 1130px) {
     :root {
         --nav-height: 100px;
-        --main-height: calc(100vh - var(--nav-height));
-        --map-frame-height: calc(80vh - var(--nav-height));
+        --main-height:
+        calc(100vh - var(--nav-height));
+        --map-frame-height:
+        calc(80vh - var(--nav-height));
         --width-content: 100vw;
-        /*--map-visibility: hidden;*/
+        /* --map-visibility: hidden; */
         --map-width: 100vw;
         --map-frame-width:100vw;
         --main-flex-direction: column-reverse;
