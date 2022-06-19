@@ -101,6 +101,7 @@ class Map {
          element.param=latlng;
          element.p=this.map;
          
+        
     }
     async addIasiListener(){
         const element = document.getElementById("iasi_btn");

@@ -104,7 +104,17 @@ const uploadUsers =() =>
         )
 
 }
+function getLocations()
+{
+
+}
+function getUsers()
+{
+
+}
 uploadUsers();
 uploadLocations();
 locationListener();
 userListener();
+document.getElementById('export_locations').addEventListener("click",getLocations);
+document.getElementById('export_users').addEventListener("click",getUsers);
