@@ -3,6 +3,7 @@
     justify-content: space-between;
 }
 .account{
+  display: flex;
     padding-top: 20px;
     direction: rtl;
     padding-top: 20px;
@@ -26,6 +27,8 @@
   justify-content: center;
 }
 #account_buttons{
+  top: 70px;
+  position: fixed;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -89,6 +92,10 @@ text-align: center;
 letter-spacing: 0.07em;
 color: rgba(8, 8, 8, 0.65);
 height: 40px;
+}
+#my_estates_content{
+  right: 210px;
+
 }
 .register_form_container_container{
   display: flex;
@@ -323,7 +330,18 @@ height: 40px;
     padding: 0 10px;
     width: 30%;
   }
-  
+  #helloname{
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.07em;
+  color: rgba(8, 8, 8, 0.65);
+  }
   .add_apartment_form .row {
     display: flex;
     flex-direction: column;
@@ -363,6 +381,18 @@ height: 40px;
     }
     #logged_in_buttons{
       right: 0;
+    }
+   
+  }
+  @media only screen and (max-width: 600px) {
+    #my_estates_content{
+      right: 0;
+      top:250px;
+    }
+  }
+  @media only screen and (max-width: 710px) {
+    #helloname{
+      display: none;
     }
   }
   .add_apartment_form input[type="submit"] {
