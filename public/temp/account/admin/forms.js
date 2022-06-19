@@ -177,3 +177,6 @@ locationListener();
 userListener();
 document.getElementById('export_locations').addEventListener("click",getLocations);
 document.getElementById('export_users').addEventListener("click",getUsers);
+document.getElementById('back').addEventListener("click", (_) => {
+    location.href = "http://localhost:8000/temp";
+} )

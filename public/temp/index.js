@@ -57,6 +57,7 @@ function init () {
     })
 
     Map.init();
+    Map.fetchLocationsAndUpdateSide("iasi", side);
     onMapStateChange();
     onAccountStateChange();
     recommendationsListeners();

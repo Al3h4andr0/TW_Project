@@ -1,5 +1,6 @@
 const readJson = require('../utils/jsonReader');
 const writeJson = require('../utils/jsonWriter');
+const allFacilities = require('../data/facilities');
 const LOCATIONS_PATH = './data/locations.json'
 var allLocations;
 readJson(LOCATIONS_PATH, (err, data) => {

@@ -1,6 +1,4 @@
-// let res = await fetch("http://localhost:8000/api/locations", {method: 'GET'});
-//    res = await res.json();
-//     console.log(res);
+
 
 class Map {
     constructor() {

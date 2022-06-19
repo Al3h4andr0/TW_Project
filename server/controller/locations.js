@@ -90,8 +90,13 @@ class LocationsControler {
 
     async getMultipleLocations(request, response) {
         const urlData = request.url.split("?ids=");
-        const ids = urlData[urlData.length - 1].split(",");
-        const locations = await LocationService.getMultipleLocations(ids);
+        let locations = []
+        if(urlData)
+        {
+            const ids = urlData[urlData.length - 1].split(",");
+         locations = await LocationService.getMultipleLocations(ids);}
+        else
+        locations = await LocationService.getAllLocations();
         response.writeHead(200, '200', { 'Content-Type': 'application/json' });
         response.end(JSON.stringify(locations));
     }
