@@ -62,7 +62,7 @@
       "lng": 27.582023
     },
     "title": "Metropolitan Cathedral",
-    "imgSrc": "https://d1bvpoagx8hqbg.cloudfront.net/originals/the-metropolitan-cathedral-ia-65e10ac69e76974c0b1133e182ed1f03.jpg",
+    "imgSrc": "http://localhost:8000/api/photo/?photo=app1.jpg",
     "imgAlt": "Metropolitan Cathedral",
     "address": "Bulevardul Ștefan cel Mare și Sfânt 16, Iași 700064",
     "price": 10,
@@ -118,7 +118,7 @@
       "lng": 27.386982
     },
     "title": "Palatul Culturii",
-    "imgSrc": "https://palatulculturii.ro/web/img/og_image.jpg",
+    "imgSrc": "http://localhost:8000/api/photo/?photo=app2.jpeg",
     "imgAlt": "Palatul culturii",
     "address": "Bulevardul Ștefan cel Mare și Sfânt 1, Iași",
     "price": 15,
@@ -165,7 +165,7 @@
       "lng": 27.606170
     },
     "title": "Apartament Zona industriala",
-    "imgSrc": "https://palatulculturii.ro/web/img/og_image.jpg",
+    "imgSrc": "http://localhost:8000/api/photo/?photo=app3.jpg",
     "imgAlt": "Apartament Zona industriala",
     "address": "Calea Chișinăului 2A, Iași",
     "price": 15,
@@ -211,7 +211,7 @@
       "lng": 27.574660
     },
     "title": "Pensiunea Cantemir",
-    "imgSrc": "https://palatulculturii.ro/web/img/og_image.jpg",
+    "imgSrc": "http://localhost:8000/api/photo/?photo=app4.jpg",
     "imgAlt": "Pensiunea Cantemir",
     "address": "Bulevardul Nicolae Iorga 7D, Iași",
     "price": 30,
@@ -260,7 +260,7 @@
       "lng": "26.056650"
     },
     "title": "Apartament Bucuresti",
-    "imgSrc": "./images/Screenshot (8).png",
+    "imgSrc": "http://localhost:8000/api/photo/?photo=app5.jpg",
     "imagAlt": "Apartament Bucuresti",
     "address": "Pasajul Pietonal Halta Grivița, București 012244",
     "price": "100",
@@ -295,7 +295,7 @@
       "lng": "21.22624474301332"
     },
     "title": "Apartment in old town",
-    "imgSrc": "./images/old-town-by-welcome-apartment.jpg",
+    "imgSrc": "http://localhost:8000/api/photo/?photo=app7.jpg",
     "imagAlt": "Apartment in old town",
     "address": "Bulevardul Mihai Eminescu 1, Timisoara",
     "condition": "good",
@@ -329,7 +329,7 @@
       "lng": "25.608870"
     },
     "title": "Apartment Brasov",
-    "imgSrc": "./images/old-town-by-welcome-apartment.jpg",
+    "imgSrc": "http://localhost:8000/api/photo/?photo=app6.jpg",
     "imagAlt": "Apartment Brasov",
     "address": "Bulevardul Gării 3A, Brașov 500148",
     "condition": "good",
