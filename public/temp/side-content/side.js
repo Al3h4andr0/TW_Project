@@ -89,7 +89,7 @@ export default class Side {
             <div class="location" id="location${location.id}">
                 <div class="locationImage">
                     <img src='${location.imgSrc}' alt='${location.imgAlt}'>
-                <div/>
+                </div>
                 <div class="locationTitle">
                     <p>${location.title}</p>
                 </div>

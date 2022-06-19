@@ -5,8 +5,11 @@ import map from './map/map.js';
 import Account from './account/account.js';
 import Suggestions from './api/suggestions.js';
 import FilterModal from './modals/filter/filterModal.js'
+import myEstatesModal from './modals/myEstates/myEstatesModal.js';
 
 
+
+const myEstates = new myEstatesModal(document.getElementById('my_estates_content'), document.getElementById('myApartments_btn'));
 const side = new Side(document.getElementById('content'));
 const account = new Account(document.getElementById('account'));
 const suggestions = new Suggestions(document.getElementById("searchInput"),document.getElementById("autocomplete-box"), side,Map);
@@ -61,6 +64,8 @@ function init () {
     suggestions.bindListeners();
     filterModal.render();
     account.addAccountListener();
+    myEstates.render();
+    myEstates.addListenersToElements();
 }
 
 
