@@ -5,7 +5,6 @@ var formidable = require('formidable');
 // var multiparty = require('multiparty');
 const allLocations = require('../data/locations');
 const { getRequestData, getFormRequestData } = require('../utils/utils');
-const LocationsService = require('../service/locationService');
 const LocationService = new (require('../service/locationService'))();
 const authenticationService = new (require('../controller/authentication'))();
 const notFound = (id) => ({ statusCode: 404, message: `Location with id ${id} not found` });
@@ -86,7 +85,8 @@ class LocationsControler {
     }
 
     async getSuggestions(request, response) {
-        const keyword = request.url.split("keyword=")[1];
+        const keyword = request.url.split("keyword=")[1].replace("+", " ");;
+
         const suggestions = await LocationService.getSuggestions(keyword);
         response.writeHead(200, '200', { 'Content-Type': 'application/json' });
         response.end(JSON.stringify(suggestions));

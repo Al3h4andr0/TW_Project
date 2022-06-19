@@ -1,10 +1,8 @@
-const facilities=[
+[
     "air-conditioning",
     "parking",
     "fridge",
     "microwave",
     "bath-tub",
-    "shop nearby",
+    "shop nearby"
 ]
-
-module.exports = facilities;
