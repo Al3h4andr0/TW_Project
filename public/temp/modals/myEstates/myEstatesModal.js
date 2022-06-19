@@ -9,19 +9,25 @@ export default class myEstatesModal{
     }
 
     async render(){ 
+        console.log("a fost apelat render");
+        const rootAPI = 'http://localhost:8000/api/ping';
+        var response = await fetch(rootAPI,  {method: 'GET', headers:{'Content-Type': 'application/json'}});
+        if(response.status === 401){
+            alert("session expired. you need to log in first before viewing you apartments");
+        }else{
         this.modal = document.getElementById("estates-modal");
         const estates = await this.getEstates();
         const modalTemplate = this.renderEverything(estates);
+        this.rootElement.insertAdjacentHTML('beforeend', "");
         this.rootElement.insertAdjacentHTML('beforeend', `${modalTemplate}`);
        // this.addListenersToElements();
+        }
     }
 
     renderEverything(list){
+        console.log('a fost apelat rendereverything');
         return `
-        <div id="estates-modal" class="estates-modal" style="width">
-            <div class="estates-modal-header">
-                <button class="estates-modal-close" id="estates-modal-close" aria-label="Close">&times;</button>
-            </div>
+        <div id="estates-modal" class="estates-modal"  style='background-color:beige; max-width: 20em; max-height: 50em; display: flex;'>
             <div class="estates-modal-body">
                 ${this.renderEstates(list)}
             </div>
@@ -29,6 +35,7 @@ export default class myEstatesModal{
             `
     }
     renderEstates(list){
+        console.log('a fost apelat renderestates');
         let res='';
         console.log("List: ", list);
        for(let estate of list)
@@ -37,43 +44,40 @@ export default class myEstatesModal{
         console.log("empty list for this user. try adding some apartments.");
         for(let estate of list){
             res+= `
-                    <div id="estate${estate.id}">
+                    <div id="estate${estate.id}" style="padding-top: 1em; padding-left: 2em;">
                         <div class="estateImage">
-                            <img src='${estate.imgSrc}' alt='${estate.imgAlt}'>
+                            <img src='${estate.imgSrc}' alt='${estate.imgAlt}' style="max-width: 10em; max-height:25em">
                         </div>
                         <div class="estateTitle">
                             <p>${estate.title}</p>
                         </div>
                         <div class="optionsEstates">
-                            <button type="button" id="delete_btn${estate.id}" class="delete_btn" action='deleteEstate(${estate.id})'>Delete</button>
+                            <button type="button" id="delete_btn${estate.id}" class="delete_btn" action='deleteEstate(${estate.id})' align = "right">Delete</button>
                         </div>
                     </div>
                 `
         }
-        if(list.length === 0)
-        res+= `
-        <div id="estateundefined">
-        <div class="estateImage">
-            <img src="../temp/images/pink-clouds.png" alt='nothing to show here'>
-        </div>
+        if(list.length === 0){
+        res='';
+            res= `
+        <div id="estateundefined"  style='background-color:beige; max-width: 20em; max-height: 80%'>
         <div class="estateTitle">
             <p>You have no apartments listed here. Try adding one or viewing what are in the market already.</p>
         </div>
     </div>
-        `
+        `;
+    }
         return res;
     }
 
-    async addListener(locations){
-        for(let location of locations){
-            const element = document.getElementById('estate' + locations.id);
-            element.addEventListener("click", renderEstates);
-        }
-    }
-
     async getEstates(){
+        console.log("a fost apelat getestates");
         var response = await fetch(rootAPIGet, {method: 'GET', headers:{'Content-Type': 'application/json'}})
         response = await response.json();
+        if(response.status == 401)
+        {alert('session expire. you need to reconnect.');
+        return;} 
+        else
         return response;
     }
 
@@ -91,22 +95,37 @@ export default class myEstatesModal{
         
     addListenersToElements(){
         this.triggerElement.addEventListener('click', (_)=> {
-            this.render();
+            console.log('a fost apelat addlistenerstolements');
             const divv = document.querySelector(".my_estates_content");
+            console.log("am trecut de document query...");
+            if(divv.classList.contains('expanded')){
+                console.log("am intrat .contains('expanded')")
+                divv.classList.remove('expanded');
+                divv.classList.add('hidden');
+                document.getElementById("my_estates_content").innerHTML="";
+            }else  if(divv.classList.contains('hidden')){
+                console.log("am intrat pe .contains(hidden)");
             divv.classList.remove('hidden');
-            divv.classList.remove('expanded');
+            divv.classList.add('expanded');
+            this.render();
+            }
+            console.log("am trecut de ifuri");
         })
-        let xButton = document.getElementById('estates-modal-close');
-        xButton.addEventListener("click", (_)=>{
-                   console.log("x buttton has been pressed. ");
-                   const divv = document.querySelector(".my_estates_content");
-                   divv.classList.remove('expanded');
-                   divv.classList.remove('hidden');
-               })
-       
     }
 
-    classListEstates(){
-        return this.rootElement.classList;
+
+   
+}
+
+function closeEstates(){
+    console.log('closeestates has been called ');
+
+    const divvX = document.querySelector(".my_estates_content");
+    if(divvX.classList.contains('expanded')){
+    divvX.classList.remove('expanded');
+    divvX.classList.add('hidden');
+    }else if(divvX.classList.contains('hidden')){
+        divvX.classList.remove('expanded');
+        divvX.classList.add('hidden');
     }
 }

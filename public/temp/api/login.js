@@ -4,6 +4,7 @@ async function login(){
    console.log("login started");
     const rootAPI = `http://localhost:8000/api/login`;
     console.log(document.getElementById('username_for_login').value);
+    var namme = document.getElementById('username_for_login').value;
     let body={
         username:document.getElementById('username_for_login').value,
         password:document.getElementById('password_for_login').value
@@ -16,7 +17,7 @@ async function login(){
                     alert("username or password incorrect. please try again.");
                 }else
                 if(res.status >=200 && res.status <=399){
-                    const rootAPI2 = 'http://localhost:8000/api/ping'
+                    const rootAPI2 = 'http://localhost:8000/api/ping';
                   let response= await fetch(rootAPI2,{method:'GET',headers:{'Content-Type': 'application/json'}})
                   response= await response.json();
                     console.log(response);
@@ -34,7 +35,13 @@ async function login(){
                   
                 console.log(document.getElementById('username_for_login').value);
                  
-                
+                const template = ` 
+                            Welcome ${namme}
+                        `
+       console.log(template);
+       const hello = document.getElementById("helloname");
+        hello.insertAdjacentHTML('beforeend', `${template}` );
+
                 if(response.isAdmin==1)
                 {window.location.replace("http://localhost:8000/temp/account/admin/");}
        
@@ -44,6 +51,10 @@ async function login(){
             .catch(ex => {
                 throw ex;
             });
+
+        document.getElementById('username_for_login').value='';
+        document.getElementById('password_for_login').value='';
+}
     
 // async function ping(){
 //     const rootAPI = 'http://localhost:8000/api/ping';
@@ -70,6 +81,6 @@ async function login(){
 //     }, 7000)
     
 // }
-        }
+        
 document.getElementById('login').addEventListener("click",login);
 

@@ -12,6 +12,7 @@ async function logout(){
          const acc_logged = document.querySelector('.logged_in_buttons');
          acc_logged.classList.remove('expanded_acc');
          acc_logged.classList.add('hidden');
+         const hello = document.getElementById("helloname").innerHTML="";
      }
      })
      .catch(ex => {

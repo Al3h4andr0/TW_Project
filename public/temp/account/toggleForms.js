@@ -69,17 +69,31 @@ var body = document.querySelector('body');
    body.classList.remove("stopScroll");
 }
 
-
+async function decide(){
+  const rootAPI = 'http://localhost:8000/api/ping';
+  var response = await fetch(rootAPI, {method: 'GET', headers:{'Content-Type': 'application/json'}});
+  const acc_logged = document.querySelector('.logged_in_buttons');
+  const acc = document.querySelector('.not_logged_in_buttons');
+if(response.status === 401){
+  acc_logged.classList.remove('expanded_acc');
+  acc_logged.classList.add('hidden');
+  acc.classList.remove('hidden');
+  acc.classList.add('expanded_acc');
+}else{
+  acc.classList.remove('expanded_acc');
+  acc.classList.add('hidden');
+  acc_logged.classList.remove('hidden');
+  acc_logged.classList.add('expanded_acc');
+}
+}
 
 export function toggleAccountButtons(){
   var divElement=document.getElementById('account_buttons');
-
+  decide();
   if (divElement.classList.contains("expanded_acc"))
  { divElement.classList.remove("expanded_acc"); divElement.classList.add("hidden");}
  
   else
  if (divElement.classList.contains("hidden"))
  { divElement.classList.remove("hidden"); divElement.classList.add("expanded_acc");}
- 
 }
-

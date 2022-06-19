@@ -78,8 +78,10 @@
         <div id="filter-zone">
             <!-- filter zone here -->
         </div>
-        <div class="account" id="account">
-            <div id="hello"></div>
+        <div class="account" id="account" >
+            <div id="helloname" class="helloname" style="margin:auto; padding:1em;">
+                
+            </div>
             <svg id='acc' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g>
                     <path fill="none" d="M0 0h24v24H0z"></path>
@@ -96,7 +98,7 @@
                         Register
                     </button>
                 </div>
-                <div id="logged_in_buttons" class="logged_in_buttons hidden">
+                <div id="logged_in_buttons" class="logged_in_buttons expanded_acc">
                     <button type="button" id="add_apartment_btn" class="acc_btn">
                         Add apartment
                     </button>
@@ -105,6 +107,10 @@
                 </div>
             </div>
          </div>
+
+         <div class="my_estates_content hidden" id="my_estates_content" style='position: fixed; background-color:beige; width: 10em; overflow-y: scroll; height: 60em; align-self: center; padding-right: 9em; padding-top: 30em;'>
+         
+        </div>
 
               <div class="login_container_container" style="position: fixed; vertical-align: top;">
                 <div class="login_form_container" id="login_form_container">
@@ -217,9 +223,6 @@
         <section id="content">
 
         </section>
-        <div class="my_estates_content" id="my_estates_content" style='width: 20em; height: 80%; align-self: center;'>
-
-        </div>
         <section id="map">
             <div id="map-controller">
                 <!-- <div>

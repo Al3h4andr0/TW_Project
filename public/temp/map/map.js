@@ -171,3 +171,10 @@ function moveView(latlng) {
 
 const map = (new Map());
 export default map;
+
+
+
+
+
+
+

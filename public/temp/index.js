@@ -65,7 +65,7 @@ function init () {
     suggestions.bindListeners();
     filterModal.render();
     account.addAccountListener();
-    myEstates.render();
+
     myEstates.addListenersToElements();
 }
 
