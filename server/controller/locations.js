@@ -153,26 +153,17 @@ class LocationsControler {
     }
 
     async uploadTest(request, response, userPayload) {
-        //const body = await getRequestData(request);
-        // TODOs
-        /*  am incercat cu diferite librarii, nu face niciuna ce trebuie sa faca.
-            Din body-u asta raw ar trebui sa-mi apara toate datele din formular intr-un map, iar fisierele (pozele)
-           sa fie salvate local (cum ar veni pe server), iar cand dau get la apartamente sa fie trimise si pozele, probabil tot ca BLOB.
-           Trimitem un multipart/form-data, vezi in public/temp/addApartment
-           5 hours wasted on this :(  
-        */
-
-
         let form = new formidable.IncomingForm();
         form.parse(request, async function (error, fields, file) {
             console.log(fields);
             let filepath = file.images.filepath;
-            let newpath = '../\public\/temp/\images/';
+            __dirname
+            let newpath = '../server/data/photos/';
             newpath += file.images.originalFilename;
             fs.rename(filepath, newpath, function () {
             });
             let fac = [];
-            newpath = '.\/images/';
+            newpath = 'http://localhost:8000/api/photo?photo=';
             newpath += file.images.originalFilename;
             if (fields.facilities1 != null) {
                 fac.push(fields.facilities1);

@@ -2,12 +2,14 @@
 
 //const { verify } = require("crypto");
 const http = require("http");
+
 const { url } = require("inspector");
 const static = require('node-static');
 const { getRequestData } = require('./utils/utils');
 //let Todo = new (require('./controller/todos'))();
 let LocationController = new (require('./controller/locations'))();
-let authenticationController = new (require('./controller/authentication'))();
+let authenticationController = new (require('./controller/authentication')) ();
+let photoController = new (require('./controller/photo'))();
 
 const port = 8000;
 const host = 'localhost';
@@ -94,20 +96,16 @@ async function requestListener(request, response) {
         authorizedSafeExec(LocationController.updateLocation, request, response);
     else if (request.url.match(/\api\/locations\/([0-9]+)/) && request.method === DELETE) {
         authorizedSafeExec(LocationController.deleteLocation, request, response);}
-
     else if (request.url.match(/\api\/admin\/users\/([0-9]+)/) && request.method === DELETE) {
         authorizedSafeExec(authenticationController.deleteUser, request, response);}
-
     else if (request.url.match(/\api\/admin\/uploadLocations/) && request.method === POST) {
         authorizedSafeExec(LocationController.uploadLocations, request, response);}
     else if (request.url.match(/\api\/admin\/uploadUsers/) && request.method === POST) {
         authorizedSafeExec(authenticationController.uploadUsers, request, response);}
-
     else if (request.url.match(/\api\/admin\/getLocations/) && request.method === POST) {
         authorizedSafeExec(LocationController.getLocations, request, response);}
     else if (request.url.match(/\api\/admin\/getUsers/) && request.method === POST) {
         authorizedSafeExec(authenticationController.getUsers, request, response);}
-
     else if (request.url.match(/\api\/locations\/myLocations/) && request.method === GET) {
         authorizedSafeExec(LocationController.getLocationsOwnedByUser, request, response);}
     else if (request.url.match(/\api\/login/) && request.method === POST) {
@@ -120,7 +118,11 @@ async function requestListener(request, response) {
         safeExec(authenticationController.logout, request, response);
     } else if (request.url.match(/\api\/secret/) && request.method === GET) {
         authorizedSafeExec(LocationController.getAllLocations, request, response);
-    } else if (request.method === GET) {
+    }
+    else if(request.url.match(/\api\/photo/) && request.method === GET){
+        safeExec(photoController.getPhoto,request,response);
+    }
+    else if (request.method === GET) {
         handleFilesRequest(request, response);
     }  else {
         //500 page here!?!
