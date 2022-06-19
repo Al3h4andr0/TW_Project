@@ -112,6 +112,17 @@ class LocationsControler {
         response.writeHead(200, '200', { 'Content-Type': 'application/json' });
         response.end(JSON.stringify(deletedLocation));
     }
+    
+    // async deleteLocationAdmin(request, response) {
+    //     const urlData = request.url.split('/');
+    //     const id = urlData[urlData.length - 1];
+    //     const toBeDeleted = LocationService.getLocation(id);
+
+    //     let deletedLocation = await LocationService.deleteLocation(id);
+
+    //     response.writeHead(200, '200', { 'Content-Type': 'application/json' });
+    //     response.end(JSON.stringify(deletedLocation));
+    // }
 
     async updateLocation(request, response, userPayload) {
         const urlData = request.url.split('/');
